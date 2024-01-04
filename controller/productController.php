@@ -1,7 +1,7 @@
 <?php
     include_once("model/bdd.php");
     include_once("model/Model.php");
-    class clientController {
+    class productController {
         public $bdd;
         public $model;
 
@@ -18,7 +18,7 @@
 
         }
         public function changeProductPrice(){
-            
+
         }
     }
 ?>
