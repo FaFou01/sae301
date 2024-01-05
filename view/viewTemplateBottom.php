@@ -1,7 +1,7 @@
     </main>
 
     <footer>
-        <img src="assets/img/logo.png" alt="logo du site">
+        <a href="index.php"><img src="assets/img/logo.png" alt="logo du site"></a>
         <p>&copy; SAE 301 2024 - Biville Matthieu - Marcus Boned</p>
         <ul>
             <li>RGPD</li>
