@@ -7,6 +7,13 @@
     <title>Document</title>
 </head>
 <body>
+    <header>
+        <?php include('navbar.php');?>
+    </header>
     <h1>Site Parfum SAE 301</h1>
+
+    <footer>
+        <?php include('footer.php');?>
+    </footer>
 </body>
 </html>
