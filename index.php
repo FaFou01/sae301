@@ -1,19 +1,8 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="assets/css/index.css">
-    <title>Document</title>
-</head>
-<body>
-    <header>
-        <?php include('navbar.php');?>
-    </header>
-    <h1>Site Parfum SAE 301</h1>
+<?php
 
-    <footer>
-        <?php include('footer.php');?>
-    </footer>
-</body>
-</html>
+include_once("controller/Controller.php");
+
+$controller = new Controller();
+$controller->invoke();
+
+?>

@@ -1,0 +1,5 @@
+<h1>Test du MVC de merde</h1>
+
+<h2>Juste pour voir si ça marche un peu</h2>
+
+<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Repudiandae aliquid possimus consequuntur nihil autem. Placeat, enim veritatis. A asperiores necessitatibus debitis minus delectus! Quisquam, blanditiis libero quaerat qui nostrum doloremque molestias reiciendis laboriosam modi ullam iusto corrupti officia magnam natus tempora quam nulla amet. Pariatur magnam ad dignissimos, molestiae ipsa debitis aspernatur perspiciatis, error officiis repellendus voluptatibus aliquid. Quis numquam animi incidunt? Laboriosam quae voluptatem, consequuntur earum neque aliquam voluptatum nisi dolorum optio deleniti quos reiciendis quibusdam. Voluptatem ea quidem facilis recusandae quaerat totam ex, consectetur esse eveniet velit rerum commodi natus beatae voluptatibus magni dolore amet excepturi blanditiis voluptate?</p>

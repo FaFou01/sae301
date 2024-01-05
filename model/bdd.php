@@ -6,7 +6,7 @@
             $hostname = 'localhost';  
             $username = 'root'; 
             $password = '';
-            $db = 'mediatheque';
+            $db = 'sae301';
             // Data Source Name
             $dsn = "mysql:host=$hostname;dbname=$db";
             try {
