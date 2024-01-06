@@ -1,11 +1,9 @@
 <?php
     class Notice{
         public $noticeContent;
-        public $productId;
 
-        public function __construct($noticeContent, $productId){
+        public function __construct($noticeContent){
             $this->noticeContent = $noticeContent;
-            $this->productId = $productId;
         }
     }
 ?>

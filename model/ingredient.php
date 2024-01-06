@@ -1,11 +1,9 @@
 <?php
     class Ingredient{
         public $ingredientName;
-        public $productId;
 
-        public function __construct($ingredientName, $productId){
+        public function __construct($ingredientName){
             $this->ingredientName = $ingredientName;
-            $this->productId = $productId;
         }
     }
 ?>

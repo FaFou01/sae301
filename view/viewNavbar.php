@@ -1,23 +1,23 @@
 <nav>
     <a href="index.php"><img src="assets/img/logo.png" alt="logo du site"></a>
     <ul>
-        <li><a href="">Petits prix</a></li>
-        <li><a href="">Produits Homme</a></li>
-        <li><a href="">Produits Femme</a></li>
-        <li><a href="">Contact</a></li>
+        <li><a href="index.php?page=">Petits prix</a></li>
+        <li><a href="index.php?page=liste_produits_homme">Produits Homme</a></li>
+        <li><a href="index.php?page=liste_produits_femme">Produits Femme</a></li>
+        <li><a href="index.php?page=">Contact</a></li>
         <li>
             <?php
                 if($isLoggedIn){
-                    echo '<a href="">Mon Compte</a>';
+                    echo '<a href="index.php?page=">Mon Compte</a>';
                 }
                 else{
-                    echo '<a href="">Connexion</a>';
+                    echo '<a href="index.php?page=">Connexion</a>';
                 }
             ?>
         </li>
         <?php
             if($isLoggedIn){
-                echo '<li><a href="">Panier</a></li>';
+                echo '<li><a href="index.php?page=">Panier</a></li>';
             }
         ?>
     </ul>
