@@ -1,6 +1,6 @@
 <?php
     class Model{
-        public function getProductList(){
+        public function getProductList($condition){
         }
     
         public function getProduct($productId){
