@@ -28,12 +28,13 @@
 <div id="liste_produits">
     <?php
         foreach($productsList as $product){
-            echo '<div class="product '.$product->productBrand.' '.$product->productType.'">';
+            $onclick = "window.location.href='index.php?page=produit&productId=$product->productId'"; 
+            echo '<div class="product '.$product->productBrand.' '.$product->productType.'" onclick='.$onclick.'>';
             echo '<img src="assets/img/'.$product->productPicture.'" alt="image du produit '.$product->productName.'">';
-            echo '<p><b>'.$product->productName.'</b> par '.$product->productBrand.'</p>';
+            echo '<p><b>'.$product->productName.'</b></p>';
+            echo '<p>'.$product->productBrand.'</p>';
             echo '<p>A partir de <b>'.$product->productPrice.' €</b></p>';
             echo '<p>'.str_replace('_', ' ', $product->productType ).'</p>';
-            echo '<a href="index.php?page=produit&productId='.$product->productId.'"><button>Voir le produit</button></a>';
             if($product->productQuantityAvailable == 0){
                 echo '<div>';
                 echo '<div>Rupture de stock</div>';

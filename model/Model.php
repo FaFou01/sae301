@@ -1,6 +1,5 @@
 <?php
     include_once('product.php');
-    include_once('advice.php');
     include_once('notice.php');
     include_once('ingredient.php');
 
@@ -21,6 +20,7 @@
                 $donnees['ProductDescription'], 
                 $donnees['ProductType'], 
                 $donnees['ProductBrand'],
+                $donnees['ProductAdvice'],
                 $donnees['ProductQuantityAvailable']));
             }
             return $productsList;
@@ -40,22 +40,10 @@
                 $donnees['ProductDescription'], 
                 $donnees['ProductType'], 
                 $donnees['ProductBrand'],
+                $donnees['ProductAdvice'],
                 $donnees['ProductQuantityAvailable']);
             }
             return $product;
-        }
-
-        public function getProductAdvices($productId){
-            include_once("bdd.php");
-            $bdd = new connexionBDD();
-            $db = $bdd->db;
-            $req = $db->prepare('SELECT AdviceContent FROM advice WHERE ProductId = ?');
-            $req->execute([$productId]);
-            $advices = array();
-            while($donnees = $req->fetch()){ 
-                array_push($advices, new Advice($donnees['AdviceContent']));
-            }
-            return $advices;
         }
 
         public function getProductIngredients($productId){

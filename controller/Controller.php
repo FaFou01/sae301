@@ -23,7 +23,6 @@
                 }
                 else if($_GET['page'] == 'produit'){
                     $product = $this->model->getProduct($_GET['productId']);
-                    $advices = $this->model->getProductAdvices($_GET['productId']);
                     $ingredients = $this->model->getProductIngredients($_GET['productId']);
                     include('view/viewProduct.php');
                 }

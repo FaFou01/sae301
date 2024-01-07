@@ -1,0 +1,38 @@
+#logoSite{
+    width: 231px;
+    height: 97px;
+}
+
+.icone{
+    width: 48px;
+}
+
+nav{
+    height: 104px;
+    display: flex;
+    justify-content: space-between;
+}
+
+nav ul{
+    list-style-type: none;
+    width: 771px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+nav a{
+    text-decoration: none;
+    color: black;
+}
+
+#code_promo{
+    width: 100%;
+    height: 46px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #FFA300;
+    color: white;
+}
+

@@ -1,0 +1,145 @@
+#infos{
+    display: flex;
+    width: 1296px;
+    height: 72px;
+    margin: auto;
+}
+
+#infos div{
+    width: 324px;
+    border: solid 4px #FFA300;
+    border-bottom: none;
+    border-radius: 30px 30px 0 0;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#infos div:hover{
+    cursor: pointer;
+}
+
+#avis, #advice, #ingredient{
+    color: #FFA300;
+}
+
+#notices, #advices, #ingredientList{
+    display: none;
+}
+
+#desc{
+    background-color: #FFA300;
+    color: white;
+}
+
+.contenu_infos{
+    width: 1296px;
+    height: 500px;
+    margin: auto;
+    border: solid 4px #FFA300;
+    border-radius: 0 0 30px 30px;
+    padding: 1.5em;
+}
+
+#productInfos{
+    display: flex;
+    justify-content: space-evenly;
+}
+
+#productInfos>img{
+    width: 576px;
+    height: 501px;
+}
+
+#productCustom{
+    width: 700px;
+    text-align: center;
+}
+
+#productCustom h1{
+    color : #FFA300;
+}
+
+#productCustom form{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    width: 100%;
+    height: 501px;
+}
+
+#formats{
+    display: flex;
+    justify-content: space-between;
+    align-items: end;
+    width: 100%;
+}
+
+#petit_format{
+    width: 50px;
+}
+
+#moyen_format{
+    width: 75px;
+}
+
+#grand_format{
+    width: 100px;
+}
+
+.prix{
+    text-align: center;
+}
+
+#prix_commande{
+    clip-path: polygon(0% 20%, 20% 0%, 100% 0%, 100% 100%, 20% 100%, 0% 80%);
+    width: 303.5px;
+    height: 153px;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    color: white;
+    background-color: #FFA300;
+    border: solid 3px black;
+}
+
+#trou{
+    border: black solid;
+    background-color: white;
+    width: 24px;
+    height: 24px;
+    border-radius: 50px;
+}
+
+#trou+div{
+    display: flex;
+    flex-direction: column;
+}
+
+#trou+div div{
+    display: flex;
+}
+
+#trou+div div input{
+    color: white;
+    background-color: #FFA300;
+    border: none;
+    text-align: center;
+    width: 100px;
+}
+
+#commande{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#prix_commande+input{
+    width: 307px;
+    height: 72px;
+    border-radius: 30px;
+    background-color: #FFA300;
+    color: white;
+    border: none;
+}
