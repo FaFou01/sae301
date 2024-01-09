@@ -8,7 +8,8 @@
     <link rel="stylesheet" href="assets/css/footer.css">
     <link rel="stylesheet" href="assets/css/general.css">
     <link rel="stylesheet" href="assets/css/product.css">
-    <title>Document</title>
+    <link rel="stylesheet" href="assets/css/productList.css">
+    <title>Nuances - Parfumerie en ligne</title>
 </head>
 <body>
     <?php 

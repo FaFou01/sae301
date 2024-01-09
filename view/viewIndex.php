@@ -1,5 +1,19 @@
-<h1>Test du MVC de merde</h1>
+<img id="img-index" src="assets/img/image-index.jpg" alt="image d'index">
+<h1 id="h1index">Notre sélection</h1>
+<div id="selection">
 
-<h2>Juste pour voir si ça marche un peu</h2>
-
-<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Repudiandae aliquid possimus consequuntur nihil autem. Placeat, enim veritatis. A asperiores necessitatibus debitis minus delectus! Quisquam, blanditiis libero quaerat qui nostrum doloremque molestias reiciendis laboriosam modi ullam iusto corrupti officia magnam natus tempora quam nulla amet. Pariatur magnam ad dignissimos, molestiae ipsa debitis aspernatur perspiciatis, error officiis repellendus voluptatibus aliquid. Quis numquam animi incidunt? Laboriosam quae voluptatem, consequuntur earum neque aliquam voluptatum nisi dolorum optio deleniti quos reiciendis quibusdam. Voluptatem ea quidem facilis recusandae quaerat totam ex, consectetur esse eveniet velit rerum commodi natus beatae voluptatibus magni dolore amet excepturi blanditiis voluptate?</p>
+</div>
+<div id="bandeau">
+    <p>Découvrez nos petits prix !</p>
+    <a href="index.php?page="><button>Je découvre</button></a>
+</div>
+<div id="parfums">
+    <div id="produitH" class="parfum" onclick='window.location.href="index.php?page=liste_produits_homme"'>
+        <img src="assets/img/parfumH.jpg" alt="parfum pour homme">
+        <p>Produits Homme</p>
+    </div>
+    <div id="produitF" class="parfum" onclick='window.location.href="index.php?page=liste_produits_femme"'>
+        <img src="assets/img/parfumF.jpg" alt="parfum pour homme">
+        <p>Produits Femme</p>
+    </div>
+</div>
