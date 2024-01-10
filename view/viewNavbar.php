@@ -5,7 +5,7 @@
         <li><a href="index.php?page=liste_produits_homme">Produits Homme</a></li>
         <li><a href="index.php?page=liste_produits_femme">Produits Femme</a></li>
         <li><a href="index.php?page=">Contact</a></li>
-        <li><a href="index.php?page="><img src="assets/img/panier.png" alt="icône compte" class="icone"></a></li>
+        <li><a href="index.php?page=panier"><img src="assets/img/panier.png" alt="icône compte" class="icone"></a></li>
         <li>
             <?php
                 if($isLoggedIn){

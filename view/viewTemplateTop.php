@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="assets/css/general.css">
     <link rel="stylesheet" href="assets/css/product.css">
     <link rel="stylesheet" href="assets/css/productList.css">
+    <link rel="stylesheet" href="assets/css/panier.css">
     <title>Nuances - Parfumerie en ligne</title>
 </head>
 <body>

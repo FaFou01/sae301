@@ -10,30 +10,35 @@ window.addEventListener('load', function(){
     for(i=0;i<choixMarque.length;i++){
         li = choixMarque[i];
         li.addEventListener('click', function(){
-            if(!marqueCochee.includes(this.innerHTML)){
+            if(!marqueCochee.includes(this.innerHTML.replaceAll(' ', '_'))){
                 this.style.backgroundColor = "#FFA300";
                 this.style.color = "white";
-                for(j=0;j<produits.length;j++){
-                    if(!produits[j].classList.contains(this.innerHTML)){
-                        produits[j].style.display = "none";
-                    }
-                    else{
-                        produits[j].style.display = "block";
-                    }
-                }
-                marqueCochee.push(this.innerHTML);
+                marqueCochee.push(this.innerHTML.replaceAll(' ', '_'));
             }
             else{
                 this.style.backgroundColor = "white";
                 this.style.color = "black";
                 index = marqueCochee.indexOf(this.innerHTML);
                 marqueCochee.splice(index, 1);
-                if(marqueCochee.length == 0){
-                    for(j=0;j<produits.length;j++){
-                        produits[j].style.display = "block";
+            }
+            if(marqueCochee.length == 0){
+                for(j=0;j<produits.length;j++){
+                    produits[j].style.display = "block";
+                }
+            }
+            else{
+                for(j=0;j<marqueCochee.length;j++){
+                    for(k=0;k<produits.length;k++){
+                        if(produits[k].classList.contains(marqueCochee[j])){
+                            produits[k].style.display = "block";
+                        }
+                        else{
+                            produits[k].style.display = "none";
+                        }
                     }
                 }
             }
+            console.log(produits);
         });
     }
 })

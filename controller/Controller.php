@@ -26,6 +26,9 @@
                     $ingredients = $this->model->getProductIngredients($_GET['productId']);
                     include('view/viewProduct.php');
                 }
+                else if($_GET['page'] == 'panier'){
+                    include('view/viewBasket.php');
+                }
             }
             else{
                 include('view/viewIndex.php');
