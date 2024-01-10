@@ -5,25 +5,20 @@
     gap: 72px;
 }
 
-#etapesPanier{
+#etapesCommande{
     width: 1246px;
     height: 59px;
     display: flex;
     margin: auto;
 }
 
-#etapesPanier div{
+#etapesCommande div{
     width: 351px;
     display: flex;
     justify-content: center;
     align-items: center;
     border: black solid 1px;
     border-radius: 10px;
-}
-
-#etapePanier{
-    color: white;
-    background-color: #FFA300;
 }
 
 #commande{
@@ -86,4 +81,20 @@
 
 #offert a button:hover{
     cursor: pointer;
+}
+
+#panier_vide{
+    padding-top: 3em;
+    text-align: center;
+}
+
+#panier_vide h1{
+    color: #FFA300;
+}
+
+#panier_vide img{
+    width: 759px;
+    height: 533px;
+    object-fit: cover;
+    margin-top: 3em;
 }

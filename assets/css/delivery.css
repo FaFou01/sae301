@@ -1,0 +1,105 @@
+#livraison{
+    padding: 3em;
+}
+
+#choixLivraison{
+    display: flex;
+    justify-content: center;
+    width: 510px;
+    height: 67px;
+    margin-inline: auto;
+    border-radius: 20px;
+    margin-top: 3em;
+    margin-bottom: 3em;
+}
+
+#choixLivraison div{
+    width: 255px;
+    height: 67px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#domicile{
+    border-radius: 20px 0 0 20px;
+    background-color: #ffa300;
+    color: white;
+}
+
+#point_relais{
+    border-radius: 0 20px 20px 0;
+    color: #ffa300;
+    border: #ffa300 solid;
+}
+
+#choixLivraison div:hover{
+    cursor: pointer;
+}
+
+.input-container{
+    display: flex;
+    justify-content: space-between;
+}
+
+.input-container div, .input-container:nth-child(2){
+    display: flex;
+    flex-direction: column;
+}
+
+.input-container div input{
+    width: 273px;
+    height: 50px;
+    border-radius: 30px;
+    border: #ffa300 solid;
+}
+
+.input-container:nth-child(2) input{
+    width: 576px;
+    height: 50px;
+    border-radius: 30px;
+    border: #ffa300 solid;
+}
+
+#formulaire, #formLivraison{
+    width: 576px;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+#formulaire h2{
+    color: #ffa300;
+}
+
+#formLivraison label{
+    color: #ffa300;
+    padding-left: 1em;
+}
+
+#formLivraison  input[type=submit]{
+    width: 576px;
+    height: 76px;
+    color: white;
+    background-color: #ffa300;
+    border: none;
+    border-radius: 30px;
+}
+
+#carte{
+    width: 576px;
+}
+
+#carte img{
+    width: 576px;
+    height: 543px;
+    object-fit: cover;
+    border-radius: 73px;
+}
+
+#infosDomicile{
+    margin: auto;
+    width: 1246px;
+    display: flex;
+    justify-content: space-between;
+}

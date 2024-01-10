@@ -27,7 +27,16 @@
                     include('view/viewProduct.php');
                 }
                 else if($_GET['page'] == 'panier'){
-                    include('view/viewBasket.php');
+                    if(isset($_COOKIE['panier'])){
+                        include('view/viewFullBasket.php');
+                    }
+                    else{
+                        include('view/viewEmptyBasket.php');
+                    }
+                    
+                }
+                else if($_GET['page'] == 'livraison'){
+                    include('view/viewDelivery.php');
                 }
             }
             else{

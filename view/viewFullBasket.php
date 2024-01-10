@@ -1,5 +1,5 @@
 <div id="panier">
-    <div id="etapesPanier">
+    <div id="etapesCommande">
         <div id="etapePanier">Panier</div>
         <div id="etapeConnexion">Connexion</div>
         <div id="etapeLivraison">Livraison</div>
