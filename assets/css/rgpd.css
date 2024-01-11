@@ -1,0 +1,52 @@
+#rgpd{
+    min-height: 1000px;
+    width: 70%;
+    margin: auto;
+    padding: 100px 0px;
+}
+
+#rgpd h1{
+    font-size: 54px;
+    font-weight: 500;
+    color: #FFA300;
+    margin-bottom: 60px;
+}
+
+#rgpd h3{
+    font-size: 32px;
+    font-weight: 500;
+    margin-bottom: 7px;
+}
+
+#rgpd p{
+    font-size: 20px;
+    font-weight: 300;
+    margin-bottom: 50px;
+}
+
+@media only screen and (max-width: 974px){
+    #rgpd h1 {
+        font-size: 50px;
+        margin-bottom: 40px;
+    }
+    #rgpd h3 {
+        font-size: 28px;
+    }
+    #rgpd p {
+        font-size: 20px;
+        
+    }
+}
+
+@media only screen and (max-width: 574px){
+    #rgpd h1 {
+        font-size: 44px;
+    }
+    #rgpd h3 {
+        font-size: 24px;
+    }
+    #rgpd p {
+        font-size: 18px;
+        
+    }
+}
