@@ -1,0 +1,117 @@
+#connexion{
+    min-height: 1000px;
+    width: 90%;
+    margin: 50px auto;
+}
+
+.divAvance{
+    position: relative;
+    
+}
+svg{
+    position: relative;
+}
+text {
+    font-family: 'Poppins';
+}
+
+.divbothconn{
+    display: flex;
+    flex-direction: row;
+    padding: 80px 0;
+}
+.connclassique{
+    width: 50%;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+h3{
+    color: #FFA300;
+    text-align: center;
+    font-family: 'Poppins';
+    font-size: 36px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+}
+
+.connclassique h2 {
+    color: #FFA300;
+    font-family: 'Poppins';
+    text-align: center;
+    font-size: 48px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+}
+.divider{
+    width: 5px;
+    height: 576px;  
+    background: #FFA300;
+}
+
+form{
+    gap: 60px;
+}
+
+form div {
+    display: flex;
+    flex-direction: column;
+    margin: 30px auto;
+    width: 432px;
+}
+
+form label {
+    color: #FFA300;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+    margin-left: 15px;
+}
+
+form input[type="text"]{
+    border-radius: 30px;
+    border: 3px solid #FFA300;
+    background: #FFF;
+    width: 432px;
+    height: 40px;
+    flex-shrink: 0;
+    font-size: 20px;
+    padding: 0 20px;
+}
+
+form input[type="submit"]{
+    width: 432px;
+    height: 60px;
+    flex-shrink: 0;
+    border-radius: 30px;
+    background: #FFA300;
+    color: white;
+    font-size: 28px;
+    font-weight: 600;
+    font-style: normal;
+    border: none;
+}
+
+form a {
+    color: #FFA300;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+}
+
+.connautre{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    gap: 40px;
+}
+
+.connautre{
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+}

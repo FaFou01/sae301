@@ -10,6 +10,6 @@ body {
     background-color: var(--background-color);
 }
 
-h1,h2,h3,h4,h5,h6,p,a,li,label{
+h1,h2,h3,h4,h5,h6,p,a,li,label,text{
     font-family: 'Poppins', sans-serif;
 }
