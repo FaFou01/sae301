@@ -4,8 +4,10 @@
 
 </div>
 <div id="bandeau">
-    <p>Découvrez nos petits prix !</p>
-    <a href="index.php?page="><button>Je découvre</button></a>
+    <div>
+        <p>Découvrez nos petits prix !</p>
+        <a href="index.php?page="><button>Je découvre</button></a>
+    </div>
 </div>
 <div id="parfums">
     <div id="produitH" class="parfum" onclick='window.location.href="index.php?page=liste_produits_homme"'>
