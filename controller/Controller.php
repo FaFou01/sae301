@@ -11,52 +11,72 @@
 
         public function invoke()
         {
-            include('view/viewTemplateTop.php');
             if(isset($_GET['page'])){
                 if($_GET['page'] == 'liste_produits_homme'){
                     $productsList = $this->model->getProductList('Homme');
-                    include('view/viewMenProductsList.php');
+                    $css = 'productList';
+                    $page = 'viewMenProductsList';
                 }
                 else if($_GET['page'] == 'liste_produits_femme'){
                     $productsList = $this->model->getProductList('Femme');
-                    include('view/viewWomenProductsList.php');
+                    $css = 'productList';
+                    $page = 'viewWomenProductsList';
                 }
                 else if($_GET['page'] == 'produit'){
                     $product = $this->model->getProduct($_GET['productId']);
                     $ingredients = $this->model->getProductIngredients($_GET['productId']);
-                    include('view/viewProduct.php');
+                    $css = 'product';
+                    $page = 'viewProduct';
                 }
                 else if($_GET['page'] == 'panier'){
+                    $css = 'panier';
                     if(isset($_COOKIE['panier'])){
-                        include('view/viewFullBasket.php');
+                        $page = 'viewFullBasket';
                     }
                     else{
-                        include('view/viewEmptyBasket.php');
+                        $page = 'viewEmptyBasket';
                     }
                     
                 }
                 else if($_GET['page'] == 'livraison'){
-                    include('view/viewDelivery.php');
+                    $css = 'delivery';
+                    $page = 'viewDelivery';
                 }
                 else if($_GET['page'] == 'inscription'){
-                    include('view/viewSignIn.php');
+                    $css = 'signin';
+                    $page = 'viewSignIn';
                 }
                 else if($_GET['page'] == 'connexion'){
-                    include('view/viewConnexion.php');
+                    $css = 'connexion';
+                    $page = 'viewConnexion';
                 }
                 else if($_GET['page'] == 'paiement'){
-                    include('view/viewPayment.php');
+                    $css = 'paiement';
+                    $page = 'viewPayment';
                 }
                 else if($_GET['page'] == 'compte'){
-                    include('view/viewAccount.php');
+                    $css = 'account';
+                    $page = 'viewAccount';
                 }
                 else if($_GET['page'] == 'contact'){
-                    include('view/viewContact.php');
+                    $css = 'contact';
+                    $page = 'viewContact';
+                }
+                else if($_GET['page'] == 'rgpd'){
+                    $css = 'rgpd';
+                    $page = 'viewRGPD';
+                }
+                else if($_GET['page'] == 'ml'){
+                    $css = 'ml';
+                    $page = 'viewML';
                 }
             }
             else{
-                include('view/viewIndex.php');
+                $page = 'viewIndex';
+                $css = 'index';
             }
+            include('view/viewTemplateTop.php');
+            include('view/'.$page.'.php');
             include('view/viewTemplateBottom.php');
         }
     }
