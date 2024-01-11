@@ -27,14 +27,18 @@ window.addEventListener('load', function(){
                 }
             }
             else{
-                for(j=0;j<marqueCochee.length;j++){
-                    for(k=0;k<produits.length;k++){
-                        if(produits[k].classList.contains(marqueCochee[j])){
-                            produits[k].style.display = "block";
+                for(j=0;j<produits.length;j++){
+                    flag = false;
+                    for(k=0;k<marqueCochee.length;k++){
+                        if(produits[j].classList.contains(marqueCochee[k])){
+                            flag = true;
                         }
-                        else{
-                            produits[k].style.display = "none";
-                        }
+                    }
+                    if(flag){
+                        produits[j].style.display = "block";
+                    }
+                    else{
+                        produits[j].style.display = "none";
                     }
                 }
             }
