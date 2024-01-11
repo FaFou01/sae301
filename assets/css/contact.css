@@ -53,4 +53,41 @@
         font-size: 18px;
         
     }
+    .divTitre{
+        margin-bottom: 50px;
+    }
+    #contact p {
+        margin-bottom: 40px;
+    }
+}
+
+@media only screen and (max-width: 500px){
+    #contact h1 {
+        font-size: 36px;
+    }
+    #contact h3 {
+        font-size: 20px;
+    }
+    #contact p {
+        font-size: 14px;
+        
+    }
+}
+
+@media only screen and (max-width: 420px){
+    #contact h1 {
+        font-size: 30px;
+    }
+    #contact h3 {
+        font-size: 16px;
+    }
+    #contact p {
+        font-size: 10px;  
+    }
+    .divTitre{
+        margin-bottom: 30px;
+    }
+    #contact p {
+        margin-bottom: 20px;
+    }
 }

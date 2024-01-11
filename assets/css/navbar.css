@@ -98,3 +98,15 @@ nav a{
     }
 }
 
+@media only screen and (max-width: 480px){
+    #logoSite{
+        width: 173px;
+        height: 73px;
+    }
+    .icones{
+        width: 100px;
+    }
+    .icones img{
+        width: 30px;
+    }
+}

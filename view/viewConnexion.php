@@ -52,7 +52,7 @@
             </a>
             <a href="">
                 <div class="moyenconn">
-                    <img src="../assets/img/facebook_bleu.png" alt="facebook">
+                    <img src="../assets/img/facebook_bleu.png" class="facebook" alt="facebook">
                     <p>Se connecter avec Facebook</p>
                 </div>
             </a>

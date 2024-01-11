@@ -183,6 +183,7 @@ form a {
     }
     .divbothconn{
         flex-direction: column;
+        padding: 50px 0;
     }
     .divider{
         display: none;
@@ -208,13 +209,20 @@ form a {
     .connclassique h3{
         font-size: 30px;
     }
+    .divbothconn{
+        padding: 40px 0;
+    }
 }
 @media only screen and (max-width: 740px){
     svg{
         width: 150px;
+        height: 100px;
     }
     .svgmargin1,.svgmargin2,.svgmargin3{
         margin-left: -40px;
+    }
+    .divbothconn{
+        padding: 30px 0;
     }
 }
 @media only screen and (max-width: 635px){
@@ -224,13 +232,58 @@ form a {
     .externe{
         font-size: 26pxs;
     }
+    .divbothconn{
+        padding: 10px 0;
+    }
+    .connautre h3{
+        font-size: 30px;
+    }
 }
 
-@media only screen and (max-width: 500px){
+@media only screen and (max-width: 548px){
     svg{
         width: 120px;
     }
     .svgmargin1,.svgmargin2,.svgmargin3{
         margin-left: -25px;
+    }
+    .connautre h3{
+        font-size: 26px;
+    }
+}
+@media only screen and (max-width: 465px){
+    .divbothconn h2{
+        font-size: 32px;
+    }
+    .divbothconn h3{
+        font-size: 26px;
+    }
+    svg{
+        width: 100px;
+    }
+    form div {
+        width: 350px;
+    }
+    form input[type="text"]{
+        width: 350px;
+    }
+    form input[type="submit"]{
+        width: 350px;
+    }
+    .connautre h3{
+        font-size: 20px;
+    }
+}
+
+@media only screen and (max-width: 430px){
+    
+    form div {
+        width: 300px;
+    }
+    form input[type="text"]{
+        width: 300px;
+    }
+    form input[type="submit"]{
+        width: 300px;
     }
 }
