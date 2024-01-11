@@ -38,6 +38,21 @@
                 else if($_GET['page'] == 'livraison'){
                     include('view/viewDelivery.php');
                 }
+                else if($_GET['page'] == 'inscription'){
+                    include('view/viewSignIn.php');
+                }
+                else if($_GET['page'] == 'connexion'){
+                    include('view/viewConnexion.php');
+                }
+                else if($_GET['page'] == 'paiement'){
+                    include('view/viewPayment.php');
+                }
+                else if($_GET['page'] == 'compte'){
+                    include('view/viewAccount.php');
+                }
+                else if($_GET['page'] == 'contact'){
+                    include('view/viewContact.php');
+                }
             }
             else{
                 include('view/viewIndex.php');
