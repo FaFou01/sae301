@@ -24,6 +24,8 @@ nav ul{
 nav a{
     text-decoration: none;
     color: black;
+    font-size: 18px;
+    font-weight: 300;
 }
 
 #code_promo{

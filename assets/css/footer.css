@@ -9,6 +9,8 @@ footer img{
 
 footer p{
     text-align: center;
+    font-size: 20px;
+    font-weight: 300;
 }
 
 #services{
@@ -59,4 +61,9 @@ footer p{
 
 li{
     text-decoration: none;
+}
+
+footer li {
+    font-size: 20;
+    font-weight: 300;
 }
