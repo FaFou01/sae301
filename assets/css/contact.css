@@ -1,0 +1,56 @@
+#contact{
+    width: 70%;
+    margin: auto;
+    padding: 80px 0px;
+}
+
+#contact h1{
+    font-size: 54px;
+    font-weight: 500;
+    color: #FFA300;
+    margin: auto;
+}
+#contact h3{
+    font-size: 32px;
+    font-weight: 500;
+    color: #FFA300;
+    margin-bottom: 25px;
+}
+#contact p {
+    font-size: 24px;
+    font-weight: 300;
+    margin-bottom: 80px;
+}
+.divTitre{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    margin-bottom: 100px;
+}
+
+@media only screen and (max-width: 974px){
+    #contact h1 {
+        font-size: 48px;
+    }
+    #contact h3 {
+        font-size: 28px;
+    }
+    #contact p {
+        font-size: 20px;
+        
+    }
+}
+
+@media only screen and (max-width: 574px){
+    #contact h1 {
+        font-size: 40px;
+    }
+    #contact h3 {
+        font-size: 24px;
+    }
+    #contact p {
+        font-size: 18px;
+        
+    }
+}
