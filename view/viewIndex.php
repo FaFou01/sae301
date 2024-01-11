@@ -1,7 +1,28 @@
 <img id="img-index" src="assets/img/image-index.jpg" alt="image d'index">
-<h1 id="h1index">Notre sélection</h1>
 <div id="selection">
-
+    <h1 id="h1index">Notre sélection</h1>
+    <div class="NotreSelection">
+        <div class="itemselection">
+            <a href="">
+                <img src="" alt="">
+            </a>
+        </div>
+        <div class="itemselection">
+            <a href="">
+                <img src="" alt="">
+            </a>
+        </div>
+        <div class="itemselection">
+            <a href="">
+                <img src="" alt="">
+            </a>
+        </div>
+        <div class="itemselection">
+            <a href="">
+                <img src="" alt="">
+            </a>
+        </div>
+    </div>
 </div>
 <div id="bandeau">
     <div>

@@ -4,4 +4,67 @@
     display: flex;
     justify-content: center;
     flex-direction: column;
+    padding: 100px 0px;
 }
+form{
+    width: 80%;
+    margin: auto;
+}
+#inscription h2{
+    text-align: center;
+    font-size: 64px;
+    font-weight: 500;
+    color: #FFA300;
+}
+
+#inscription label {
+    font-size: 28px;
+    font-weight: 500;
+    
+}
+
+.labinput{
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+.nomprenom{
+    display: flex;
+    flex-direction: row;
+    margin-bottom: -60px;
+    gap: 40px;
+}
+.prenom,.nom{
+    width: 100%;
+}
+
+.nomprenom .labinput{
+    width: 50%;
+}
+
+
+#inscription input[type="text"]{
+    border: 3px #FFA300 solid;
+    border-radius: 20px;
+    height: 50px;
+}
+
+#inscription input[type="submit"]{
+    background-color: #FFA300;
+    color: white;
+    width: 580px;
+    height: 80px;
+    border-radius: 30px;
+    font-size: 32px;
+    font-weight: 600;
+    border:none;
+    margin-top: 25px ;
+}
+.labinput{
+    margin: 50px auto;
+}
+.divEnregistre{
+    display: flex;
+    justify-content: center;
+}
+

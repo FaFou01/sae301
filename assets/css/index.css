@@ -1,6 +1,6 @@
 #img-index{
     width: 100%;
-    height: 672px;
+    max-height: 672px;
     object-fit: cover;
     object-position: 50% 80%;
 }
@@ -53,6 +53,7 @@
     justify-content: space-evenly;
     align-items: center;
     padding: 3em;
+    margin: 50px auto;
 }
 
 .parfum{
@@ -61,6 +62,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    
 }
 
 .parfum:hover{
@@ -86,3 +88,22 @@
     color: white;
     text-shadow: 2px 2px 2px black;
 }
+#selection{
+    margin: 60px 0 90px 0;
+}
+.NotreSelection{
+    display: none;
+    width: 95%;
+    margin: 50px auto;
+    display: flex;
+    flex-direction: row;
+    gap: 60px;
+    justify-content: center;
+}
+
+.itemselection{
+    width: 20%;
+    height: 430px;
+    background-color: rgb(209, 208, 208) ;
+}
+

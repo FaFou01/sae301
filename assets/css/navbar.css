@@ -79,6 +79,7 @@ nav a{
     }
     .nav-none.show {
         display: flex;
+        padding: 30px;
     }
 
     .nav-none li {
@@ -86,6 +87,8 @@ nav a{
     }
     .nav-none li a {
         color: white;
+        font-size: 20px;
+        font-weight: 500;
     }
     .icone{
         width: 40px;

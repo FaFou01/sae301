@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="assets/css/general.css">
     <link rel="stylesheet" href="assets/css/<?php echo $css?>.css">
     <title>Nuances - Parfumerie en ligne</title>
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
 </head>
 <body>
     <?php 
