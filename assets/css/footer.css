@@ -69,6 +69,11 @@ footer li {
     font-weight: 400;
 }
 
+footer a{
+    text-decoration: none;
+    color: white;
+}
+
 @media only screen and (max-width: 1040px){
     #services{
         margin-bottom: 40px;

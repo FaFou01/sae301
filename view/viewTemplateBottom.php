@@ -16,8 +16,8 @@
             </div>
         </div>
         <ul id="liens_footer">
-            <li>Mentions Légales</li>
-            <li>RGPD</li>
+            <li><a href="?page=ml">Mentions Légales</a></li>
+            <li><a href="?page=rgpd">RGPD</a></li>
             <li>
                 <ul id="réseaux">
                     <li>Réseaux Sociaux</li>
