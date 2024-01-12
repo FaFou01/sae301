@@ -28,6 +28,5 @@
         </ul>
         <p>&copy; SAE 301 2024 - Biville Matthieu - Marcus Boned</p>
     </footer>
-    
 </body>
 </html>

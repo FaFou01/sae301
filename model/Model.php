@@ -2,10 +2,10 @@
     include_once('product.php');
     include_once('notice.php');
     include_once('ingredient.php');
+    include_once("bdd.php");
 
     class Model{
         public function getProductList($condition){
-            include_once("bdd.php");
             $bdd = new connexionBDD();
             $db = $bdd->db;
             $req = $db->prepare('SELECT * FROM product WHERE ProductTarget = ?');
@@ -27,7 +27,6 @@
         }
     
         public function getProduct($productId){
-            include_once("bdd.php");
             $bdd = new connexionBDD();
             $db = $bdd->db;
             $req = $db->prepare('SELECT * FROM product WHERE ProductId = ?');
@@ -47,7 +46,6 @@
         }
 
         public function getProductIngredients($productId){
-            include_once("bdd.php");
             $bdd = new connexionBDD();
             $db = $bdd->db;
             $req = $db->prepare('SELECT IngredientName FROM ingredient WHERE ProductId = ?');
@@ -61,6 +59,18 @@
         
         public function getProductNotices($productId){
             
+        }
+
+        public function addUser($nom, $prenom, $email, $mdp){
+            $bdd = new connexionBDD();
+            $db = $bdd->db;
+            $req = $db->prepare('INSERT INTO user(UserFirstName, UserLastName, UserEmail, UserPassword, UserStatus) VALUES(:var1, :var2, :var3, :var4, :var5)');
+            $req->bindParam('var1', $nom, PDO::PARAM_STR);
+            $req->bindParam('var2', $prenom, PDO::PARAM_STR);
+            $req->bindParam('var3', $email, PDO::PARAM_STR);
+            $req->bindParam('var4', $mdp, PDO::PARAM_STR);
+            $req->bindParam('var5', 'Client', PDO::PARAM_STR);
+            $req->execute();
         }
     }
 
