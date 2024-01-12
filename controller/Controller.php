@@ -11,6 +11,14 @@
 
         public function invoke()
         {
+            if(isset($_POST['prenom']) and isset($_POST['nom'])){
+                $this->model->addUser($_POST['nom'], $_POST['prenom'], $_POST['email'], $_POST['mdp']);
+            }
+            else if(isset($_POST['emailConnexion']) and isset($_POST['mdpConnexion'])){
+                $this->model->connect($_POST['emailConnexion'], $_POST['mdpConnexion']);
+            }
+
+            //partie pour choisir la page à afficher
             if(isset($_GET['page'])){
                 if($_GET['page'] == 'liste_produits_homme'){
                     $productsList = $this->model->getProductList('Homme');

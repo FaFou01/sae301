@@ -13,7 +13,7 @@
             <li>
                 <?php
                     if($isLoggedIn){
-                        echo '<a href="index.php?page=compte"><img src="assets/img/compte.png" alt="icône compte" class="icone">Mon Compte</a>';
+                        echo '<a href="index.php?page=compte"><img src="assets/img/compte.png" alt="icône compte" class="icone"> '.$_SESSION['userName'].'</a>';
                     }
                     else{
                         echo '<a href="index.php?page=connexion"><img src="assets/img/compte.png" alt="icône compte" class="icone"></a>';

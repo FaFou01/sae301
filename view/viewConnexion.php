@@ -21,20 +21,20 @@
         <div class="connclassique">
             <h3>Vous avez un compte ?</h3>
             <h2>Connectez vous</h2>
-            <form action="">
+            <form action="" method="post">
                 <div>
                     <label for="">Email</label>
-                    <input type="text">
+                    <input type="mail" name="emailConnexion">
                 </div>
                 <div>
                     <label for="">Mot de passe</label>
-                    <input type="text">
+                    <input type="password" name="mdpConnexion">
                 </div>
                 <div>
                     <a href="?page=inscription">Vous n’avez pas de compte ? Créez en un !</a>
                 </div>
                 <div>
-                    <input type="submit">
+                    <input type="submit" value="Se connecter">
                 </div>
             </form>
         </div>
