@@ -259,7 +259,7 @@ form a {
         font-size: 26px;
     }
     svg{
-        width: 100px;
+        width: 95px;
     }
     form div {
         width: 350px;
@@ -272,6 +272,16 @@ form a {
     }
     .connautre h3{
         font-size: 20px;
+    }
+    .connautre p {
+        font-size: 16px;
+    }
+    .connautre img{
+        height: 30px;
+        width: 30px;
+    }
+    .moyenconn{
+        width: 320px;
     }
 }
 

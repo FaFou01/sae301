@@ -46,7 +46,7 @@
             </div>
             <a href="">
                 <div class="moyenconn">
-                    <img src="../assets/img/google.png" alt="google">
+                <img src="../assets/img/google.png" alt="google">
                     <p>Se connecter avec Google</p>
                 </div>
             </a>
@@ -58,7 +58,7 @@
             </a>
             <a href="">
                 <div class="moyenconn xtwitter">
-                    <img src="../assets/img/X.png" alt="X">
+                    <img src=".../assets/img/X.png" alt="X">
                     <p>Se connecter avec X</p>
                 </div>
             </a>
