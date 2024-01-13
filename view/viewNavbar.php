@@ -9,11 +9,24 @@
             <li><a href="index.php?page=contact">Contact</a></li>
         </ul>
         <ul class="icones">
-            <li><a href="index.php?page=panier"><img src="assets/img/panier.png" alt="icône compte" class="icone"></a></li>
+            <li>
+                <a href="index.php?page=panier">
+                    <div id="nombreArticle">
+                        <?php 
+                        if(isset($_COOKIE['panier'])){
+                            echo count($_COOKIE['panier']);
+                        }
+                        else{
+                            echo 0;
+                        } ?>
+                    </div>
+                    <img src="assets/img/panier.png" alt="icône compte" class="icone">
+                </a>
+            </li>
             <li>
                 <?php
                     if($isLoggedIn){
-                        echo '<a href="index.php?page=compte"><img src="assets/img/compte.png" alt="icône compte" class="icone"> '.$_SESSION['userName'].'</a>';
+                        echo '<a href="index.php?page=compte"><img src="assets/img/compte.png" alt="icône compte" class="icone"> '.$_SESSION['userLastName'][0].'. '.$_SESSION['userFirstName'].'</a>';
                     }
                     else{
                         echo '<a href="index.php?page=connexion"><img src="assets/img/compte.png" alt="icône compte" class="icone"></a>';

@@ -11,11 +11,23 @@
 
         public function invoke()
         {
+            session_start();
+            //partie pour les actions a effectuer dans la BDD
             if(isset($_POST['prenom']) and isset($_POST['nom'])){
                 $this->model->addUser($_POST['nom'], $_POST['prenom'], $_POST['email'], $_POST['mdp']);
             }
             else if(isset($_POST['emailConnexion']) and isset($_POST['mdpConnexion'])){
                 $this->model->connect($_POST['emailConnexion'], $_POST['mdpConnexion']);
+            }
+            else if(isset($_POST['prenomCompte']) and isset($_POST['nomCompte'])){
+                $this->model->updateUser($_SESSION['userId'], $_POST['prenomCompte'], $_POST['nomCompte'], $_POST['mailCompte']);
+            }
+
+            //partie pour effectuer des actions
+            if(isset($_GET['action'])){
+                if($_GET['action'] == 'deconnect'){
+                    $this->model->deconnect();
+                }
             }
 
             //partie pour choisir la page à afficher
@@ -63,6 +75,7 @@
                     $page = 'viewPayment';
                 }
                 else if($_GET['page'] == 'compte'){
+                    $orderList = $this->model->getUserOrders($_SESSION['userId']);
                     $css = 'account';
                     $page = 'viewAccount';
                 }

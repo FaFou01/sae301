@@ -28,7 +28,7 @@
         <ul>
             <li class="choixType">Eau de Toilette</li>
             <li class="choixType">Eau de Parfum</li>
-            <li class="choixType">Eau de Cologne</li>
+            <li class="choixType">Parfum pour cheveux</li>
             <li class="choixType">Parfum</li>
         </ul>
     </div>
