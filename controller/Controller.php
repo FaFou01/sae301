@@ -18,6 +18,7 @@
             }
             else if(isset($_POST['emailConnexion']) and isset($_POST['mdpConnexion'])){
                 $this->model->connect($_POST['emailConnexion'], $_POST['mdpConnexion']);
+                header('Location: index.php');
             }
             else if(isset($_POST['prenomCompte']) and isset($_POST['nomCompte'])){
                 $this->model->updateUser($_SESSION['userId'], $_POST['prenomCompte'], $_POST['nomCompte'], $_POST['mailCompte']);
@@ -27,6 +28,7 @@
             if(isset($_GET['action'])){
                 if($_GET['action'] == 'deconnect'){
                     $this->model->deconnect();
+                    header('Location: index.php');
                 }
             }
 
@@ -47,6 +49,11 @@
                     $ingredients = $this->model->getProductIngredients($_GET['productId']);
                     $css = 'product';
                     $page = 'viewProduct';
+
+                    //partie pour gérer le panier
+                    if(isset($_POST['finalPrice'])){
+                        $this->model->addProductToBasket($product->productPicture,$product->productName,$_POST['quantity'],$_POST['finalPrice']);
+                    }
                 }
                 else if($_GET['page'] == 'panier'){
                     $css = 'panier';

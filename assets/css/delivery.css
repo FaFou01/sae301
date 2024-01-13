@@ -70,6 +70,7 @@
 
 #formulaire h2{
     color: #ffa300;
+    font-size: 48px;
 }
 
 #formLivraison label{
@@ -77,16 +78,17 @@
     padding-left: 1em;
 }
 
-#formLivraison  input[type=submit]{
+#formLivraison  input[type=submit], #choixPR input[type=submit]{
     width: 576px;
     height: 76px;
     color: white;
     background-color: #ffa300;
     border: none;
     border-radius: 30px;
+    font-size: 32px;
 }
 
-#carte{
+#carte, #carteReduite{
     width: 576px;
 }
 
@@ -97,10 +99,23 @@
     border-radius: 73px;
 }
 
+#carteReduite img{
+    width: 576px;
+    height: 543px;
+    object-fit: cover;
+    border-radius: 73px;
+}
+
 #infosDomicile{
     margin: auto;
     width: 1246px;
     display: flex;
+    justify-content: space-between;
+}
+
+#infosPR{
+    margin: auto;
+    width: 1246px;
     justify-content: space-between;
 }
 
@@ -133,3 +148,54 @@ svg{
 text {
     font-family: 'Poppins';
 }
+
+input{
+    font-size: 24px;
+    padding: 10px;
+}
+
+#choixPR{
+    height: 543px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+}
+
+#choixPR h2{
+    font-size: 48px;
+    color:#ffa300;
+}
+
+.PR{
+    width: 540px;
+    height: 56px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border: #ffa300 solid;
+    border-radius: 10px;
+    padding: 20px;
+}
+
+.PR label{
+    font-size: 20px;
+    color:#ffa300;
+}
+
+.PR input[type=radio]{
+    appearance: none;
+    border: #ffa300 solid;
+    border-radius: 50px;
+    width: 30px;
+    height: 30px;
+}
+
+.PR input[type=radio]:checked{
+    background-color: #ffa300;
+    border-width: -5px;
+}
+
+.PR input[type=radio]:hover{
+    cursor: pointer;
+}
+

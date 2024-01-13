@@ -1,3 +1,33 @@
+.divAvance{
+    position: relative;
+    margin: auto;
+    text-align: center;
+}
+svg{
+    position: relative;
+    width: 349px;
+    height: 60px;
+}
+
+.svgmargin0{
+    z-index: 100;
+}
+.svgmargin1{
+    margin-left: -50px;
+    z-index: 90;
+}
+.svgmargin2{
+    margin-left: -50px; 
+    z-index: 80;
+}
+.svgmargin3{
+    margin-left: -50px; 
+    z-index: 70;
+}
+text {
+    font-family: 'Poppins';
+}
+
 #panier{
     padding: 3em;
     display: flex;

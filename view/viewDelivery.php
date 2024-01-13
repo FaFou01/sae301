@@ -24,29 +24,29 @@
     <div id="infosDomicile">
         <div id="formulaire">
             <h2>Adresse de Livraison</h2>
-            <form action="" method="post" id="formLivraison">
+            <form action="index.php?page=paiement" method="post" id="formLivraison">
                 <div class="input-container">
                     <div>
                         <label for="lastName">Prénom</label>
-                        <input type="text" name="lastName" id="">
+                        <input type="text" name="lastName" id="" required>
                     </div>
                     <div>
                         <label for="firstName">Nom</label>
-                        <input type="text" name="firstName" id="">
+                        <input type="text" name="firstName" id="" required>
                     </div>
                 </div>
                 <div class="input-container">
                     <label for="adress">Adresse</label>
-                    <input type="text" name="adress" id="adress">
+                    <input type="text" name="adress" id="adress" required>
                 </div>
                 <div class="input-container">
                     <div>
                         <label for="city">Ville</label>
-                        <input type="text" name="city" id="">
+                        <input type="text" name="city" id="" required>
                     </div>
                     <div>
                         <label for="cp">Code Postal</label>
-                        <input type="text" name="cp" id="">
+                        <input type="text" name="cp" id="" required>
                     </div>
                 </div>
                 <input type="submit" value="Procéder au paiement">
@@ -56,8 +56,30 @@
             <img src="assets/img/carte.png" alt="carte de france">
         </div>
     </div>
-    <div id="infosPR">
-
+    <div id="infosPR" hidden>
+        <form action="index.php?page=paiement" method="post" id="choixPR">
+            <h2>Points Relais</h2>
+            <div class="PR">
+                <label for="">Fnac Mayol - 1 km</label>
+                <input type="radio" name="pr" id="" value="Fnac Mayol" required>
+            </div>
+            <div class="PR">
+                <label for="">Micromania Grand Var - 2.3 km</label>
+                <input type="radio" name="pr" id="" value="Micromania Grand Var" required>
+            </div>
+            <div class="PR">
+                <label for="">Yves Rocher Sanary - 3.2 km</label>
+                <input type="radio" name="pr" id="" value="Yves Rocher Sanary" required>
+            </div>
+            <div class="PR">
+                <label for="">Carrefour Ollioules - 4.5 km</label>
+                <input type="radio" name="pr" id="" value="Carrefour Ollioules" required>
+            </div>
+            <input type="submit" value="Procéder au paiement">
+        </form>
+        <div id="carteReduite">
+            <img src="assets/img/cartePR.png" alt="carte réduite">
+        </div>
     </div>
 </div>
 <script src="assets/js/delivery.js"></script>

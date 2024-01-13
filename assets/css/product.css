@@ -1,3 +1,7 @@
+#pageProduit{
+    padding: 50px;
+}
+
 #infos{
     display: flex;
     width: 1296px;
@@ -59,6 +63,7 @@
 
 #productCustom h1{
     color : #FFA300;
+    font-size: 30px;
 }
 
 #productCustom form{
@@ -113,6 +118,7 @@
 }
 
 #trou+div{
+    font-size: 28px;
     display: flex;
     flex-direction: column;
 }
@@ -122,6 +128,7 @@
 }
 
 #trou+div div input{
+    font-size: 28px;
     color: white;
     background-color: #FFA300;
     border: none;
@@ -136,9 +143,100 @@
 }
 
 #prix_commande+input{
+    font-size: 24px;
     width: 307px;
     height: 72px;
     border-radius: 30px;
+    background-color: #FFA300;
+    color: white;
+    border: none;
+}
+
+.prix input[type=radio]{
+    appearance: none;
+    border: black solid;
+    width: 108px;
+    height: 70px;
+}
+
+.prix input[type=radio]:checked{
+    border: none;
+    background-color: #FFA300;
+}
+
+.prix input[type=radio]:checked~p{
+    color: white;
+}
+
+.format{
+    font-size: 18px;
+}
+
+.prix_format{
+    font-size: 16px;
+}
+
+#quantity label{
+    font-size: 24px;
+}
+
+#quantity input{
+    font-size: 24px;
+    text-align: center;
+    width: 64px;
+    height: 34.58px;
+    color: #FFA300;
+    border: #FFA300 solid;
+    border-radius: 14px;
+}
+
+#popProduct{
+    position: absolute;
+    z-index: 2;
+    top: 0;
+    width: 99vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    backdrop-filter: blur(10px);
+}
+
+#popProduct>div{
+    border-radius: 10px;
+    width: 700px;
+    height: 300px;
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 50px;
+    border: black solid 1px;
+}
+
+#popProduct>div div{
+    width: 100%;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+#popProduct>div p{
+    font-size: 30px;
+}
+
+#popProduct>div div button{
+    width: 250px;
+    height: 70px;
+    font-size: 20px;
+    border-radius: 10px;
+}
+
+#retourAccueil{
+    border: none;
+}
+
+#allerPanier{
     background-color: #FFA300;
     color: white;
     border: none;
