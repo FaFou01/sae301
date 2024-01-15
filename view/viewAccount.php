@@ -25,6 +25,7 @@
                         echo '<p>effectuée le : '.$order->orderDate.'</p>';
                         echo '</div>';
                         echo '<p>'.$order->orderPrice.' €</p>';
+                        echo '<p>'.$order->orderStatus.'</p>';
                         echo '</div>';
                     }
                 ?>

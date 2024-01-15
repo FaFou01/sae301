@@ -120,7 +120,7 @@
         public function getUserOrders($userId){
             $bdd = new connexionBDD();
             $db = $bdd->db;
-            $req = $db->prepare('SELECT OrderId, OrderPrice, OrderDate FROM userorder WHERE UserId=? ORDER BY OrderId DESC');
+            $req = $db->prepare('SELECT OrderId, OrderPrice, OrderDate, OrderStatus FROM userorder WHERE UserId=? ORDER BY OrderId DESC');
             $req->execute([$userId]);
             $orderList = array();
             while($donnees = $req->fetch()){
@@ -129,7 +129,8 @@
                 array_push($orderList, 
                 new userOrder($donnees['OrderId'],
                 $donnees['OrderPrice'],
-                $date));
+                $date,
+                $donnees['OrderStatus']));
             }
             return $orderList;
         }
