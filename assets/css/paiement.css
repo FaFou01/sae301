@@ -1,0 +1,101 @@
+#paiement{
+    width: 90%;
+    margin: 50px auto;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.divAvance{
+    position: relative;
+    margin: auto;
+}
+svg{
+    position: relative;
+    width: 349px;
+    height: 60px;
+}
+
+.svgmargin0{
+    z-index: 100;
+}
+.svgmargin1{
+    margin-left: -50px;
+    z-index: 90;
+}
+.svgmargin2{
+    margin-left: -50px; 
+    z-index: 80;
+}
+.svgmargin3{
+    margin-left: -50px; 
+    z-index: 70;
+}
+text {
+    font-family: 'Poppins';
+}
+
+#moypaiement{
+    display: flex;
+    flex-direction: row;
+    gap: 6px;
+    margin: auto;
+}
+
+#moypaiement div {
+    width: 220px;
+    height: 100px;
+    border: 5px #FFA300 solid;
+}
+#visa{
+    border-radius: 30px 0px 0px 30px;
+    background: #FFA300;
+}
+
+#cadeau{
+   border-radius: 0px 30px 30px 0px;
+}
+
+
+@media only screen and (max-width: 1400px){
+    svg{
+        width: 300px;
+    }
+}
+
+@media only screen and (max-width: 1180px){
+    svg{
+        width: 250px;
+    }
+}
+
+@media only screen and (max-width: 960px){
+    svg{
+        width: 200px;
+    }
+}
+
+@media only screen and (max-width: 740px){
+    svg{
+        width: 150px;
+        height: 100px;
+    }
+    .svgmargin1,.svgmargin2,.svgmargin3{
+        margin-left: -40px;
+    }
+}
+
+@media only screen and (max-width: 548px){
+    svg{
+        width: 120px;
+    }
+    .svgmargin1,.svgmargin2,.svgmargin3{
+        margin-left: -25px;
+    }
+}
+
+@media only screen and (max-width: 465px){
+    svg{
+        width: 95px;
+    }
+}
