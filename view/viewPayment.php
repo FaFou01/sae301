@@ -20,13 +20,13 @@
 
     <div id="moypaiement">
         <div id="visa">
-            <img src="../assets/img/Visa.png" alt="Visa">
+            <img src="assets/img/Visa.png" alt="Visa">
         </div>
         <div id="paypal">
-            <img src="../assets/img/Paypal.png" alt="Paypal">
+            <img src="assets/img/Paypal.png" alt="Paypal">
         </div>
         <div id="cadeau">
-            <img src="../assets/img/cartecadeau.png" alt="Cadeau">
+            <img src="assets/img/cartecadeau.png" alt="Cadeau">
         </div>
     </div>
 
@@ -55,7 +55,7 @@
                 </select>
                 <input type="text" class="inputNom">
             </div>
-            <img src="../assets/img/Visa.png" alt="Visa" id="visabas">
+            <img src="assets/img/Visa.png" alt="Visa" id="visabas">
         </div>
     </div>
     <div id="validation">

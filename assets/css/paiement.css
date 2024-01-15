@@ -59,14 +59,12 @@ text {
     width: 156px;
     height: 51px;
     flex-shrink: 0;
-    border: 1px black solid;
 }
 
 #paypal img{
     width: 77px;
     height: 76px;
     flex-shrink: 0;
-    border: 1px black solid;
 }
 
 #cadeau{
@@ -76,7 +74,6 @@ text {
     width: 74px;
     height: 74px;
     flex-shrink: 0;
-    border: 1px black solid;
 }
 
 #carte_bleu{
@@ -165,7 +162,6 @@ text {
     width: 219px;
     height: 72px;
     flex-shrink: 0;
-    border: #000 1px solid;
 }
 #bas_carte{
     display: flex;

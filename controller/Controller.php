@@ -57,7 +57,7 @@
                 }
                 else if($_GET['page'] == 'panier'){
                     $css = 'panier';
-                    if(isset($_COOKIE['panier'])){
+                    if(isset($_SESSION['panier'])){
                         $page = 'viewFullBasket';
                     }
                     else{
