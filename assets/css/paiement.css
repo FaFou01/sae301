@@ -39,23 +39,162 @@ text {
     display: flex;
     flex-direction: row;
     gap: 6px;
-    margin: auto;
+    margin: 100px auto 70px auto;
+
 }
 
 #moypaiement div {
     width: 220px;
     height: 100px;
     border: 5px #FFA300 solid;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 #visa{
     border-radius: 30px 0px 0px 30px;
     background: #FFA300;
 }
+#visa img {
+    width: 156px;
+    height: 51px;
+    flex-shrink: 0;
+    border: 1px black solid;
+}
+
+#paypal img{
+    width: 77px;
+    height: 76px;
+    flex-shrink: 0;
+    border: 1px black solid;
+}
 
 #cadeau{
    border-radius: 0px 30px 30px 0px;
 }
+#cadeau img{
+    width: 74px;
+    height: 74px;
+    flex-shrink: 0;
+    border: 1px black solid;
+}
 
+#carte_bleu{
+    max-width: 1000px;
+    width: 90%;
+    height: 647px;
+    flex-shrink: 0;
+    border-radius: 87px;
+    border: 2px solid #000;
+    background: #FFA300;
+    margin: auto;
+    padding: 45px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+.credit-card-input {
+    display: flex;
+    width: 90%;
+    margin: auto;
+    gap: 20px;
+  }
+  
+  .input-box {
+    width: 25%;
+    height: 50px;
+    font-size: 32px;
+    letter-spacing: 5px;
+    text-align: center;
+    border: none;
+    padding: 5px;
+    outline: none;
+  }
+  
+  .input-box:focus {
+    border-bottom: 2px solid #000;
+  }
+.date_expi{
+    display: flex;
+    flex-direction: row;
+    margin: 50px auto auto 50px;
+}
+ #carte_bleu h5{
+    color: #FFF;
+    font-size: 36px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+  }
+.input-expi{
+    width: 50px;
+    height: 50px;
+    font-size: 24px;
+    text-align: center;
+    margin: 0px 5px;
+}
+
+.crypto{
+    display: flex;
+    flex-direction: row;
+    margin: 70px auto auto 50px;
+}
+.input-crypto{
+    height: 50px;
+    width: 70px;
+    font-size: 24px;
+    text-align: center;
+    margin: 0 20px;
+}
+
+.Nom{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.inputNom{
+    height: 40px;
+    width: 400px;
+    font-size: 24px;
+    margin: 0px 20px;
+}
+
+#visabas{
+    width: 219px;
+    height: 72px;
+    flex-shrink: 0;
+    border: #000 1px solid;
+}
+#bas_carte{
+    display: flex;
+    justify-content: space-between;
+    width: 90%;
+    align-items: center;
+    margin: auto;
+
+}
+
+input[type="submit"]{
+    width: 576px;
+    height: 80px;
+    flex-shrink: 0;
+    border-radius: 30px;
+    background: #FFA300;
+    color: white;
+    font-size: 32px;
+    font-weight: 600;
+    font-style: normal;
+    border: none;
+}
+#validation{
+    width: 90%;
+    margin: 50px auto;
+    display: flex;
+    justify-content: center;
+}
+  
 
 @media only screen and (max-width: 1400px){
     svg{
@@ -63,17 +202,389 @@ text {
     }
 }
 
+
+
+
+
 @media only screen and (max-width: 1180px){
     svg{
         width: 250px;
     }
+    #moypaiement{
+        margin: 100px auto 70px auto;
+    }
+    #carte_bleu {
+        width: 90%;
+        height: 600px;
+        flex-shrink: 0;
+        border-radius: 80px;
+        border: 2px solid #000;
+        background: #FFA300;
+        margin: auto;
+        padding: 35px;
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+    }
+
+    .credit-card-input {
+        display: flex;
+        width: 90%;
+        margin: auto;
+        gap: 15px;
+    }
+
+    .input-box {
+        width: 25%;
+        height: 45px;
+        font-size: 28px;
+        letter-spacing: 4px;
+        text-align: center;
+        border: none;
+        padding: 4px;
+        outline: none;
+    }
+
+    .input-box:focus {
+        border-bottom: 2px solid #000;
+    }
+
+    .date_expi {
+        display: flex;
+        flex-direction: row;
+        margin: 45px auto auto 45px;
+    }
+
+    #carte_bleu h5 {
+        color: #FFF;
+        font-size: 32px;
+        font-style: normal;
+        font-weight: 600;
+        line-height: normal;
+    }
+
+    .input-expi {
+        width: 40px;
+        height: 40px;
+        font-size: 20px;
+        text-align: center;
+        margin: 0px 4px;
+    }
+
+    .crypto {
+        display: flex;
+        flex-direction: row;
+        margin: 60px auto auto 45px;
+    }
+
+    .input-crypto {
+        height: 45px;
+        width: 60px;
+        font-size: 20px;
+        text-align: center;
+        margin: 0 15px;
+    }
+
+    .Nom {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+    }
+
+    .inputNom {
+        height: 35px;
+        width: 300px;
+        font-size: 20px;
+        margin: 0px 15px;
+    }
+
+    #visabas {
+        width: 160px;
+        height: 55px;
+        flex-shrink: 0;
+        border: #000 1px solid;
+    }
+
+    #bas_carte {
+        display: flex;
+        justify-content: space-between;
+        width: 90%;
+        align-items: center;
+        margin: auto;
+    }
 }
+
+
+
+
+
+
+
 
 @media only screen and (max-width: 960px){
     svg{
         width: 200px;
     }
+    #moypaiement{
+        margin: 80px auto 70px auto;
+    }
+    #moypaiement div{
+        height: 70px;
+        width: 180px;
+    }
+    #visa img{
+        width: 117px;
+        height: 38px;
+    }
+    #paypal img{
+        height: 58px;
+        width: 58px;
+    }
+    #cadeau img{
+        height: 58px;
+        width: 58px;
+    }
+
+    #carte_bleu {
+        width: 90%;
+        height: 550px;
+        flex-shrink: 0;
+        border-radius: 70px;
+        border: 2px solid #000;
+        background: #FFA300;
+        margin: auto;
+        padding: 40px;
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+    }
+
+    .credit-card-input {
+        display: flex;
+        width: 90%;
+        margin: auto;
+        gap: 18px;
+    }
+
+    .input-box {
+        width: 25%;
+        height: 45px;
+        font-size: 30px;
+        letter-spacing: 4px;
+        text-align: center;
+        border: none;
+        padding: 4px;
+        outline: none;
+    }
+
+    .input-box:focus {
+        border-bottom: 2px solid #000;
+    }
+
+    .date_expi {
+        display: flex;
+        flex-direction: row;
+        margin: 45px auto auto 45px;
+    }
+
+    #carte_bleu h5 {
+        color: #FFF;
+        font-size: 32px;
+        font-style: normal;
+        font-weight: 600;
+        line-height: normal;
+    }
+
+    .input-expi {
+        width: 48px;
+        height: 48px;
+        font-size: 22px;
+        text-align: center;
+        margin: 0px 4px;
+    }
+
+    .crypto {
+        display: flex;
+        flex-direction: row;
+        margin: 60px auto auto 45px;
+    }
+
+    .input-crypto {
+        height: 45px;
+        width: 65px;
+        font-size: 22px;
+        text-align: center;
+        margin: 0 18px;
+    }
+
+    .Nom {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+    }
+
+    .inputNom {
+        height: 35px;
+        width: 350px;
+        font-size: 22px;
+        margin: 0px 15px;
+    }
+
+    #visabas {
+        width: 130px;
+        height: 50px;
+        flex-shrink: 0;
+        border: #000 1px solid;
+    }
+
+    #bas_carte {
+        display: flex;
+        justify-content: space-between;
+        width: 90%;
+        align-items: center;
+        margin: auto;
+    }
 }
+
+
+
+
+
+
+
+@media only screen and (max-width: 870px){
+    #moypaiement{
+        margin: 50px auto 70px auto;
+    }
+    #moypaiement div{
+        height: 53px;
+        width: 135px;
+    }
+    #visa img{
+        width: 88px;
+        height: 29px;
+    }
+    #paypal img{
+        height: 44px;
+        width: 44px;
+    }
+    #cadeau img{
+        height: 44px;
+        width: 44px;
+    }
+
+    #carte_bleu {
+        width: 90%;
+        height: 500px;
+        flex-shrink: 0;
+        border-radius: 60px;
+        border: 2px solid #000;
+        background: #FFA300;
+        margin: auto;
+        padding: 30px;
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+    }
+
+    .credit-card-input {
+        display: flex;
+        width: 90%;
+        margin: auto;
+        gap: 15px;
+    }
+
+    .input-box {
+        width: 25%;
+        height: 40px;
+        font-size: 28px;
+        letter-spacing: 4px;
+        text-align: center;
+        border: none;
+        padding: 4px;
+        outline: none;
+    }
+
+    .input-box:focus {
+        border-bottom: 2px solid #000;
+    }
+
+    .date_expi {
+        display: flex;
+        flex-direction: row;
+        margin: 40px auto auto 40px;
+    }
+
+    #carte_bleu h5 {
+        color: #FFF;
+        font-size: 28px;
+        font-style: normal;
+        font-weight: 600;
+        line-height: normal;
+    }
+
+    .input-expi {
+        width: 45px;
+        height: 45px;
+        font-size: 22px;
+        text-align: center;
+        margin: 0px 5px;
+    }
+
+    .crypto {
+        display: flex;
+        flex-direction: row;
+        margin: 50px auto auto 40px;
+    }
+
+    .input-crypto {
+        height: 45px;
+        width: 60px;
+        font-size: 22px;
+        text-align: center;
+        margin: 0 15px;
+    }
+
+    .Nom {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+    }
+
+    .inputNom {
+        height: 30px;
+        width: 300px;
+        font-size: 22px;
+        margin: 0px 15px;
+    }
+
+    #visabas {
+        width: 110px;
+        height: 40px;
+        flex-shrink: 0;
+        border: #000 1px solid;
+    }
+
+    #bas_carte {
+        display: flex;
+        justify-content: space-between;
+        width: 90%;
+        align-items: center;
+        margin: auto;
+    }
+
+    input[type="submit"]{
+        width: 450px;
+        height: 60px;
+        font-size: 28px;
+    }
+}
+
+
+
+
+
+
 
 @media only screen and (max-width: 740px){
     svg{
@@ -83,7 +594,254 @@ text {
     .svgmargin1,.svgmargin2,.svgmargin3{
         margin-left: -40px;
     }
+
+    #moypaiement{
+        margin: 30px auto 50px auto;
+    }
+    #moypaiement div{
+        height: 40px;
+        width: 100px;
+    }
+    #visa img{
+        width: 66px;
+        height: 22px;
+    }
+    #paypal img{
+        height: 33px;
+        width: 33px;
+    }
+    #cadeau img{
+        height: 33px;
+        width: 33px;
+    }
+    svg{
+        height: auto;
+    }
+    #carte_bleu {
+        width: 90%;
+        height: 400px;
+        flex-shrink: 0;
+        border-radius: 50px;
+        border: 2px solid #000;
+        background: #FFA300;
+        margin: auto;
+        padding: 20px;
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+    }
+
+    .credit-card-input {
+        display: flex;
+        width: 90%;
+        margin: auto;
+        gap: 10px;
+    }
+
+    .input-box {
+        width: 25%;
+        height: 30px;
+        font-size: 20px;
+        letter-spacing: 3px;
+        text-align: center;
+        border: none;
+        padding: 3px;
+        outline: none;
+    }
+
+    .input-box:focus {
+        border-bottom: 2px solid #000;
+    }
+
+    .date_expi {
+        display: flex;
+        flex-direction: row;
+        margin: 30px auto auto 30px;
+    }
+
+    #carte_bleu h5 {
+        color: #FFF;
+        font-size: 24px;
+        font-style: normal;
+        font-weight: 600;
+        line-height: normal;
+    }
+
+    .input-expi {
+        width: 40px;
+        height: 40px;
+        font-size: 18px;
+        text-align: center;
+        margin: 0px 5px;
+    }
+
+    .crypto {
+        display: flex;
+        flex-direction: row;
+        margin: 30px auto auto 30px;
+    }
+
+    .input-crypto {
+        height: 40px;
+        width: 55px;
+        font-size: 18px;
+        text-align: center;
+        margin: 0 15px;
+    }
+
+    .Nom {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+    }
+
+    .inputNom {
+        height: 25px;
+        width: 250px;
+        font-size: 18px;
+        margin: 0px 15px;
+    }
+
+    #visabas {
+        width: 88px;
+        height: 30px;
+        flex-shrink: 0;
+        border: #000 1px solid;
+    }
+
+    #bas_carte {
+        display: flex;
+        justify-content: space-between;
+        width: 90%;
+        align-items: center;
+        margin: auto;
+    }
 }
+
+
+
+
+
+
+
+
+@media only screen and (max-width: 650px){
+    #carte_bleu {
+        width: 90%;
+        height: 300px;
+        flex-shrink: 0;
+        border-radius: 40px;
+        border: 2px solid #000;
+        background: #FFA300;
+        margin: auto;
+        padding: 15px;
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+    }
+
+    .credit-card-input {
+        display: flex;
+        width: 90%;
+        margin: auto;
+        gap: 10px;
+    }
+
+    .input-box {
+        width: 25%;
+        height: 20px;
+        font-size: 16px;
+        letter-spacing: 2px;
+        text-align: center;
+        border: none;
+        padding: 2px;
+        outline: none;
+    }
+
+    .input-box:focus {
+        border-bottom: 2px solid #000;
+    }
+
+    .date_expi {
+        display: flex;
+        flex-direction: row;
+        margin: 25px auto auto 25px;
+    }
+
+    #carte_bleu h5 {
+        color: #FFF;
+        font-size: 18px;
+        font-style: normal;
+        font-weight: 600;
+        line-height: normal;
+    }
+
+    .input-expi {
+        width: 30px;
+        height: 30px;
+        font-size: 16px;
+        text-align: center;
+        margin: 0px 3px;
+    }
+
+    .crypto {
+        display: flex;
+        flex-direction: row;
+        margin: 25px auto auto 25px;
+    }
+
+    .input-crypto {
+        height: 30px;
+        width: 40px;
+        font-size: 16px;
+        text-align: center;
+        margin: 0 10px;
+    }
+
+    .Nom {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+    }
+
+    .inputNom {
+        height: 20px;
+        width: 200px;
+        font-size: 16px;
+        margin: 0px 10px;
+    }
+
+    #visabas {
+        width: 66px;
+        height: 30px;
+        flex-shrink: 0;
+        border: #000 1px solid;
+    }
+
+    #bas_carte {
+        display: flex;
+        justify-content: space-between;
+        width: 90%;
+        align-items: center;
+        margin: auto;
+    }
+
+    input[type="submit"]{
+        width: 400px;
+        height: 50px;
+        font-size: 24px;
+    }
+}
+
+
+
+
+
+
+
+
+
+
 
 @media only screen and (max-width: 548px){
     svg{
@@ -92,10 +850,267 @@ text {
     .svgmargin1,.svgmargin2,.svgmargin3{
         margin-left: -25px;
     }
-}
+        #carte_bleu {
+            width: 90%;
+            height: 200px;
+            flex-shrink: 0;
+            border-radius: 20px;
+            border: 2px solid #000;
+            background: #FFA300;
+            margin: auto;
+            padding: 5px;
+            display: flex;
+            align-items: center;
+            flex-direction: column;
+        }
+    
+        .credit-card-input {
+            display: flex;
+            width: 90%;
+            margin: auto;
+            gap: 5px;
+        }
+    
+        .input-box {
+            width: 25%;
+            height: 13px;
+            font-size: 16px;
+            letter-spacing: 2px;
+            text-align: center;
+            border: none;
+            padding: 2px;
+            outline: none;
+        }
+    
+        .input-box:focus {
+            border-bottom: 2px solid #000;
+        }
+    
+        .date_expi {
+            display: flex;
+            flex-direction: row;
+            margin: 17px auto auto 17px;
+        }
+    
+        #carte_bleu h5 {
+            color: #FFF;
+            font-size: 14px;
+            font-style: normal;
+            font-weight: 600;
+            line-height: normal;
+        }
+    
+        .input-expi {
+            width: 22px;
+            height: 22px;
+            font-size: 14px;
+            text-align: center;
+            margin: 0px 3px;
+        }
+    
+        .crypto {
+            display: flex;
+            flex-direction: row;
+            margin: 17px auto auto 17px;
+        }
+    
+        .input-crypto {
+            height: 20px;
+            width: 35px;
+            font-size: 14px;
+            text-align: center;
+            margin: 0 5px;
+        }
+    
+        .Nom {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+        }
+    
+        .inputNom {
+            height: 15px;
+            width: 110px;
+            font-size: 14px;
+            margin: 0px 5px;
+        }
+    
+        #visabas {
+            width: 66px;
+            height: 22px;
+            flex-shrink: 0;
+            border: #000 1px solid;
+        }
+    
+        #bas_carte {
+            display: flex;
+            justify-content: space-between;
+            width: 90%;
+            align-items: center;
+            margin: auto;
+        }
+        input[type="submit"]{
+            width: 350px;
+            height: 40px;
+            font-size: 20px;
+        }
+        #validation{
+            margin: 30px auto;
+        }
+    }
+
+
+
+
+
+
+
+
+
 
 @media only screen and (max-width: 465px){
     svg{
         width: 95px;
+    }
+    #moypaiement div{
+        height: 40px;
+        width: 85px;
+    }
+    #moypaiement{
+        margin: 30px auto 25px auto;
+    }
+    #visa img{
+        width: 42px;
+        height: 19px;
+    }
+    #paypal img{
+        height: 28px;
+        width: 28px;
+    }
+    #cadeau img{
+        height: 28px;
+        width: 28px;
+    }
+    .input-box {
+        width: 25%;
+        height: 18px;
+        font-size: 8px;
+        letter-spacing: 3px;
+        text-align: center;
+        border: none;
+        padding: 5px;
+        outline: none;
+      }
+      .credit-card-input {
+        gap: 10px;
+      }
+
+    input[type="submit"]{
+        width: 350px;
+    }
+
+
+      #carte_bleu{
+        width: 90%;
+        height: 200px;
+        flex-shrink: 0;
+        border-radius: 20px;
+        border: 2px solid #000;
+        background: #FFA300;
+        margin: auto;
+        padding: 5px;
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+    }
+    
+    .credit-card-input {
+        display: flex;
+        width: 90%;
+        margin: auto;
+        gap: 5px;
+      }
+      
+      .input-box {
+        width: 25%;
+        height: 13px;
+        font-size: 13px;
+        letter-spacing: 2px;
+        text-align: center;
+        border: none;
+        padding: 2px;
+        outline: none;
+      }
+      
+      .input-box:focus {
+        border-bottom: 2px solid #000;
+      }
+    .date_expi{
+        display: flex;
+        flex-direction: row;
+        margin: 17px auto auto 17px;
+    }
+     #carte_bleu h5{
+        color: #FFF;
+        font-size: 14px;
+        font-style: normal;
+        font-weight: 600;
+        line-height: normal;
+      }
+    .input-expi{
+        width: 22px;
+        height: 22px;
+        font-size: 12px;
+        text-align: center;
+        margin: 0px 3px;
+    }
+    
+    .crypto{
+        display: flex;
+        flex-direction: row;
+        margin: 17px auto auto 17px;
+    }
+    .input-crypto{
+        height: 20px;
+        width: 35px;
+        font-size: 12px;
+        text-align: center;
+        margin: 0 5px;
+    }
+    
+    .Nom{
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+    }
+    
+    .inputNom{
+        height: 15px;
+        width: 110px;
+        font-size: 12px;
+        margin: 0px 5px;
+    }
+    
+    #visabas{
+        width: 66px;
+        height: 22px;
+        flex-shrink: 0;
+        border: #000 1px solid;
+    }
+    #bas_carte{
+        display: flex;
+        justify-content: space-between;
+        width: 90%;
+        align-items: center;
+        margin: auto;
+    
+    }
+    input[type="submit"]{
+        width: 300px;
+    }
+    input[type="submit"]{
+        width: 280px;
+        height: 35px;
+        font-size: 16px;
     }
 }
