@@ -120,11 +120,19 @@ text {
 
 #panier_vide h1{
     color: #FFA300;
+    margin-bottom: 50px;
 }
 
 #panier_vide img{
-    width: 759px;
-    height: 533px;
+    width: 60%;
+    height: auto;
     object-fit: cover;
-    margin-top: 3em;
+    margin: 3em auto 0 auto;
+}
+
+@media only screen and (max-width: 720px){
+    #panier_vide h1{
+        font-size: 24px;
+        font-weight: 500;
+    }
 }
