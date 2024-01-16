@@ -1,3 +1,4 @@
+<script src="assets/js/paiement.js"></script>
 <section id="paiement">
     <div class="divAvance">
         <svg xmlns="http://www.w3.org/2000/svg" class="svgmargin0" viewBox="0 0 349 61" fill="none">
@@ -30,6 +31,7 @@
         </div>
     </div>
 
+    <div id="parCarte">
     <div id="carte_bleu">
         <div class="credit-card-input">
             <input type="text" maxlength="4" placeholder="XXXX" class="input-box" id="num1" />
@@ -58,9 +60,45 @@
             <img src="assets/img/Visa.png" alt="Visa" id="visabas">
         </div>
     </div>
-    <div id="validation">
-        <input type="submit" value="Valider et payer">
+        <div id="validation">
+                <input type="submit" value="Valider et payer">
+        </div> 
     </div>
-</section>
+    
 
+
+
+
+    <div id="ParPaypal">
+        <h2>Payer par Paypal</h2>
+        <div>
+            <form action="">
+                <div class="champ">
+                    <label for="">Email ou numéro de téléphone</label>
+                    <input type="text">
+                </div>
+                <div class="champ">
+                    <label for="">Mot de passe</label>
+                    <input type="password">
+                </div>
+                <div class="envoyer">
+                    <input type="submit">
+                </div>
+            </form>
+        </div>
+    </div> 
+
+    <div id="parCadeau">
+        <h2>Carte Cadeau</h2>
+        <form action="">
+            <div class="champ">
+                <label for=""></label>
+                <input type="text">
+            </div>
+            <div class="envoyer">
+                <input type="submit">
+            </div>
+        </form>
+    </div>
+</section> 
 

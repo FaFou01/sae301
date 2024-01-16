@@ -172,7 +172,7 @@ text {
 
 }
 
-input[type="submit"]{
+#validation input[type="submit"]{
     width: 576px;
     height: 80px;
     flex-shrink: 0;
@@ -298,7 +298,6 @@ input[type="submit"]{
         width: 160px;
         height: 55px;
         flex-shrink: 0;
-        border: #000 1px solid;
     }
 
     #bas_carte {
@@ -430,7 +429,6 @@ input[type="submit"]{
         width: 130px;
         height: 50px;
         flex-shrink: 0;
-        border: #000 1px solid;
     }
 
     #bas_carte {
@@ -558,7 +556,6 @@ input[type="submit"]{
         width: 110px;
         height: 40px;
         flex-shrink: 0;
-        border: #000 1px solid;
     }
 
     #bas_carte {
@@ -569,7 +566,7 @@ input[type="submit"]{
         margin: auto;
     }
 
-    input[type="submit"]{
+    #validation input[type="submit"]{
         width: 450px;
         height: 60px;
         font-size: 28px;
@@ -597,6 +594,7 @@ input[type="submit"]{
     #moypaiement div{
         height: 40px;
         width: 100px;
+        border: 4px #FFA300 solid;
     }
     #visa img{
         width: 66px;
@@ -702,7 +700,6 @@ input[type="submit"]{
         width: 88px;
         height: 30px;
         flex-shrink: 0;
-        border: #000 1px solid;
     }
 
     #bas_carte {
@@ -811,7 +808,6 @@ input[type="submit"]{
         width: 66px;
         height: 30px;
         flex-shrink: 0;
-        border: #000 1px solid;
     }
 
     #bas_carte {
@@ -822,7 +818,7 @@ input[type="submit"]{
         margin: auto;
     }
 
-    input[type="submit"]{
+    #validation input[type="submit"]{
         width: 400px;
         height: 50px;
         font-size: 24px;
@@ -935,7 +931,6 @@ input[type="submit"]{
             width: 66px;
             height: 22px;
             flex-shrink: 0;
-            border: #000 1px solid;
         }
     
         #bas_carte {
@@ -945,7 +940,7 @@ input[type="submit"]{
             align-items: center;
             margin: auto;
         }
-        input[type="submit"]{
+        #validation input[type="submit"]{
             width: 350px;
             height: 40px;
             font-size: 20px;
@@ -971,12 +966,14 @@ input[type="submit"]{
     #moypaiement div{
         height: 40px;
         width: 85px;
+        border: 3px #FFA300 solid;
     }
     #moypaiement{
         margin: 30px auto 25px auto;
+        
     }
     #visa img{
-        width: 42px;
+        width: 50px;
         height: 19px;
     }
     #paypal img{
@@ -1001,7 +998,7 @@ input[type="submit"]{
         gap: 10px;
       }
 
-    input[type="submit"]{
+    #validation input[type="submit"]{
         width: 350px;
     }
 
@@ -1091,7 +1088,7 @@ input[type="submit"]{
         width: 66px;
         height: 22px;
         flex-shrink: 0;
-        border: #000 1px solid;
+
     }
     #bas_carte{
         display: flex;
@@ -1101,12 +1098,296 @@ input[type="submit"]{
         margin: auto;
     
     }
-    input[type="submit"]{
+    #validation input[type="submit"]{
         width: 300px;
     }
-    input[type="submit"]{
+    #validation input[type="submit"]{
         width: 280px;
         height: 35px;
         font-size: 16px;
     }
 }
+
+
+
+
+
+#ParPaypal{
+    width: 50%;
+    margin: auto;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    margin-bottom: 100px;
+}
+#ParPaypal h2{
+    color: #FFA300;
+    font-size: 52px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+    text-align: center;
+    margin-bottom: 40px;
+}
+#ParPaypal form{
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    max-width: 720px;
+    margin: auto;
+}
+
+.champ{
+    display: flex;
+    flex-direction: column;
+}
+.champ label{
+    color: #FFA300;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    margin-left: 20px;
+    width: auto;
+}
+
+.champ input[type="text"], .champ input[type="password"]{
+    border-radius: 30px;
+    border: 3px solid #FFA300;
+    background: #FFF;
+    width: 100%;
+    max-width: 700px;
+    height: 50px;
+    flex-shrink: 0;
+    font-size: 20px;
+    padding: 0 20px;
+}
+.envoyer{
+    display: flex;
+    justify-content: center;
+}
+
+.envoyer input{
+    width: 576px;
+    height: 78px;
+    flex-shrink: 0;
+    border-radius: 30px;
+    background: #FFA300;
+    margin: auto;
+    color: #FFF;
+    text-align: center;
+    font-size: 32px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+    border: none;
+}
+@media only screen and (max-width: 1180px){
+    #ParPaypal{
+        width: 60%; 
+    }
+    
+    #ParPaypal h2{
+        font-size: 42px; 
+    }
+    
+    .champ input[type="text"], .champ input[type="password"]{ 
+        height: 40px; 
+        font-size: 16px; 
+    }
+    
+    .envoyer input{
+        width: 480px; 
+        height: 60px; 
+        font-size: 24px; 
+    }
+    
+}
+@media only screen and (max-width: 960px){
+    #ParPaypal{
+        width: 70%; 
+    }
+    #ParPaypal h2{
+        font-size: 36px;
+    }
+
+    .envoyer input{
+        width: 420px;
+        height: 55px;
+        font-size: 20px;
+    }
+    
+}
+
+@media only screen and (max-width: 960px){
+    #ParPaypal{
+        width: 80%;
+    }
+}
+
+@media only screen and (max-width: 548px){
+    #ParPaypal{
+        width: 95%;
+    }
+    #ParPaypal h2{
+        font-size: 32px;
+    }
+
+    .champ label{
+        font-size: 12px;
+    }
+
+    .champ input[type="text"], .champ input[type="password"]{
+        flex-shrink: 0;
+        border: 2px solid #FFA300;
+        font-size: 12px;
+    }
+    .envoyer input{
+        width: 326.293px;
+        height: 44.186px;
+        font-size: 16px;
+    }
+}
+
+
+#parCadeau{
+    width: 50%;
+    margin: auto;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    margin-bottom: 100px;
+}
+#parCadeau h2{
+    color: #FFA300;
+    font-size: 52px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+    text-align: center;
+    margin-bottom: 40px;
+}
+#parCadeau form{
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    max-width: 720px;
+    margin: auto;
+}
+
+.champ{
+    display: flex;
+    flex-direction: column;
+}
+.champ label{
+    color: #FFA300;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    margin-left: 20px;
+    width: auto;
+}
+
+.champ input[type="text"], .champ input[type="password"]{
+    border-radius: 30px;
+    border: 3px solid #FFA300;
+    background: #FFF;
+    width: 100%;
+    max-width: 700px;
+    height: 50px;
+    flex-shrink: 0;
+    font-size: 20px;
+    padding: 0 20px;
+}
+.envoyer{
+    display: flex;
+    justify-content: center;
+}
+
+.envoyer input{
+    width: 576px;
+    height: 78px;
+    flex-shrink: 0;
+    border-radius: 30px;
+    background: #FFA300;
+    margin: auto;
+    color: #FFF;
+    text-align: center;
+    font-size: 32px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+    border: none;
+}
+@media only screen and (max-width: 1180px){
+    #parCadeau{
+        width: 60%; 
+    }
+    
+    #parCadeau h2{
+        font-size: 42px; 
+    }
+    
+    .champ input[type="text"], .champ input[type="password"]{ 
+        height: 40px; 
+        font-size: 16px; 
+    }
+    
+    .envoyer input{
+        width: 480px; 
+        height: 60px; 
+        font-size: 24px; 
+    }
+    
+}
+@media only screen and (max-width: 960px){
+    #parCadeau{
+        width: 70%; 
+    }
+    #parCadeau h2{
+        font-size: 36px;
+    }
+
+    .envoyer input{
+        width: 420px;
+        height: 55px;
+        font-size: 20px;
+    }
+    
+}
+
+@media only screen and (max-width: 960px){
+    #parCadeau{
+        width: 80%;
+    }
+}
+
+@media only screen and (max-width: 548px){
+    #parCadeau{
+        width: 95%;
+    }
+    #parCadeau h2{
+        font-size: 32px;
+    }
+
+    .champ label{
+        font-size: 12px;
+    }
+
+    .champ input[type="text"], .champ input[type="password"]{
+        flex-shrink: 0;
+        border: 2px solid #FFA300;
+        font-size: 12px;
+    }
+    .envoyer input{
+        width: 326.293px;
+        height: 44.186px;
+        font-size: 16px;
+    }
+}
+
+
+
+
+
