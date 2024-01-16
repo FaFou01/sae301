@@ -110,7 +110,7 @@
 }
 
 #infosDomicile{
-    margin: auto;
+    margin: 0 auto 60px auto;
     width: 100%;
     display: flex;
     gap: 40px;
@@ -119,7 +119,7 @@
 }
 
 #infosPR{
-    margin: auto;
+    margin: 0 auto 60px auto;
     width: 100%;
     max-width: 1300px;
     justify-content: space-around;
