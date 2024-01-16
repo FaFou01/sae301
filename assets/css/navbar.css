@@ -32,6 +32,7 @@ nav{
     display: flex;
     justify-content: space-around;
     width: 600px;
+    z-index: 100000;
 }
 .icones{
     list-style-type: none;

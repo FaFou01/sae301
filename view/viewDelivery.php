@@ -18,14 +18,14 @@
         </svg>
     </div>
     <div id="choixLivraison">
-        <div id="domicile">A domicile</div>
+        <div id="domicile"> A domicile</div>
         <div id="point_relais">Point Relai</div>
     </div>
     <div id="infosDomicile">
         <div id="formulaire">
             <h2>Adresse de Livraison</h2>
             <form action="index.php?page=paiement" method="post" id="formLivraison">
-                <div class="input-container">
+                <div class="input-container" id="input-Name">
                     <div>
                         <label for="lastName">Prénom</label>
                         <input type="text" name="lastName" id="" required>
