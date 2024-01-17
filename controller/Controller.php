@@ -38,6 +38,9 @@
                     $productsList = $this->model->getProductList('Homme');
                     $css = 'productList';
                     $page = 'viewMenProductsList';
+                    if(isset($_GET['action']) and $_GET['action'] == "changeQuantity"){
+                        $this->model->updateProductQuantityAvailable( $_GET['article'], $_POST['newQuantity']);
+                    }
                 }
                 else if($_GET['page'] == 'liste_produits_femme'){
                     $productsList = $this->model->getProductList('Femme');

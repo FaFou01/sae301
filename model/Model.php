@@ -155,6 +155,15 @@
                 $unitaryPrice));
             }
         }
+
+        public function updateProductQuantityAvailable($productId, $newQuantity){
+            $bdd = new connexionBDD();
+            $db = $bdd->db;
+            $req = $db->prepare('UPDATE product SET ProductQuantityAvailable= :var1 WHERE ProductId= :var2');
+            $req->bindParam('var1', $newQuantity, PDO::PARAM_INT);
+            $req->bindParam('var2', $productId, PDO::PARAM_INT);
+            $req->execute();
+        }
     }
 
 ?>

@@ -24,6 +24,47 @@
     color: #FFA300;
 }
 
+#ajoutProduit{
+    width: 394px;
+    height: 65px;
+    font-size: 24px;
+    background-color: #FFA300;
+    color: white;
+    border-radius: 20px;
+    border: none;
+    margin-left: 600px;
+}
+
+#ajoutProduit:hover{
+    cursor: pointer;
+}
+
+#quantiteAdmin{
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    position: absolute;
+    bottom: -30px;
+}
+
+#quantiteAdmin input[type=number]{
+    width: 50px;
+    height: 25px;
+    border: #FFA300 solid;
+    border-radius: 10px;
+    padding: 5px;
+}
+
+#quantiteAdmin input[type=submit]{
+    width: 52px;
+    height: 25px;
+    background-color: #FFA300;
+    color: white;
+    border: none;
+    border-radius: 10px;
+}
+
 #products{
     width: 1000px;
     display: flex;
@@ -36,7 +77,7 @@
 .product{
     position: relative;
     width: 252px;
-    height: 360px;
+    height: 400px;
     text-align: center;
     border: black solid 1px;
 }
@@ -50,6 +91,7 @@
 
 .productInfos>p>b{
     color: #FFA300;
+    font-size: 20px;
 }
 
 .product:hover{
@@ -62,7 +104,7 @@
     justify-content: center;
     align-items: center;
     gap: 18px;
-    height: 144px;
+    height: 184px;
 }
 
 #rupture{

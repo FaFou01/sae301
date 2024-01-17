@@ -15,12 +15,6 @@
             <li class="choixPrix">Prix croissant</li>
             <li class="choixPrix">Prix décroissant</li>
         </ul>
-        <p>Quantité</p>
-        <ul>
-            <li class="choixFormat">50 mL</li>
-            <li class="choixFormat">100 mL</li>
-            <li class="choixFormat">200 mL</li>
-        </ul>
         <p>Type</p>
         <ul>
             <li class="choixType">Eau de Toilette</li>
@@ -37,14 +31,21 @@
             <?php
                 foreach($productsList as $product){
                     $onclick = "window.location.href='index.php?page=produit&productId=$product->productId'"; 
-                    echo '<div class="product '.$product->productBrand.' '.$product->productType.'" onclick='.$onclick.'>';
-                    echo '<img src="assets/img/'.$product->productPicture.'" alt="image du produit '.$product->productName.'">';
-                    echo '<div class="productInfos">';
+                    echo '<div class="product '.$product->productBrand.' '.$product->productType.'">';
+                    echo '<img src="assets/img/'.$product->productPicture.'" alt="image du produit '.$product->productName.'" onclick='.$onclick.'>';
+                    echo '<div class="productInfos" onclick='.$onclick.'>';
                     echo '<p><b>'.$product->productName.'</b></p>';
                     echo '<p>'.str_replace('_', ' ', $product->productBrand).'</p>';
                     echo '<p>A partir de <b>'.$product->productPrice.' €</b></p>';
                     echo '</div>';
-                    if($product->productQuantityAvailable == 0){
+                    if(isset($_SESSION['userStatus']) and $_SESSION['userStatus'] == "Admin"){
+                        echo '<form action="?page=liste_produits_homme&action=changeQuantity&article='.$product->productId.'" method="post" id="quantiteAdmin">';
+                        echo '<p>Quantité : </p>';
+                        echo '<input type="number" name="newQuantity" value="'.$product->productQuantityAvailable.'" required>';
+                        echo '<input type="submit" value="Valider">';
+                        echo'</form>';
+                    }
+                    if(isset($_SESSION['userStatus']) and $_SESSION['userStatus'] == "Client" and $product->productQuantityAvailable == 0){
                         echo '<div id="rupture">';
                         echo '<div>Rupture de stock</div>';
                         echo '</div>';
@@ -53,6 +54,11 @@
                 }
             ?>
         </div>
+        <?php
+            if(isset($_SESSION['userStatus']) and $_SESSION['userStatus'] == "Admin"){
+                echo '<a href="?page=ajoutProduit"><button id="ajoutProduit">Ajouter un produit</button></a>';
+            }
+        ?>
     </div>
 </div>
 
