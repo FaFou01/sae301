@@ -21,19 +21,19 @@
                 <div id="formats">
                     <img src="assets/img/parfum.png" alt="icône parfum" id="petit_format">
                     <div class="prix">
-                        <input type="radio" name="price" id="50ml" value="<?php echo $product->productPrice?>">
+                        <input type="radio" name="price" id="50ml" value="50 mL">
                         <p class="format">50 mL</p>
                         <p class="prix_format"><?php echo $product->productPrice?> €</p>
                     </div>
                     <img src="assets/img/parfum.png" alt="icône parfum" id="moyen_format">
                     <div class="prix">
-                        <input type="radio" name="price" id="100ml" value="<?php echo $product->productPrice*1.5 ?>">
+                        <input type="radio" name="price" id="100ml" value="100 mL">
                         <p class="format">100 mL</p>
                         <p class="prix_format"><?php echo $product->productPrice*1.5 ?> €</p>
                     </div>
                     <img src="assets/img/parfum.png" alt="icône parfum" id="grand_format">
                     <div class="prix">
-                        <input type="radio" name="price" id="200ml" value="<?php echo $product->productPrice*2 ?>">
+                        <input type="radio" name="price" id="200ml" value="200 mL">
                         <p class="format">200 mL</p>
                         <p class="prix_format"><?php echo $product->productPrice*2 ?> €</p>
                     </div>

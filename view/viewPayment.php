@@ -19,6 +19,8 @@
         </svg>
     </div>
 
+    <p>Prix à payer : <?php echo $_SESSION['prixPanier']?> €</p>
+
     <div id="moypaiement">
         <div id="visa">
             <img src="assets/img/Visa.png" alt="Visa">
@@ -34,28 +36,28 @@
     <div id="parCarte">
     <div id="carte_bleu">
         <div class="credit-card-input">
-            <input type="text" maxlength="4" placeholder="XXXX" class="input-box" id="num1" />
-            <input type="text" maxlength="4" placeholder="XXXX" class="input-box" id="num2" />
-            <input type="text" maxlength="4" placeholder="XXXX" class="input-box" id="num3" />
-            <input type="text" maxlength="4" placeholder="XXXX" class="input-box" id="num4" />
+            <input type="text" maxlength="4" placeholder="XXXX" class="input-box" id="num1" required/>
+            <input type="text" maxlength="4" placeholder="XXXX" class="input-box" id="num2" required/>
+            <input type="text" maxlength="4" placeholder="XXXX" class="input-box" id="num3" required/>
+            <input type="text" maxlength="4" placeholder="XXXX" class="input-box" id="num4" required/>
         </div>
         <div class="date_expi">
             <h5>Date d'expiration :  &nbsp;&nbsp;</h5>
-            <input type="text" maxlength="2" placeholder="XX" class="input-expi" id="expi1" />
+            <input type="text" maxlength="2" placeholder="XX" class="input-expi" id="expi1" required/>
             <h5> / </h5>
-            <input type="text" maxlength="2" placeholder="XX" class="input-expi" id="expi1" />
+            <input type="text" maxlength="2" placeholder="XX" class="input-expi" id="expi1" required/>
         </div>
         <div class="crypto">
             <h5>Cryptogramme :</h5>
-            <input type="text" maxlength="3" placeholder="XXX" class="input-crypto" id="crypto" />
+            <input type="text" maxlength="3" placeholder="XXX" class="input-crypto" id="crypto" required/>
         </div>
         <div id="bas_carte">
             <div class="Nom">
-                <select name="" id="">
+                <select name="" id="" required>
                     <option value="Monsieur">M.</option>
                     <option value="Madame">Mme.</option>
                 </select>
-                <input type="text" class="inputNom">
+                <input type="text" class="inputNom" required>
             </div>
             <img src="assets/img/Visa.png" alt="Visa" id="visabas">
         </div>

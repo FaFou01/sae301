@@ -4,9 +4,9 @@ window.addEventListener("load", function(){
     moyenFormat = document.getElementById('100ml');
     grandFormat = document.getElementById('200ml');
     quantite = document.getElementById('productQuantity');
-    prixApayer.value = petitFormat.value*quantite.value;
-    petitFormat.checked = true;
+    prixApayer.value = petitFormat.nextSibling.nextSibling.nextSibling.nextSibling.innerHTML.split(' ')[0]*quantite.value;
     casecochee = petitFormat;
+    petitFormat.checked = true;
 
     petitFormat.addEventListener('click', getFinalPrice);
     moyenFormat.addEventListener('click', getFinalPrice);
@@ -16,10 +16,13 @@ window.addEventListener("load", function(){
     function getFinalPrice(){
         if(this.checked){
             casecochee = this;
-            prixApayer.value = this.value*quantite.value;
+            prix = this.nextSibling.nextSibling.nextSibling.nextSibling.innerHTML.split(' ')[0];
+            prixApayer.value = prix*quantite.value;
         }
         else{
-            prixApayer.value = casecochee.value*quantite.value;
+            console.log(prix);
+            prix = casecochee.nextSibling.nextSibling.nextSibling.nextSibling.innerHTML.split(' ')[0];
+            prixApayer.value = prix*quantite.value;
         }
     }
 

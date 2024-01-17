@@ -24,8 +24,8 @@
                         echo '<p>N° de commande : '.$order->orderId.'</p>';
                         echo '<p>effectuée le : '.$order->orderDate.'</p>';
                         echo '</div>';
-                        echo '<p>'.$order->orderPrice.' €</p>';
                         echo '<p>'.$order->orderStatus.'</p>';
+                        echo '<p>'.$order->orderPrice.' €</p>';
                         echo '</div>';
                     }
                 ?>

@@ -52,12 +52,23 @@
 
                     //partie pour gérer le panier
                     if(isset($_POST['finalPrice'])){
-                        $this->model->addProductToBasket($product->productPicture,$product->productName,$_POST['quantity'],$_POST['finalPrice']);
+                        $this->model->addProductToBasket($product->productPicture,$product->productName, $_POST['price'], $_POST['quantity'], $product->productQuantityAvailable, $_POST['finalPrice']);
                     }
                 }
                 else if($_GET['page'] == 'panier'){
                     $css = 'panier';
-                    if(isset($_SESSION['panier'])){
+                    if(isset($_GET['action'])){
+                        if($_GET['action'] == "supprArticle"){
+                            array_splice($_SESSION['panier'], $_GET['article'], 1);
+                        }
+                        else if($_GET['action'] == "augmenterArticle"){
+                            $_SESSION['panier'][$_GET['article']][3]++;
+                        }
+                        else if($_GET['action'] == "réduireArticle"){
+                            $_SESSION['panier'][$_GET['article']][3]--;
+                        }
+                    }
+                    if(isset($_SESSION['panier']) and !empty($_SESSION['panier'])){
                         $page = 'viewFullBasket';
                     }
                     else{
@@ -68,6 +79,9 @@
                 else if($_GET['page'] == 'livraison'){
                     $css = 'delivery';
                     $page = 'viewDelivery';
+                    if(isset($_POST['promo']) and $_POST['promo'] == "PROMO"){
+                        $_SESSION['prixPanier'] = $_SESSION['prixPanier'] - $_SESSION['prixPanier']/10;
+                    }
                 }
                 else if($_GET['page'] == 'inscription'){
                     $css = 'signin';

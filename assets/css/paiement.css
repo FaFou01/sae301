@@ -91,6 +91,13 @@ text {
     flex-direction: column;
 }
 
+#carte_bleu input{
+    border: none;
+    border-bottom: white solid;
+    background-color: #FFA300;
+    color: white;
+}
+
 .credit-card-input {
     display: flex;
     width: 90%;
@@ -189,6 +196,17 @@ text {
     margin: 50px auto;
     display: flex;
     justify-content: center;
+}
+
+.Nom select{
+    width: 165px;
+    height: 64px;
+    font-size: 36px;
+    border-radius: 14px;
+    color: #FFA300;
+    background-color: white;
+    padding: 10px;
+    border: none;
 }
   
 

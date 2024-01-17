@@ -135,19 +135,24 @@
             return $orderList;
         }
 
-        public function addProductToBasket($productPicture, $productName, $quantity, $price){
+        public function addProductToBasket($productPicture, $productName, $format, $quantity, $maxQuantity, $price){
+            $unitaryPrice = $price/$quantity;
             if(isset($_SESSION['panier'])){
                 array_push($_SESSION['panier'], 
                 array($productPicture,
-                $productName,                            
+                $productName,
+                $format,                            
                 $quantity,
-                $price));
+                $maxQuantity,
+                $unitaryPrice));
             }
             else{
                 $_SESSION['panier'] = array(array($productPicture,
-                $productName,                            
+                $productName,
+                $format,                            
                 $quantity,
-                $price));
+                $maxQuantity,
+                $unitaryPrice));
             }
         }
     }

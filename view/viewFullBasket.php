@@ -26,28 +26,75 @@
             </div>
             <div id="corps">
                 <?php
+                    $prixTotal = 0;
                     for($i=0; $i<count($_SESSION['panier']);$i++){
                         $produitPanier = $_SESSION['panier'][$i];
-                        for($j=0; $j<count($produitPanier); $j++){
-                            echo $produitPanier[$j].'<br>';
-                        }
+                        $imageProduit = $produitPanier[0];
+                        $nomProduit = $produitPanier[1];
+                        $format = $produitPanier[2];
+                        $quantité = $produitPanier[3];
+                        $quantitéMax = $produitPanier[4];
+                        $prixUnitaire = $produitPanier[5];
+                        $sousTotal = $quantité*$prixUnitaire;
+                        echo '<div class="produitPanier">';
+                        echo '<img src="assets/img/'.$imageProduit.'" alt="photo du produit">';
+                            echo '<div>';
+                                echo '<p class="nomProduitPanier">'.$nomProduit.'</p>';
+                                echo '<p class="formatProduit">Format : '.$format.'</p>';
+                                echo '<div class="quantité">';
+                                    echo '<p class="nombre">Quantité : '.$quantité.'</p>';
+                                    if($quantité < $quantitéMax){
+                                        echo '<a href="?page=panier&action=augmenterArticle&article='.$i.'"><button class="plus">+</button></a>';
+                                    }
+                                    else{
+                                        echo '<a href="?page=panier"><button class="impossible">+</button></a>';
+                                    }
+                                    echo '<p>/</p>';
+                                    if($quantité>1){
+                                        echo '<a href="?page=panier&action=réduireArticle&article='.$i.'"><button class="moins">-</button></a>';
+                                    }
+                                    else{
+                                        echo '<a href="?page=panier"><button class="impossible">-</button></a>';
+                                    }
+                                echo '</div>';
+                                echo '<p>Prix unitaire : '.$prixUnitaire.' €</p>';
+                                echo '<p><b>Sous-total : '. $sousTotal.' €</b></p>';
+                            echo '</div>';
+                            echo '<a href="?page=panier&action=supprArticle&article='.$i.'"><button class="supprimer">🗑️</button></a>';
+                        echo '</div>';
+                        $prixTotal = $prixTotal + $sousTotal;
                     }
+                    $_SESSION['prixPanier'] = $prixTotal;
                 ?>
             </div>
+            <div id="prixTotal">
+                <div id="trou"></div>
+                <div>
+                    <p>Prix Total :</p>
+                    <div>
+                        <p><?php echo $prixTotal?> €</p>
+                    </div>  
+                </div>
+            </div>
         </div>
-        <div id="offert">
-            <div>
+        <?php
+            if(isset($_SESSION['userId'])){
+                $href = 'livraison';
+            }
+            else{
+                $href = 'connexion';
+            }
+            ?>
+        <form action="index.php?page=<?php echo $href?>" method="post" id="offert">
+            <div id="produitsOfferts">
 
             </div>
-            <?php
-                if(isset($_SESSION['userId'])){
-                    $href = 'livraison';
-                }
-                else{
-                    $href = 'connexion';
-                }
-            ?>
-            <a href="index.php?page=<?php echo $href?>"><button>Passer Commande</button></a>
-        </div>
+            <div id="codePromo">
+                <label for="promo">Code Promo : </label>
+                <input type="text" name="promo" id="promo">
+            </div>
+            
+            <input type="submit" value="Passer la commande">
+        </form>
     </div>
 </div>

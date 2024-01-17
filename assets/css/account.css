@@ -99,8 +99,12 @@ form label{
     font-size: 20px;
 }
 
-.order>div+p{
+.order>div+p+p{
     font-size: 32px;
+}
+
+.order>div+p{
+    font-size: 20px;
 }
 
 #compte button{

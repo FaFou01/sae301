@@ -52,12 +52,14 @@ text {
 }
 
 #commande{
+    margin-top: 70px;
     display: flex;
     justify-content: space-evenly;
     align-items: end;
 }
 
 #aPayer{
+    position: relative;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -95,22 +97,45 @@ text {
 
 #corps{
     width: 478px;
-    height: 448px;
     background-color: #FFA300;
     border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: center;
+    padding: 10px;
+    row-gap: 10px;
 }
 
-#offert a button{
+form input[type=submit]{
     width: 449px;
     height: 108px;
     border-radius: 30px;
     background-color: #FFA300;
     color: white;
     border: none;
+    font-size: 32px;
+}
+
+form input[type=submit]:hover{
+    cursor: pointer;
 }
 
 #offert a button:hover{
     cursor: pointer;
+}
+
+#codePromo label{
+    font-size: 32px;
+}
+
+#codePromo input{
+    width: 212px;
+    height: 41px;
+    padding: 10px;
+    font-size: 25px;
+    border: #FFA300 solid;
+    border-radius: 30px;
 }
 
 #panier_vide{
@@ -128,6 +153,109 @@ text {
     height: auto;
     object-fit: cover;
     margin: 3em auto 0 auto;
+}
+
+.produitPanier{
+    width: 468px;
+    height: 144px;
+    background-color: white;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    border-radius: 30px;
+}
+
+.produitPanier img{
+    width: 144px;
+    height: 108px;
+    object-fit: cover;
+    border: #FFA300 solid;
+    border-radius: 30px;
+}
+
+.produitPanier>img+div{
+    width: 170px;
+}
+
+.nomProduitPanier{
+    font-size: 24px;
+}
+
+.quantité>p, .quantité+p{
+    font-size: 16px;
+}
+
+.nombre{
+    width: 110px;
+}
+
+.quantité{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.plus{
+    background-color: #00ff38;
+}
+
+.moins{
+    background-color: #ff0000;
+}
+
+.plus, .moins, .impossible{
+    border: none;
+    width: 18px;
+    height: 18px;
+    font-size: 16px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.quantité a{
+    text-decoration: none;
+}
+
+.supprimer{
+    background-color: white;
+    border: none;
+    font-size: 27px;
+}
+
+.produitPanier button:hover{
+    cursor: pointer;
+}
+
+#prixTotal{
+    position: absolute;
+    top: -50px;
+    right: -200px;
+    clip-path: polygon(0% 20%, 20% 0%, 100% 0%, 100% 100%, 20% 100%, 0% 80%);
+    width: 303.5px;
+    height: 153px;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    color: white;
+    background-color: #FFA300;
+}
+
+#trou{
+    background-color: white;
+    width: 24px;
+    height: 24px;
+    border-radius: 50px;
+}
+
+#trou+div{
+    font-size: 28px;
+    display: flex;
+    flex-direction: column;
+}
+
+#trou+div div{
+    display: flex;
 }
 
 @media only screen and (max-width: 720px){
