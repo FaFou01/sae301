@@ -29,7 +29,7 @@
 <div id="bandeau">
     <div>
         <p>Découvrez nos petits prix !</p>
-        <a href="index.php?page="><button>Je découvre</button></a>
+        <a href="index.php?page=liste_petit_prix"><button>Je découvre</button></a>
     </div>
 </div>
 <div id="parfums">
