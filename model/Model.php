@@ -1,7 +1,6 @@
 <?php
     include_once('product.php');
     include_once('notice.php');
-    include_once('ingredient.php');
     include_once("bdd.php");
     include_once('userOrder.php');
 
@@ -22,6 +21,7 @@
                 $donnees['ProductType'], 
                 $donnees['ProductBrand'],
                 $donnees['ProductAdvice'],
+                $donnees['ProductIngredient'],
                 $donnees['ProductQuantityAvailable']));
             }
             return $productsList;
@@ -41,25 +41,30 @@
                 $donnees['ProductType'], 
                 $donnees['ProductBrand'],
                 $donnees['ProductAdvice'],
+                $donnees['ProductIngredient'],
                 $donnees['ProductQuantityAvailable']);
             }
             return $product;
         }
-
-        public function getProductIngredients($productId){
-            $bdd = new connexionBDD();
-            $db = $bdd->db;
-            $req = $db->prepare('SELECT IngredientName FROM ingredient WHERE ProductId = ?');
-            $req->execute([$productId]);
-            $ingredients = array();
-            while($donnees = $req->fetch()){ 
-                array_push($ingredients, new Ingredient($donnees['IngredientName']));
-            }
-            return $ingredients;
-        }
         
         public function getProductNotices($productId){
-            
+            $bdd = new connexionBDD();
+            $db = $bdd->db;
+            $req = $db->prepare('SELECT * FROM notice WHERE ProductId = ?');
+            $req->execute([$productId]);
+            $noticeList = array();
+            $resultNotice = $req->fetchAll(PDO::FETCH_ASSOC);
+            if($resultNotice){
+                foreach($resultNotice as $notice){
+                    $noticeContent = $notice['NoticeContent'];
+                    $req2 = $db->prepare('SELECT UserLastName, UserFirstName FROM user WHERE UserId = ?');
+                    $req2->execute([$notice['UserId']]);
+                    $resultUser = $req2->fetchAll(PDO::FETCH_ASSOC);
+                    $userName = $resultUser[0]['UserLastName'][0].'. '.$resultUser[0]['UserFirstName'];
+                    array_push($noticeList, array($userName, $noticeContent));
+                }
+            }
+            return $noticeList;
         }
 
         public function addUser($nom, $prenom, $email, $mdp){

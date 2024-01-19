@@ -8,9 +8,10 @@
         public $productType;
         public $productBrand;
         public $productAdvice;
+        public $productIngredient;
         public $productQuantityAvailable;
 
-        public function __construct($productId, $productName, $productPicture, $productPrice, $productDescription, $productType, $productBrand, $productAdvice, $productQuantityAvailable){
+        public function __construct($productId, $productName, $productPicture, $productPrice, $productDescription, $productType, $productBrand, $productAdvice, $productIngredient, $productQuantityAvailable){
             $this->productId = $productId;
             $this->productName = $productName;
             $this->productPicture = $productPicture;
@@ -19,6 +20,7 @@
             $this->productType = $productType;
             $this->productBrand = $productBrand;
             $this->productAdvice = $productAdvice;
+            $this->productIngredient = $productIngredient;
             $this->productQuantityAvailable = $productQuantityAvailable;
         }
     }

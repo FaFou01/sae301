@@ -82,15 +82,15 @@
 }
 
 #petit_format{
-    width: 50px;
+    width: 25px;
 }
 
 #moyen_format{
-    width: 75px;
+    width: 83px;
 }
 
 #grand_format{
-    width: 100px;
+    width: 68px;
 }
 
 .prix{
@@ -150,20 +150,44 @@
     border: none;
 }
 
+.prix{
+    position: relative;
+}
+
 .prix input[type=radio]{
+    position: relative;
     appearance: none;
-    border: black solid;
     width: 108px;
     height: 70px;
+    background-color: none;
+    z-index: 30;
 }
 
-.prix input[type=radio]:checked{
-    border: none;
-    background-color: #FFA300;
-}
-
-.prix input[type=radio]:checked~p{
+.prix input[type=radio]:checked~.format-infos{
     color: white;
+}
+
+.prix input[type=radio]:checked~.case-couleur{
+    background-color: #FFA300;
+    border: none;
+}
+
+.prix div{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.format-infos{
+    z-index: 20;
+}
+
+.case-couleur{
+    z-index: 10;
+    border: black solid;
 }
 
 .format{
@@ -238,4 +262,16 @@
     background-color: #FFA300;
     color: white;
     border: none;
+}
+
+#ajoutAvis input[type=submit]{
+    background-image: url('../img/envoi.png');
+    background-color: white;
+    border: none;
+    width: 52px;
+    height: 52px;
+}
+
+#ajoutAvis input[type=submit]:hover{
+    cursor: pointer;
 }

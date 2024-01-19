@@ -47,9 +47,14 @@
                     $css = 'productList';
                     $page = 'viewWomenProductsList';
                 }
+                else if($_GET['page'] == 'liste_petit_prix'){
+                    $productsList = $this->model->getProductList('PP');
+                    $css = 'productList';
+                    $page = 'viewSmallPrices';
+                }
                 else if($_GET['page'] == 'produit'){
                     $product = $this->model->getProduct($_GET['productId']);
-                    $ingredients = $this->model->getProductIngredients($_GET['productId']);
+                    $noticeList = $this->model->getProductNotices($_GET['productId']);
                     $css = 'product';
                     $page = 'viewProduct';
 

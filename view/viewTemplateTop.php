@@ -19,7 +19,7 @@
         <a href="index.php"><img src="assets/img/logo.png" alt="logo du site" id="logoSite"></a>
         <div class="nav-links">
             <ul class="nav-none">
-                <li><a href="index.php?page=">Petits prix</a></li>
+                <li><a href="index.php?page=liste_petit_prix">Petits prix</a></li>
                 <li><a href="index.php?page=liste_produits_homme">Produits Homme</a></li>
                 <li><a href="index.php?page=liste_produits_femme">Produits Femme</a></li>
                 <li><a href="index.php?page=contact">Contact</a></li>

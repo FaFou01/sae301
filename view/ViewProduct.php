@@ -19,23 +19,32 @@
             <h1><?php echo str_replace('_', ' ', $product->productType).' '.$product->productName.' par '.str_replace('_', ' ', $product->productBrand)?></h1>
             <form action="" method="post">
                 <div id="formats">
-                    <img src="assets/img/parfum.png" alt="icône parfum" id="petit_format">
+                    <img src="assets/img/petite_bouteille.svg" alt="icône parfum" id="petit_format">
                     <div class="prix">
                         <input type="radio" name="price" id="50ml" value="50 mL">
-                        <p class="format">50 mL</p>
-                        <p class="prix_format"><?php echo $product->productPrice?> €</p>
+                        <div class="format-infos">
+                            <p class="format">50 mL</p>
+                            <p class="prix_format"><?php echo $product->productPrice?> €</p>
+                        </div>
+                        <div class="case-couleur"></div>
                     </div>
-                    <img src="assets/img/parfum.png" alt="icône parfum" id="moyen_format">
+                    <img src="assets/img/moyenne_bouteille.svg" alt="icône parfum" id="moyen_format">
                     <div class="prix">
                         <input type="radio" name="price" id="100ml" value="100 mL">
-                        <p class="format">100 mL</p>
-                        <p class="prix_format"><?php echo $product->productPrice*1.5 ?> €</p>
+                        <div class="format-infos">
+                            <p class="format">100 mL</p>
+                            <p class="prix_format"><?php echo $product->productPrice*1.5 ?> €</p>
+                        </div>
+                        <div class="case-couleur"></div>
                     </div>
-                    <img src="assets/img/parfum.png" alt="icône parfum" id="grand_format">
+                    <img src="assets/img/grande_bouteille.svg" alt="icône parfum" id="grand_format">
                     <div class="prix">
                         <input type="radio" name="price" id="200ml" value="200 mL">
-                        <p class="format">200 mL</p>
-                        <p class="prix_format"><?php echo $product->productPrice*2 ?> €</p>
+                        <div class="format-infos">
+                            <p class="format">200 mL</p>
+                            <p class="prix_format"><?php echo $product->productPrice*2 ?> €</p>
+                        </div>
+                        <div class="case-couleur"></div>
                     </div>
                 </div>
                 <div id="quantity">
@@ -66,13 +75,35 @@
         <div id="ingredient"><p>Ingrédients</p></div>
     </div>
     <div id="descContent" class="contenu_infos"><?php echo $product->productDescription?></div>
-    <div id="notices" class="contenu_infos"></div>
+    <div id="notices" class="contenu_infos">
+        <?php
+            if(count($noticeList)>0){
+                foreach($noticeList as $notice){
+                    echo '<div class="notice">';
+                    echo '<p><b>'.$notice[0].'</b> - '.$notice[1].'</p>';
+                    echo'</div>';
+                }
+            }
+            else{
+                echo "<p>Aucun avis n'a été laissé sur ce produit !</p>";
+            }
+            
+            if(isset($_SESSION['userStatus'])){
+                echo '<form action="" method="post" id="ajoutAvis">';
+                echo '<input type="text" name="notice" required>';
+                echo '<input type="submit" value="">';
+                echo '</form>';
+            }
+        ?>
+    </div>
     <div id="advices" class="contenu_infos"><?php echo $product->productAdvice?></div>
     <div id="ingredientList" class="contenu_infos">
+        <p>Ce produit est composé des ingrédients suivants :</p>
         <ul>
-            <?php 
+            <?php
+                $ingredients = explode(',',$product->productIngredient);
                 foreach($ingredients as $ingredient){
-                    echo '<li>'.$ingredient->ingredientName.'</li>';
+                    echo '<li>'.$ingredient.'</li>';
                 }
             ?>
         </ul>
