@@ -2,13 +2,9 @@
     <div id="tri">
         <p>Marques</p>
         <ul>
-            <li class="choixMarque">Dior</li>
-            <li class="choixMarque">Hermès</li>
-            <li class="choixMarque">Yves Rocher</li>
-            <li class="choixMarque">Givenchy</li>
-            <li class="choixMarque">Paco Rabanne</li>
-            <li class="choixMarque">Jean-Paul Gaultier</li>
-            <li class="choixMarque">Yves Saint Laurent</li>
+            <li class="choixMarque">Cacharel</li>
+            <li class="choixMarque">Nuances</li>
+            <li class="choixMarque">John Phillips</li>
         </ul>
         <p>Prix</p>
         <ul>
@@ -18,15 +14,14 @@
         <p>Type</p>
         <ul>
             <li class="choixType">Eau de Toilette</li>
-            <li class="choixType">Eau de Parfum</li>
-            <li class="choixType">Eau de Cologne</li>
+            <li class="choixType">Déodorant</li>
             <li class="choixType">Parfum</li>
         </ul>
     </div>
 
     <div id="liste_produits">
         <h1>Produits à petits prix</h1>
-        <img id="illustration" src="assets/img/parfumH.jpg" alt="produit pour homme">
+        <img id="illustration" src="assets/img/echantillon.jpg" alt="produit pour homme">
         <div id="products">
             <?php
                 foreach($productsList as $product){

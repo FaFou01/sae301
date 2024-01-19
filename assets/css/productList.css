@@ -109,7 +109,7 @@
 
 #rupture{
     width: 252px;
-    height: 360px;
+    height: 400px;
     position: absolute;
     z-index: 2;
     background-color: rgba(102, 102, 102, 0.721);
@@ -159,4 +159,28 @@
 
 #tri ul li:hover{
     cursor: pointer;
+}
+
+#supprimer{
+    width: 60px;
+    height: 50px;
+    position: absolute;
+    top: 0;
+    right: 0;
+    background-color: red;
+    border-left: black solid 1px;
+    border-bottom: black solid 1px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 5;
+}
+
+#supprimer input{
+    width: 37px;
+    height: 37px;
+    background-image: url('../img/poubelle.svg');
+    background-position: -2px;
+    border: none;
+    background-color: red;
 }

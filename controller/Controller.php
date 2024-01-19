@@ -58,9 +58,11 @@
                     $css = 'product';
                     $page = 'viewProduct';
 
-                    //partie pour gérer le panier
                     if(isset($_POST['finalPrice'])){
                         $this->model->addProductToBasket($product->productPicture,$product->productName, $_POST['price'], $_POST['quantity'], $product->productQuantityAvailable, $_POST['finalPrice']);
+                    }
+                    else if(isset($_GET['action']) and $_GET['action'] == 'addNotice'){
+                        $this->model->addNotice($_GET['productId'], $_SESSION['userId'], $_POST['notice']);
                     }
                 }
                 else if($_GET['page'] == 'panier'){
@@ -124,6 +126,7 @@
             else{
                 $page = 'viewIndex';
                 $css = 'index';
+                $productSelection = $this->model->getSelection();
             }
             include('view/viewTemplateTop.php');
             include('view/'.$page.'.php');

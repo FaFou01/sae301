@@ -44,8 +44,11 @@
                         echo '<input type="number" name="newQuantity" value="'.$product->productQuantityAvailable.'" required>';
                         echo '<input type="submit" value="Valider">';
                         echo'</form>';
+                        echo '<form action="" method="post" id="supprimer">';
+                        echo '<input type="submit" value="">';
+                        echo '</form>';
                     }
-                    if(isset($_SESSION['userStatus']) and $_SESSION['userStatus'] == "Client" and $product->productQuantityAvailable == 0){
+                    if(!(isset($_SESSION['userStatus']) and $_SESSION['userStatus'] == "Admin") and $product->productQuantityAvailable == 0){
                         echo '<div id="rupture">';
                         echo '<div>Rupture de stock</div>';
                         echo '</div>';

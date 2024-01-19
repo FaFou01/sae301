@@ -76,6 +76,7 @@
     </div>
     <div id="descContent" class="contenu_infos"><?php echo $product->productDescription?></div>
     <div id="notices" class="contenu_infos">
+        <div>
         <?php
             if(count($noticeList)>0){
                 foreach($noticeList as $notice){
@@ -87,10 +88,12 @@
             else{
                 echo "<p>Aucun avis n'a été laissé sur ce produit !</p>";
             }
-            
+        ?>
+        </div>
+        <?php
             if(isset($_SESSION['userStatus'])){
-                echo '<form action="" method="post" id="ajoutAvis">';
-                echo '<input type="text" name="notice" required>';
+                echo '<form action="?page=produit&productId='.$_GET['productId'].'&action=addNotice" method="post" id="ajoutAvis">';
+                echo '<input type="text" name="notice" placeholder="Ecrire un avis..." required>';
                 echo '<input type="submit" value="">';
                 echo '</form>';
             }

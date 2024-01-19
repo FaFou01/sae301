@@ -54,4 +54,13 @@ window.addEventListener("load", function(){
             }
         }
     }
+
+    formAvis = document.getElementById('ajoutAvis');
+
+    if(formAvis){
+        ongletAvis.firstElementChild.style.height = '360px';
+    }
+    else{
+        ongletAvis.firstElementChild.style.height = '460px';
+    }
 });

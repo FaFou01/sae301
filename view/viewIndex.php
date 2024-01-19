@@ -3,26 +3,16 @@
     <h1 id="h1index">Notre sélection</h1>
     <div class="NotreSelectionContainer">
         <div class="NotreSelection">
-            <div class="itemselection">
-                <a href="">
-                    <img src="" alt="">
-                </a>
-            </div>
-            <div class="itemselection">
-                <a href="">
-                    <img src="" alt="">
-                </a>
-            </div>
-            <div class="itemselection">
-                <a href="">
-                    <img src="" alt="">
-                </a>
-            </div>
-            <div class="itemselection">
-                <a href="">
-                    <img src="" alt="">
-                </a>
-            </div>
+            <?php
+                foreach($productSelection as $selection){
+                    $onclick = "window.location.href='index.php?page=produit&productId=$selection->productId'"; 
+                    echo '<div class="itemselection" onclick='.$onclick.'>';
+                    echo '<img src="assets/img/'.$selection->productPicture.'" alt="photo du produit">';
+                    echo '<p>'.str_replace('_', ' ', $selection->productBrand).'</p>';    
+                    echo '<p>'.$selection->productName.'</p>';                 
+                    echo '</div>';
+                }
+            ?>
         </div>
     </div>
 </div>

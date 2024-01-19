@@ -169,6 +169,38 @@
             $req->bindParam('var2', $productId, PDO::PARAM_INT);
             $req->execute();
         }
+
+        public function addNotice($productId, $userId, $content){
+            $bdd = new connexionBDD();
+            $db = $bdd->db;
+            $req = $db->prepare('INSERT INTO notice(ProductId, UserId, NoticeContent) VALUES(:var1, :var2, :var3)');
+            $req->bindParam('var1', $productId, PDO::PARAM_INT);
+            $req->bindParam('var2', $userId, PDO::PARAM_INT);
+            $req->bindParam('var3', $content, PDO::PARAM_STR);
+            $req->execute();
+        }
+
+        public function getSelection(){
+            $bdd = new connexionBDD();
+            $db = $bdd->db;
+            $req = $db->prepare('SELECT * FROM product WHERE ProductQuantityAvailable>? AND ProductType!=?ORDER BY RAND() LIMIT 4');
+            $req->execute([0, 'Echantillon']);
+            $productSelection = array();
+            while($donnees = $req->fetch()){
+                array_push($productSelection, 
+                new Product($donnees['ProductId'], 
+                $donnees['ProductName'], 
+                $donnees['ProductPicture'], 
+                $donnees['ProductPrice'], 
+                $donnees['ProductDescription'], 
+                $donnees['ProductType'], 
+                $donnees['ProductBrand'],
+                $donnees['ProductAdvice'],
+                $donnees['ProductIngredient'],
+                $donnees['ProductQuantityAvailable']));
+            }
+            return $productSelection;
+        }
     }
 
 ?>
