@@ -5,7 +5,7 @@
         <div class="NotreSelection">
             <?php
                 foreach($productSelection as $selection){
-                    $onclick = "window.location.href='index.php?page=produit&productId=$selection->productId'"; 
+                    $onclick = "window.location.href='$root/products/selection/$selection->productId'"; 
                     echo '<div class="itemselection" onclick='.$onclick.'>';
                     echo '<img src="assets/img/'.$selection->productPicture.'" alt="photo du produit">';
                     echo '<p>'.str_replace('_', ' ', $selection->productBrand).'</p>';    

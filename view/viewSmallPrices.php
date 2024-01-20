@@ -43,7 +43,7 @@
         <div id="products">
         <?php
                 foreach($productsList as $product){
-                    $onclick = "window.location.href='$root/products/men/$product->productId'"; 
+                    $onclick = "window.location.href='$root/products/small_prices/$product->productId'"; 
                     echo '<div class="product '.$product->productBrand.' '.$product->productType.'">';
                     echo '<img src="'.$dossierImg.$product->productPicture.'" alt="image du produit '.$product->productName.'" onclick='.$onclick.'>';
                     echo '<div class="productInfos" onclick='.$onclick.'>';
