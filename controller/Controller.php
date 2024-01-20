@@ -53,6 +53,9 @@
                     $page = 'viewSmallPrices';
                 }
                 else if($_GET['page'] == 'produit'){
+                    if(isset($_GET['action']) and $_GET['action'] == 'addNotice'){
+                        $this->model->addNotice($_GET['productId'], $_SESSION['userId'], $_POST['notice']);
+                    }
                     $product = $this->model->getProduct($_GET['productId']);
                     $noticeList = $this->model->getProductNotices($_GET['productId']);
                     $css = 'product';
@@ -61,24 +64,23 @@
                     if(isset($_POST['finalPrice'])){
                         $this->model->addProductToBasket($product->productPicture,$product->productName, $_POST['price'], $_POST['quantity'], $product->productQuantityAvailable, $_POST['finalPrice']);
                     }
-                    else if(isset($_GET['action']) and $_GET['action'] == 'addNotice'){
-                        $this->model->addNotice($_GET['productId'], $_SESSION['userId'], $_POST['notice']);
-                    }
+                    
                 }
                 else if($_GET['page'] == 'panier'){
                     $css = 'panier';
-                    if(isset($_GET['action'])){
-                        if($_GET['action'] == "supprArticle"){
-                            array_splice($_SESSION['panier'], $_GET['article'], 1);
-                        }
-                        else if($_GET['action'] == "augmenterArticle"){
-                            $_SESSION['panier'][$_GET['article']][3]++;
-                        }
-                        else if($_GET['action'] == "réduireArticle"){
-                            $_SESSION['panier'][$_GET['article']][3]--;
-                        }
-                    }
+                    $gifts = $this->model->getProductList('Offert');
                     if(isset($_SESSION['panier']) and !empty($_SESSION['panier'])){
+                        if(isset($_GET['action'])){
+                            if($_GET['action'] == "supprArticle"){
+                                array_splice($_SESSION['panier'], $_GET['article'], 1);
+                            }
+                            else if($_GET['action'] == "augmenterArticle"){
+                                $_SESSION['panier'][$_GET['article']][3]++;
+                            }
+                            else if($_GET['action'] == "réduireArticle"){
+                                $_SESSION['panier'][$_GET['article']][3]--;
+                            }
+                        }
                         $page = 'viewFullBasket';
                     }
                     else{

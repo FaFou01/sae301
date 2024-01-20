@@ -39,7 +39,7 @@
                         echo '<div class="produitPanier">';
                         echo '<img src="assets/img/'.$imageProduit.'" alt="photo du produit">';
                             echo '<div>';
-                                echo '<p class="nomProduitPanier">'.$nomProduit.'</p>';
+                                echo '<p class="nomProduitPanier"><b>'.$nomProduit.'</b></p>';
                                 echo '<p class="formatProduit">Format : '.$format.'</p>';
                                 echo '<div class="quantité">';
                                     echo '<p class="nombre">Quantité : '.$quantité.'</p>';
@@ -67,6 +67,7 @@
                     $_SESSION['prixPanier'] = $prixTotal;
                 ?>
             </div>
+            <img src="assets/img/fil.svg" alt="fil" id="fil">
             <div id="prixTotal">
                 <div id="trou"></div>
                 <div>
@@ -87,7 +88,20 @@
             ?>
         <form action="index.php?page=<?php echo $href?>" method="post" id="offert">
             <div id="produitsOfferts">
-
+                <img src="assets/img/boucle cadeau.svg" alt="boucle cadeau">
+                <div id="corpsOffert">
+                    <?php
+                        for($i=0; $i<intdiv($prixTotal, 100); $i++){
+                            echo '<div class="gift">'; 
+                                echo '<img src="assets/img/'.$gifts[$i]->productPicture.'" alt="photo du produit">';
+                                echo '<div>'; 
+                                    echo '<p><b>'.$gifts[$i]->productName.'</b></p>';
+                                    echo '<p>Offert</p>';
+                                echo'</div>';
+                            echo'</div>';
+                        }
+                    ?>
+                </div>
             </div>
             <div id="codePromo">
                 <label for="promo">Code Promo : </label>

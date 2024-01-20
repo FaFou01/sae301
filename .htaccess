@@ -1,0 +1,3 @@
+RewriteEngine On
+RewriteRule ^produit/([0-9]+)$ index.php?page=produit&productId=$1 [L]
+RewriteRule ^contact index.php?page=contact [L]

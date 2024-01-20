@@ -108,6 +108,10 @@
     background-color: #FFA300;
 }
 
+#prix_commande+input[type=submit]:hover{
+    cursor: pointer;
+}
+
 #trou{
     background-color: white;
     width: 24px;
@@ -214,7 +218,7 @@
 
 #popProduct{
     position: absolute;
-    z-index: 2;
+    z-index: 40;
     top: 0;
     width: 99vw;
     height: 100vh;

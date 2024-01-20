@@ -55,8 +55,9 @@ text {
     margin-top: 70px;
     display: flex;
     justify-content: space-evenly;
-    align-items: end;
+    align-items: center;
 }
+
 
 #aPayer{
     position: relative;
@@ -146,10 +147,11 @@ form input[type=submit]:hover{
 #panier_vide h1{
     color: #FFA300;
     margin-bottom: 50px;
+    font-size: 64px;
 }
 
 #panier_vide img{
-    width: 60%;
+    width: 759px;
     height: auto;
     object-fit: cover;
     margin: 3em auto 0 auto;
@@ -157,7 +159,7 @@ form input[type=submit]:hover{
 
 .produitPanier{
     width: 468px;
-    height: 144px;
+    height: auto;
     background-color: white;
     display: flex;
     justify-content: space-around;
@@ -230,7 +232,7 @@ form input[type=submit]:hover{
 #prixTotal{
     position: absolute;
     top: -50px;
-    right: -200px;
+    right: -190px;
     clip-path: polygon(0% 20%, 20% 0%, 100% 0%, 100% 100%, 20% 100%, 0% 80%);
     width: 303.5px;
     height: 153px;
@@ -258,9 +260,65 @@ form input[type=submit]:hover{
     display: flex;
 }
 
+#fil{
+    height: 120px;
+    position: absolute;
+    top: 10px;
+    right: 110px;
+}
+
 @media only screen and (max-width: 720px){
     #panier_vide h1{
         font-size: 24px;
         font-weight: 500;
     }
+}
+
+#produitsOfferts{
+    position: relative;
+}
+
+#produitsOfferts>img{
+    position: absolute;
+    top: -90px;
+}
+
+#corpsOffert{
+    width: 270px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #FFA300;
+    border-radius: 10px;
+    padding: 20px;
+    row-gap: 20px;
+}
+
+.gift{
+    width: 262px;
+    height: auto;
+    background-color: white;
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    border-radius: 10px;
+    padding: 10px;
+    gap: 10px;
+}
+
+.gift img{
+    width: 102px;
+    height: 94px;
+    object-fit: cover;
+    border-radius: 20px;
+    border: #FFA300 solid;
+}
+
+#offert{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    row-gap: 50px;
 }
