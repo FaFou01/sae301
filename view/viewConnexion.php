@@ -17,50 +17,33 @@
             <text x="50%" y="50%" dominant-baseline="middle" text-anchor="middle" fill="black" font-size="28">Paiement</text>
         </svg>
     </div>
-    <div class="divbothconn">
-        <div class="connclassique">
-            <h3>Vous avez un compte ?</h3>
-            <h2>Connectez vous</h2>
-            <form action="" method="post">
-                <div>
-                    <label for="">Email</label>
-                    <input type="mail" name="emailConnexion">
-                </div>
-                <div>
-                    <label for="">Mot de passe</label>
-                    <input type="password" name="mdpConnexion">
-                </div>
-                <div>
-                    <a href="<?php echo $root?>/singin">Vous n’avez pas de compte ? Créez en un !</a>
-                </div>
-                <div>
-                    <input type="submit" value="Se connecter">
-                </div>
-            </form>
-        </div>
-            <div class="divider"></div>
-        <div class="connautre">
+    <div class="connclassique">
+        <h3>Vous avez un compte ?</h3>
+        <h2>Connectez vous</h2>
+        <?php
+            if(str_contains($_SERVER['HTTP_REFERER'],"basket")){
+                $page = '/delivery/';
+            }
+            else{
+                $page = '/';
+            }
+        ?>
+        <form action="<?php echo $root.$page?>" method="post">
             <div>
-                <h3 class="externe">Se connecter avec un compte externe </h3>
+                <label for="">Email</label>
+                <input type="mail" name="emailConnexion">
             </div>
-            <a href="">
-                <div class="moyenconn">
-                <img src="assets/img/google.png" alt="google">
-                    <p>Se connecter avec Google</p>
-                </div>
-            </a>
-            <a href="">
-                <div class="moyenconn">
-                    <img src="assets/img/facebook_bleu.png" class="facebook" alt="facebook">
-                    <p>Se connecter avec Facebook</p>
-                </div>
-            </a>
-            <a href="">
-                <div class="moyenconn xtwitter">
-                    <img src="assets/img/X.png" alt="X">
-                    <p>Se connecter avec X</p>
-                </div>
-            </a>
-        </div>
+            <div>
+                <label for="">Mot de passe</label>
+                <input type="password" name="mdpConnexion">
+            </div>
+            <div>
+                <a href="<?php echo $root?>/singin">Vous n’avez pas de compte ? Créez en un !</a>
+            </div>
+            <div>
+                <input type="submit" value="Se connecter">
+            </div>
+        </form>
     </div>
 </section>
+<script src="<?php echo $dossierJs?>connexion.js"></script>

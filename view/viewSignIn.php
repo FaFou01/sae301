@@ -4,8 +4,8 @@
         echo '<div>';
         echo '<p>Votre compte a été créé avec succés !</p>';
         echo '<div>';
-        echo '<a href="index.php"><button id="retourAccueil">Retourner à laccueil</button></a>';
-        echo '<a href="?page=compte"><button id="allerCompte">Aller sur mon compte</button></a>';
+        echo '<a href="'.$root.'"><button id="retourAccueil">Retourner à laccueil</button></a>';
+        echo '<a href="'.$root.'/account/"><button id="allerCompte">Aller sur mon compte</button></a>';
         echo '</div>';
         echo '</div>';
         echo '</div>';

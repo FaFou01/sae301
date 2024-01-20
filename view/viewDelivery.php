@@ -24,7 +24,7 @@
     <div id="infosDomicile">
         <div id="formulaire">
             <h2>Adresse de Livraison</h2>
-            <form action="index.php?page=paiement" method="post" id="formLivraison">
+            <form action="<?php echo $root.'/payment/'?>" method="post" id="formLivraison">
                 <div class="input-container" id="input-Name">
                     <div>
                         <label for="lastName">Prénom</label>
@@ -53,34 +53,35 @@
             </form>
         </div>
         <div id="carte">
-            <img src="assets/img/carte.png" alt="carte de france">
+            <img src="<?php echo $dossierImg?>carte.png" alt="carte de france">
         </div>
     </div>
     <div id="infosPR" hidden>
-        <form action="index.php?page=paiement" method="post" id="choixPR">
+        <form action="<?php echo $root.'/payment/'?>" method="post" id="choixPR">
             <h2>Points Relais</h2>
             <div class="PR">
                 <label for="">Fnac Mayol - 1 km</label>
-                <input type="radio" name="pr" id="" value="Fnac Mayol" required>
+                <input type="radio" name="point-relais" id="FM" value="Fnac Mayol" required>
             </div>
             <div class="PR">
                 <label for="">Micromania Grand Var - 2.3 km</label>
-                <input type="radio" name="pr" id="" value="Micromania Grand Var" required>
+                <input type="radio" name="point-relais" id="MGV" value="Micromania Grand Var" required>
             </div>
             <div class="PR">
                 <label for="">Yves Rocher Sanary - 3.2 km</label>
-                <input type="radio" name="pr" id="" value="Yves Rocher Sanary" required>
+                <input type="radio" name="point-relais" id="YRS" value="Yves Rocher Sanary" required>
             </div>
             <div class="PR">
                 <label for="">Carrefour Ollioules - 4.5 km</label>
-                <input type="radio" name="pr" id="" value="Carrefour Ollioules" required>
+                <input type="radio" name="point-relais" id="CO" value="Carrefour Ollioules" required>
             </div>
             <input type="submit" value="Procéder au paiement">
         </form>
         <div id="carteReduite">
-            <img src="assets/img/cartePR.png" alt="carte réduite">
+            <img src="<?php echo $dossierImg?>cartePR.png" alt="carte réduite" id="carteVar">
+            <img src="<?php echo $dossierImg?>localisation.svg" alt="localisation" id="localisation">
         </div>
     </div>
 </div>
-<script src="assets/js/delivery.js"></script>
+<script src="<?php echo $dossierJs?>delivery.js"></script>
 <script src="https://maps.googleapis.com/maps/api/js?key=VOTRE_CLE_API&callback=initMap" async defer></script>

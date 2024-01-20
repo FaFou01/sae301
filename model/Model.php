@@ -140,6 +140,24 @@
             return $orderList;
         }
 
+        public function getAllOrders(){
+            $bdd = new connexionBDD();
+            $db = $bdd->db;
+            $req = $db->prepare('SELECT OrderId, OrderPrice, OrderDate, OrderStatus FROM userorder ORDER BY OrderId DESC');
+            $req->execute();
+            $orderList = array();
+            while($donnees = $req->fetch()){
+                $reponseDate = new DateTime($donnees['OrderDate']);
+                $date = $reponseDate->format('d/m/Y');
+                array_push($orderList, 
+                new userOrder($donnees['OrderId'],
+                $donnees['OrderPrice'],
+                $date,
+                $donnees['OrderStatus']));
+            }
+            return $orderList;
+        }
+
         public function addProductToBasket($productPicture, $productName, $format, $quantity, $maxQuantity, $price){
             $unitaryPrice = $price/$quantity;
             if(isset($_SESSION['panier'])){
@@ -200,6 +218,65 @@
                 $donnees['ProductQuantityAvailable']));
             }
             return $productSelection;
+        }
+
+        public function updateOrderStatus($orderId, $newStatus){
+            $bdd = new connexionBDD();
+            $db = $bdd->db;
+            $req = $db->prepare('UPDATE userorder SET OrderStatus= :var1 WHERE OrderId= :var2');
+            $req->bindParam('var1', $newStatus, PDO::PARAM_STR);
+            $req->bindParam('var2', $orderId, PDO::PARAM_INT);
+            $req->execute();
+        }
+
+        public function addProduct($name, $picture, $price, $desc, $type, $target, $brand, $advice, $ingredient, $quantity){
+            $bdd = new connexionBDD();
+            $db = $bdd->db;
+            $req = $db->prepare('INSERT INTO product(ProductName, ProductPicture, ProductPrice, ProductDescription, ProductType, ProductTarget, ProductBrand, ProductAdvice, ProductIngredient, ProductQuantityAvailable) VALUES(:var1, :var2, :var3, :var1, :var5, :var6, :var7, :var8, :var9, :var10)');
+            $req->bindParam('var1', $name, PDO::PARAM_STR);
+            $req->bindParam('var2', $picture, PDO::PARAM_STR);
+            $req->bindParam('var3', $price, PDO::PARAM_INT);
+            $req->bindParam('var4', $desc, PDO::PARAM_STR);
+            $req->bindParam('var5', $type, PDO::PARAM_STR);
+            $req->bindParam('var6', $target, PDO::PARAM_STR);
+            $req->bindParam('var7', $brand, PDO::PARAM_STR);
+            $req->bindParam('var8', $advice, PDO::PARAM_STR);
+            $req->bindParam('var9', $ingredient, PDO::PARAM_STR);
+            $req->bindParam('var10', $quantity, PDO::PARAM_INT);
+            $req->execute();
+        }
+
+        public function getBrandList($target){
+            $bdd = new connexionBDD();
+            $db = $bdd->db;
+            $req = $db->prepare('SELECT DISTINCT ProductBrand FROM product WHERE ProductTarget = ?');
+            $req->execute([$target]);
+            $brandList = array();
+            while($donnees = $req->fetch()){
+                array_push($brandList, $donnees['ProductBrand']);
+            }
+            return $brandList;
+        }
+
+        public function getTypeList($target){
+            $bdd = new connexionBDD();
+            $db = $bdd->db;
+            $req = $db->prepare('SELECT DISTINCT ProductType FROM product WHERE ProductTarget = ?');
+            $req->execute([$target]);
+            $typeList = array();
+            while($donnees = $req->fetch()){
+                array_push($typeList, $donnees['ProductType']);
+            }
+            return $typeList;
+        }
+
+        public function removeProduct($productId){
+            $bdd = new connexionBDD();
+            $db = $bdd->db;
+            $req = $db->prepare('DELETE FROM notice WHERE ProductId = ?');
+            $req->execute([$productId]);
+            $req = $db->prepare('DELETE FROM product WHERE ProductId = ?');
+            $req->execute([$productId]);
         }
     }
 

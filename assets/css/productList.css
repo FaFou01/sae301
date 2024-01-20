@@ -184,3 +184,55 @@
     border: none;
     background-color: red;
 }
+
+#popDeleteProduct{
+    position: absolute;
+    top: 0;
+    width: 99vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    backdrop-filter: blur(10px);
+    z-index: 50;
+}
+
+#popDeleteProduct>div{
+    border-radius: 10px;
+    width: 700px;
+    height: 300px;
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 50px;
+    border: black solid 1px;
+}
+
+#popDeleteProduct>div div{
+    width: 100%;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+#popDeleteProduct>div p{
+    font-size: 30px;
+}
+
+#popDeleteProduct>div div button{
+    width: 250px;
+    height: 70px;
+    font-size: 20px;
+    border-radius: 10px;
+}
+
+#retourAccueil{
+    border: none;
+}
+
+#validerSuppr{
+    background-color: #FFA300;
+    color: white;
+    border: none;
+}

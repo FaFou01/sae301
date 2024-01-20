@@ -1,10 +1,26 @@
+<?php
+    if(isset($_POST['deleteProductId'])){
+        echo '<div id="popDeleteProduct">';
+        echo '<div>';
+        echo '<p>Voulez-vous vraiment retirer cet article de la vente ?</p>';
+        echo '<div>';
+        echo '<a href=""><button id="retourAccueil">Non, j\'ai changé d\'avis</button></a>';
+        echo '<a href="?action=retirerProduit&productId='.$_POST['deleteProductId'].'"><button id="validerSuppr">Oui, retirer le produit</button></a>';
+        echo '</div>';
+        echo '</div>';
+        echo '</div>';
+    } 
+?>
+
 <div id="listing">
     <div id="tri">
         <p>Marques</p>
         <ul>
-            <li class="choixMarque">Cacharel</li>
-            <li class="choixMarque">Nuances</li>
-            <li class="choixMarque">John Phillips</li>
+            <?php
+                foreach($brandList as $brand){
+                    echo '<li class="choixMarque">'.str_replace('_', ' ', $brand).'</li>';
+                }
+            ?>
         </ul>
         <p>Prix</p>
         <ul>
@@ -13,9 +29,11 @@
         </ul>
         <p>Type</p>
         <ul>
-            <li class="choixType">Eau de Toilette</li>
-            <li class="choixType">Déodorant</li>
-            <li class="choixType">Parfum</li>
+            <?php
+                foreach($typeList as $type){
+                    echo '<li class="choixType">'.str_replace('_', ' ', $type).'</li>';
+                }
+            ?>
         </ul>
     </div>
 
@@ -23,9 +41,9 @@
         <h1>Produits à petits prix</h1>
         <img id="illustration" src="<?php echo $dossierImg?>echantillon.jpg" alt="produit pour homme">
         <div id="products">
-            <?php
+        <?php
                 foreach($productsList as $product){
-                    $onclick = "window.location.href='$root/products/small_prices/$product->productId'"; 
+                    $onclick = "window.location.href='$root/products/men/$product->productId'"; 
                     echo '<div class="product '.$product->productBrand.' '.$product->productType.'">';
                     echo '<img src="'.$dossierImg.$product->productPicture.'" alt="image du produit '.$product->productName.'" onclick='.$onclick.'>';
                     echo '<div class="productInfos" onclick='.$onclick.'>';
@@ -34,13 +52,17 @@
                     echo '<p>A partir de <b>'.$product->productPrice.' €</b></p>';
                     echo '</div>';
                     if(isset($_SESSION['userStatus']) and $_SESSION['userStatus'] == "Admin"){
-                        echo '<form action="?page=liste_produits_homme&action=changeQuantity&article='.$product->productId.'" method="post" id="quantiteAdmin">';
+                        echo '<form action="?action=changeQuantity&article='.$product->productId.'" method="post" id="quantiteAdmin">';
                         echo '<p>Quantité : </p>';
                         echo '<input type="number" name="newQuantity" value="'.$product->productQuantityAvailable.'" required>';
                         echo '<input type="submit" value="Valider">';
                         echo'</form>';
+                        echo '<form action="" method="post" id="supprimer">';
+                        echo '<input type="number" name="deleteProductId" value="'.$product->productId.'" hidden>';
+                        echo '<input type="submit" value="">';
+                        echo '</form>';
                     }
-                    if(isset($_SESSION['userStatus']) and $_SESSION['userStatus'] == "Client" and $product->productQuantityAvailable == 0){
+                    if(!(isset($_SESSION['userStatus']) and $_SESSION['userStatus'] == "Admin") and $product->productQuantityAvailable == 0){
                         echo '<div id="rupture">';
                         echo '<div>Rupture de stock</div>';
                         echo '</div>';

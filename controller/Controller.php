@@ -27,7 +27,6 @@
             }
             else if(isset($_POST['emailConnexion']) and isset($_POST['mdpConnexion'])){
                 $this->model->connect($_POST['emailConnexion'], $_POST['mdpConnexion']);
-                header('Location: '.$root);
             }
             else if(isset($_POST['prenomCompte']) and isset($_POST['nomCompte'])){
                 $this->model->updateUser($_SESSION['userId'], $_POST['prenomCompte'], $_POST['nomCompte'], $_POST['mailCompte']);
@@ -46,23 +45,36 @@
                     $css = 'productList';
                     if($this->url[1] == 'men'){
                         $productsList = $this->model->getProductList('Homme');
+                        $brandList = $this->model->getBrandList('Homme');
+                        $typeList = $this->model->getTypeList('Homme');
                         $page = 'viewMenProductsList';
                         if(isset($_GET['action']) and $_GET['action'] == "changeQuantity"){
                             $this->model->updateProductQuantityAvailable( $_GET['article'], $_POST['newQuantity']);
+                            header('Location: '.$root.'/products/men/');
+                        }
+                        else if(isset($_GET['action']) and $_GET['action'] == "retirerProduit"){
+                            $this->model->removeProduct($_GET['productId']);
+                            header('Location: '.$root.'/products/men/');
                         }
                     }
                     else if($this->url[1] == 'women'){
                         $productsList = $this->model->getProductList('Femme');
+                        $brandList = $this->model->getBrandList('Femme');
+                        $typeList = $this->model->getTypeList('Femme');
                         $page = 'viewWomenProductsList';
                         if(isset($_GET['action']) and $_GET['action'] == "changeQuantity"){
                             $this->model->updateProductQuantityAvailable( $_GET['article'], $_POST['newQuantity']);
+                            header('Location: '.$root.'/products/women/');
                         }
                     }
                     else if($this->url[1] == 'small_prices'){
                         $productsList = $this->model->getProductList('PP');
+                        $brandList = $this->model->getBrandList('PP');
+                        $typeList = $this->model->getTypeList('PP');
                         $page = 'viewSmallPrices';
                         if(isset($_GET['action']) and $_GET['action'] == "changeQuantity"){
                             $this->model->updateProductQuantityAvailable( $_GET['article'], $_POST['newQuantity']);
+                            header('Location: '.$root.'/products/small_prices/');
                         }
                     }
                     if($this->url[2] != ''){
@@ -102,7 +114,7 @@
                     }
                     
                 }
-                else if($this->url[0] == 'livraison'){
+                else if($this->url[0] == 'delivery'){
                     $css = 'delivery';
                     $page = 'viewDelivery';
                     if(isset($_POST['promo']) and $_POST['promo'] == "PROMO"){
@@ -117,14 +129,24 @@
                     $css = 'connexion';
                     $page = 'viewConnexion';
                 }
-                else if($this->url[0] == 'paiement'){
+                else if($this->url[0] == 'payment'){
                     $css = 'paiement';
                     $page = 'viewPayment';
                 }
                 else if($this->url[0] == 'account'){
-                    $orderList = $this->model->getUserOrders($_SESSION['userId']);
+                    if($_SESSION['userStatus'] == 'Client'){
+                        $orderList = $this->model->getUserOrders($_SESSION['userId']);
+                        $page = 'viewClientAccount';
+                    }
+                    if($_SESSION['userStatus'] == 'Admin'){
+                        if(isset($_POST['orderStatus']) and isset($_POST['orderId'])){
+                            $this->model->updateOrderStatus($_POST['orderId'], $_POST['orderStatus']);
+                        }
+                        $orderList = $this->model->getAllOrders();
+                        $page = 'viewAdminAccount';
+                    }
+                    
                     $css = 'account';
-                    $page = 'viewAccount';
                 }
                 else if($this->url[0] == 'contact'){
                     $css = 'contact';
@@ -137,6 +159,41 @@
                 else if($this->url[0] == 'ml'){
                     $css = 'ml';
                     $page = 'viewML';
+                }
+                else if($this->url[0] == 'addProduct'){
+                    if(isset($_POST['productName']) and isset($_POST['productPrice'])){
+                        if (isset($_FILES['productPicture']) && $_FILES['productPicture']['error'] == 0) {
+                            $allowed = ['png', 'jpeg', 'jpg'];
+                            $filename = $_FILES['productPicture']['name'];
+                            $file_ext = strtolower(pathinfo($filename, PATHINFO_EXTENSION));
+                            if (!in_array($file_ext, $allowed)) {
+                                die('Type de fichier non autorisé pour le logo.');
+                            }
+
+                            $filenameToSave = $_POST['productName'].'_'.$_POST['productType'].'.'.$file_ext;
+                            $fullPath = 'assets/img/'.$filenameToSave;
+                            if (!move_uploaded_file($_FILES['productPicture']['tmp_name'], $fullPath)) {
+                                die('Erreur lors de la sauvegarde du fichier.');
+                            }
+                        }
+                        else {
+                            die("Erreur lors du téléchargement de l'image.");
+                        }
+                        str_replace(' ', '_', $_POST['productBrand']);
+
+                        $this->model->addProduct($_POST['productName'],
+                        $filenameToSave,
+                        $_POST['productPrice'],
+                        $_POST['productDesc'],
+                        $_POST['productType'],
+                        $_POST['productTarget'],
+                        $_POST['productBrand'],
+                        $_POST['productAdvice'],
+                        $_POST['productIngredient'],
+                        $_POST['productQuantity']);
+                    }
+                    $css = 'addProduct';
+                    $page = 'viewAddProduct';
                 }
             }
             else{

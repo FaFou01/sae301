@@ -1,0 +1,75 @@
+#ajoutProduit{
+    width: 1006px;
+    margin: auto;
+    padding-top: 50px;
+    padding-bottom: 50px;
+}
+
+h1{
+    font-size: 54px;
+    color: #ffa300;
+    margin-bottom: 20px;
+}
+
+form{
+    display: flex;
+    flex-direction: column;
+    align-items: end;
+    width: 1006px;
+    row-gap: 20px;
+}
+
+#NC, #PTQ, #IM{
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.conteneur{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+.conteneur label{
+    font-size: 32px;
+}
+
+#nom input, #cible select, #image input, #marque input{
+    width: 471px;
+    height: 50px;
+}
+
+#PTQ input, #PTQ select{
+    width: 287px;
+    height: 50px;
+}
+
+textarea{
+    height: 182px;
+}
+
+#ingredients input{
+    width: 1006px;
+    height: 50px;
+}
+
+input:not([type=submit]), select, textarea{
+    border: #ffa300 solid;
+    border-radius: 20px;
+    font-size: 20px;
+}
+
+label{
+    padding-left: 5px;
+}
+
+form input[type=submit]{
+    width: 465px;
+    height: 54px;
+    background-color: #ffa300;
+    color: white;
+    border-radius: 20px;
+    border: none;
+    font-size: 24px;
+}

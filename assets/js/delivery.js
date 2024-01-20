@@ -5,6 +5,13 @@ window.addEventListener("load", function(){
     formPR = document.getElementById('infosPR');
     listePR = document.getElementsByClassName('PR');
 
+    inputFM = document.getElementById('FM');
+    inputMGV = document.getElementById('MGV');
+    inputYRS = document.getElementById('YRS');
+    inputCO = document.getElementById('CO');
+
+    localisation = document.getElementById('localisation');
+
     choixDomicile.addEventListener('click', function(){
         if(this.style.backgroundColor = "white"){
             this.style.backgroundColor = "#ffa300";
@@ -39,4 +46,33 @@ window.addEventListener("load", function(){
             }
         })
     }
+
+    inputMGV.addEventListener('input', function(){
+        if(this.checked){
+            localisation.style.display = "block";
+            localisation.style.top = "160px";
+            localisation.style.right = "50px";
+        }
+    })
+    inputFM.addEventListener('input', function(){
+        if(this.checked){
+            localisation.style.display = "block";
+            localisation.style.top = "210px";
+            localisation.style.right = "210px";
+        }
+    })
+    inputYRS.addEventListener('input', function(){
+        if(this.checked){
+            localisation.style.display = "block";
+            localisation.style.top = "210px";
+            localisation.style.right = "526px";
+        }
+    })
+    inputCO.addEventListener('input', function(){
+        if(this.checked){
+            localisation.style.display = "block";
+            localisation.style.top = "210px";
+            localisation.style.right = "350px";
+        }
+    })
 });
