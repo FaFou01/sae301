@@ -21,13 +21,13 @@
 
     <div id="liste_produits">
         <h1>Produits à petits prix</h1>
-        <img id="illustration" src="assets/img/echantillon.jpg" alt="produit pour homme">
+        <img id="illustration" src="<?php echo $dossierImg?>echantillon.jpg" alt="produit pour homme">
         <div id="products">
             <?php
                 foreach($productsList as $product){
-                    $onclick = "window.location.href='index.php?page=produit&productId=$product->productId'"; 
+                    $onclick = "window.location.href='$root/products/small_prices/$product->productId'"; 
                     echo '<div class="product '.$product->productBrand.' '.$product->productType.'">';
-                    echo '<img src="assets/img/'.$product->productPicture.'" alt="image du produit '.$product->productName.'" onclick='.$onclick.'>';
+                    echo '<img src="'.$dossierImg.$product->productPicture.'" alt="image du produit '.$product->productName.'" onclick='.$onclick.'>';
                     echo '<div class="productInfos" onclick='.$onclick.'>';
                     echo '<p><b>'.$product->productName.'</b></p>';
                     echo '<p>'.str_replace('_', ' ', $product->productBrand).'</p>';
@@ -57,4 +57,4 @@
     </div>
 </div>
 
-<script src="assets/js/productList.js"></script>
+<script src="<?php echo $dossierJs?>productList.js"></script>

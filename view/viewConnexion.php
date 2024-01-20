@@ -31,7 +31,7 @@
                     <input type="password" name="mdpConnexion">
                 </div>
                 <div>
-                    <a href="?page=inscription">Vous n’avez pas de compte ? Créez en un !</a>
+                    <a href="<?php echo $root?>/singin">Vous n’avez pas de compte ? Créez en un !</a>
                 </div>
                 <div>
                     <input type="submit" value="Se connecter">

@@ -4,8 +4,8 @@
         echo '<div>';
         echo '<p>Le produit a été ajouté dans votre panier !</p>';
         echo '<div>';
-        echo '<a href="index.php"><button id="retourAccueil">Retourner à laccueil</button></a>';
-        echo '<a href="?page=panier"><button id="allerPanier">Voir mon panier</button></a>';
+        echo '<a href="'.$root.'"><button id="retourAccueil">Retourner à laccueil</button></a>';
+        echo '<a href="'.$root.'/basket/"><button id="allerPanier">Voir mon panier</button></a>';
         echo '</div>';
         echo '</div>';
         echo '</div>';
@@ -14,12 +14,12 @@
 
 <div id="pageProduit">
     <div id="productInfos">
-        <img src="assets/img/<?php echo $product->productPicture?>" alt="image du produit">
+        <img src="<?php echo $dossierImg.$product->productPicture?>" alt="image du produit">
         <div id="productCustom">
             <h1><?php echo str_replace('_', ' ', $product->productType).' '.$product->productName.' par '.str_replace('_', ' ', $product->productBrand)?></h1>
             <form action="" method="post">
                 <div id="formats">
-                    <img src="assets/img/petite_bouteille.svg" alt="icône parfum" id="petit_format">
+                    <img src="<?php echo $dossierImg?>petite_bouteille.svg" alt="icône parfum" id="petit_format">
                     <div class="prix">
                         <input type="radio" name="price" id="50ml" value="50 mL">
                         <div class="format-infos">
@@ -28,7 +28,7 @@
                         </div>
                         <div class="case-couleur"></div>
                     </div>
-                    <img src="assets/img/moyenne_bouteille.svg" alt="icône parfum" id="moyen_format">
+                    <img src="<?php echo $dossierImg?>moyenne_bouteille.svg" alt="icône parfum" id="moyen_format">
                     <div class="prix">
                         <input type="radio" name="price" id="100ml" value="100 mL">
                         <div class="format-infos">
@@ -37,7 +37,7 @@
                         </div>
                         <div class="case-couleur"></div>
                     </div>
-                    <img src="assets/img/grande_bouteille.svg" alt="icône parfum" id="grand_format">
+                    <img src="<?php echo $dossierImg?>grande_bouteille.svg" alt="icône parfum" id="grand_format">
                     <div class="prix">
                         <input type="radio" name="price" id="200ml" value="200 mL">
                         <div class="format-infos">
@@ -92,7 +92,7 @@
         </div>
         <?php
             if(isset($_SESSION['userStatus'])){
-                echo '<form action="?page=produit&productId='.$_GET['productId'].'&action=addNotice" method="post" id="ajoutAvis">';
+                echo '<form action="?page=produit&productId='.$product->productId.'&action=addNotice" method="post" id="ajoutAvis">';
                 echo '<input type="text" name="notice" placeholder="Ecrire un avis..." required>';
                 echo '<input type="submit" value="">';
                 echo '</form>';
@@ -112,4 +112,4 @@
         </ul>
     </div>
 </div>
-<script src="assets/js/product.js"></script>
+<script src="<?php echo $dossierJs?>product.js"></script>

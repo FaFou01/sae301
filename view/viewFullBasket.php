@@ -37,37 +37,37 @@
                         $prixUnitaire = $produitPanier[5];
                         $sousTotal = $quantité*$prixUnitaire;
                         echo '<div class="produitPanier">';
-                        echo '<img src="assets/img/'.$imageProduit.'" alt="photo du produit">';
+                        echo '<img src="'.$dossierImg.$imageProduit.'" alt="photo du produit">';
                             echo '<div>';
                                 echo '<p class="nomProduitPanier"><b>'.$nomProduit.'</b></p>';
                                 echo '<p class="formatProduit">Format : '.$format.'</p>';
                                 echo '<div class="quantité">';
                                     echo '<p class="nombre">Quantité : '.$quantité.'</p>';
                                     if($quantité < $quantitéMax){
-                                        echo '<a href="?page=panier&action=augmenterArticle&article='.$i.'"><button class="plus">+</button></a>';
+                                        echo '<a href="?action=augmenterArticle&article='.$i.'"><button class="plus">+</button></a>';
                                     }
                                     else{
-                                        echo '<a href="?page=panier"><button class="impossible">+</button></a>';
+                                        echo '<a href=""><button class="impossible">+</button></a>';
                                     }
                                     echo '<p>/</p>';
                                     if($quantité>1){
-                                        echo '<a href="?page=panier&action=réduireArticle&article='.$i.'"><button class="moins">-</button></a>';
+                                        echo '<a href="?action=réduireArticle&article='.$i.'"><button class="moins">-</button></a>';
                                     }
                                     else{
-                                        echo '<a href="?page=panier"><button class="impossible">-</button></a>';
+                                        echo '<a href=""><button class="impossible">-</button></a>';
                                     }
                                 echo '</div>';
                                 echo '<p>Prix unitaire : '.$prixUnitaire.' €</p>';
                                 echo '<p><b>Sous-total : '. $sousTotal.' €</b></p>';
                             echo '</div>';
-                            echo '<a href="?page=panier&action=supprArticle&article='.$i.'"><button class="supprimer">🗑️</button></a>';
+                            echo '<a href="?action=supprArticle&article='.$i.'"><button class="supprimer">🗑️</button></a>';
                         echo '</div>';
                         $prixTotal = $prixTotal + $sousTotal;
                     }
                     $_SESSION['prixPanier'] = $prixTotal;
                 ?>
             </div>
-            <img src="assets/img/fil.svg" alt="fil" id="fil">
+            <img src="<?php echo $dossierImg?>fil.svg" alt="fil" id="fil">
             <div id="prixTotal">
                 <div id="trou"></div>
                 <div>
@@ -80,29 +80,32 @@
         </div>
         <?php
             if(isset($_SESSION['userId'])){
-                $href = 'livraison';
+                $href = '/delivery/';
             }
             else{
-                $href = 'connexion';
+                $href = '/connect/';
             }
             ?>
-        <form action="index.php?page=<?php echo $href?>" method="post" id="offert">
-            <div id="produitsOfferts">
-                <img src="assets/img/boucle cadeau.svg" alt="boucle cadeau">
-                <div id="corpsOffert">
-                    <?php
-                        for($i=0; $i<intdiv($prixTotal, 100); $i++){
-                            echo '<div class="gift">'; 
-                                echo '<img src="assets/img/'.$gifts[$i]->productPicture.'" alt="photo du produit">';
-                                echo '<div>'; 
-                                    echo '<p><b>'.$gifts[$i]->productName.'</b></p>';
-                                    echo '<p>Offert</p>';
+        <form action="<?php echo $root.$href?>" method="post" id="offert">
+            <?php
+            if($prixTotal>100){
+                echo '<div id="produitsOfferts">';
+                    echo '<img src="'.$dossierImg.'boucle cadeau.svg" alt="boucle cadeau">';
+                    echo '<div id="corpsOffert">';
+                            for($i=0; $i<intdiv($prixTotal, 100); $i++){
+                                echo '<div class="gift">'; 
+                                    echo '<img src="'.$dossierImg.$gifts[$i]->productPicture.'" alt="photo du produit">';
+                                    echo '<div>'; 
+                                        echo '<p><b>'.$gifts[$i]->productName.'</b></p>';
+                                        echo '<p>Offert</p>';
+                                    echo'</div>';
                                 echo'</div>';
-                            echo'</div>';
-                        }
-                    ?>
-                </div>
-            </div>
+                            }
+                        
+                    echo '</div>';
+                echo '</div>';
+            }
+            ?>
             <div id="codePromo">
                 <label for="promo">Code Promo : </label>
                 <input type="text" name="promo" id="promo">
