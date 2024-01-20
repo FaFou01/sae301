@@ -3,20 +3,26 @@
         public $db;
 
         public function __construct(){
-            $hostname = 'localhost';  
-            $username = 'root'; 
-            $password = '';
-            $db = 'sae301';
+            $hostnameLocal = 'localhost';  
+            $usernameLocal = 'root'; 
+            $passwordLocal = '';
+            $dbLocal = 'sae301';
+            $hostnameHosted = 'localhost';  
+            $usernameHosted = 'u961341371_digitalmattpre'; 
+            $passwordHosted = 'Mbvl0104!';
+            $dbHosted = 'u961341371_sae301';
             // Data Source Name
-            $dsn = "mysql:host=$hostname;dbname=$db";
+            $dsnLocal = "mysql:host=$hostnameLocal;dbname=$dbLocal";
+            $dsnHosted = "mysql:host=$hostnameHosted;dbname=$dbHosted";
             try {
-                $bdd = new PDO($dsn, $username, $password);
+                $bdd = new PDO($dsnLocal, $usernameLocal, $passwordLocal);
                 $bdd->setAttribute(PDO::ATTR_ERRMODE,PDO::ERRMODE_EXCEPTION);
                 $this->db = $bdd;
             }
             catch(PDOException $e){
-                echo "Erreur de connection ! </br>";
-                echo $e->getMessage();
+                $bdd = new PDO($dsnHosted, $usernameHosted, $passwordHosted);
+                $bdd->setAttribute(PDO::ATTR_ERRMODE,PDO::ERRMODE_EXCEPTION);
+                $this->db = $bdd;
             }
         }
     }
