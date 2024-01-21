@@ -48,6 +48,14 @@
     font-weight: 300;
 }
 
+#bandeau button:hover{
+    cursor: pointer;
+    background-color: white;
+    color: #FFA300;
+    font-weight: 500;
+    transition: all 0.5s;
+}
+
 #parfums{
     display: flex;
     justify-content: space-evenly;
@@ -67,6 +75,11 @@
 
 .parfum:hover{
     cursor: pointer;
+    transition: all 1s;
+}
+
+.parfum:hover img{
+    filter: blur(0px);
     transition: all 1s;
 }
 

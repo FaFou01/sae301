@@ -36,6 +36,13 @@ nav{
     z-index: 100000;
 }
 
+.nav-none li>a:hover{
+    font-weight: 500;
+    color: #FFA300;
+    border-bottom: #FFA300 solid 2px;
+    transition: color 0.2s;
+}
+
 .icones{
     list-style-type: none;
     display: flex;

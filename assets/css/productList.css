@@ -82,6 +82,11 @@
     border: black solid 1px;
 }
 
+.product:hover{
+    box-shadow: 0px 0px 20px#FFA300;
+    transition: all 0.5s;
+}
+
 .product img{
     width: 250px;
     height: 216px;
