@@ -236,7 +236,8 @@
 #popProduct>div{
     border-radius: 10px;
     width: 700px;
-    height: 300px;
+    min-height: 300px;
+    padding: 30px; 
     background-color: white;
     display: flex;
     flex-direction: column;
@@ -454,6 +455,15 @@
     #descContent, #advices, #ingredientList, .notice{
         font-size: 16px;
     }
+    
+    #popProduct>div{
+        width: 90%;  
+        
+    }
+    #popProduct>div p{
+        font-size: 26px;
+        text-align: center;
+    }
 }
 @media only screen and (max-width: 680px){
     .prix input[type=radio]{
@@ -479,6 +489,13 @@
         font-size: 20px;
         width: 51px;
         height: 28px;
+    }
+    #popProduct>div div{
+        flex-direction: column;
+        gap: 20px;
+    }
+    #popProduct>div div a{
+        margin: auto;
     }
 }
 @media only screen and (max-width: 540px){
