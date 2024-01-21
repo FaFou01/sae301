@@ -31,7 +31,7 @@
         </svg>
     </div>
 
-    <p>Prix à payer : <?php echo $_SESSION['prixPanier']?> €</p>
+    
 
     <div id="moypaiement">
         <div id="visa">
@@ -44,7 +44,9 @@
             <img src="<?php echo $dossierImg?>cartecadeau.png" alt="Cadeau">
         </div>
     </div>
-
+    
+    <p id="prixAPayer">Prix à payer : <?php echo $_SESSION['prixPanier']?> €</p>
+    
     <div id="parCarte">
     <form action="" method="post" id="carte_bleu">
         <div class="credit-card-input">
