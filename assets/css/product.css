@@ -582,4 +582,10 @@
     .contenu_infos{
         overflow: scroll;
     }
+    #ajoutAvis{
+        display: none;
+    }
+    #notices>div{
+        height: 400px;
+    }
 }
