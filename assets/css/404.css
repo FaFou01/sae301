@@ -5,15 +5,24 @@
 
 main{
     padding: 20px;
-    height: 80vh;
+    height: 100vh;
     display: flex;
     flex-direction: column;
     justify-content: space-around;
     align-items: center;
 }
 
+main>div{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    height: 40vh;
+}
+
 main p{
     font-size: 40px;
+    text-align: center;
 }
 
 #title{
@@ -30,4 +39,59 @@ main p{
 #title h1{
     font-size: 100px;
     color: #ffa300;
+}
+@media only screen and (max-width: 1200px){
+    #title h1{
+        font-size: 80px;
+    }
+    #title img{
+        width: 160px;
+    }
+    main p{
+        font-size: 32px;
+    }
+    
+}
+@media only screen and (max-width: 970px){
+    #title h1{
+        font-size: 60px;
+    }
+    #title img{
+        width: 120px;
+    }
+    main p{
+        font-size: 26px;
+    }
+    main>div{
+        height: 30vh;
+    }
+}
+@media only screen and (max-width: 720px){
+    #title h1{
+        font-size: 40px;
+    }
+    #title img{
+        width: 80px;
+    }
+    main p{
+        font-size: 20px;
+    }
+    main>div{
+        height: 20vh;
+    }
+}
+
+@media only screen and (max-width: 465px){
+    #title h1{
+        font-size: 30px;
+    }
+    #title img{
+        width: 60px;
+    }
+    main p{
+        font-size: 16px;
+    }
+    main>div{
+        height: 15vh;
+    }
 }
