@@ -2,9 +2,14 @@ window.addEventListener('load', function(){
     choixMarque = document.getElementsByClassName('choixMarque');
     marqueCochee = [];
     choixPrix = document.getElementsByClassName('choixPrix');
+    priceUp = document.getElementById('priceUp');
+    priceDown = document.getElementById('priceDown');
+    prixCoche = '';
     choixType = document.getElementsByClassName('choixType');
     typeCoche = [];
 
+    box = Array.from(document.querySelectorAll('div.product'));
+    newBox = Array.from(document.querySelectorAll('div.product'));
     produits = document.getElementsByClassName('product');
 
     for(i=0;i<choixMarque.length;i++){
@@ -82,4 +87,57 @@ window.addEventListener('load', function(){
             }
         });
     }
+
+    function verifPrice(){
+        console.log(this.innerHTML);
+        if(this.innerHTML == "Prix décroissant"){
+            if(prixCoche != this){
+                this.style.backgroundColor = "#FFA300";
+                this.style.color = "white";
+                newBox.sort(function(a, b) {
+                    const aPrice = parseInt(a.getAttribute('data-value'));
+                    const bPrice = parseInt(b.getAttribute('data-value'));
+                    return bPrice - aPrice; // trie en ordre décroissant selon la valeur de l'attribut "numTrace"
+                });
+                prixCoche = this;
+            }
+            else{
+                this.style.backgroundColor = "white";
+                this.style.color = "black";
+                prixCoche = '';
+            }
+        }
+        else if(this.innerHTML == "Prix croissant"){
+            if(prixCoche != this){
+                this.style.backgroundColor = "#FFA300";
+                this.style.color = "white";
+                newBox.sort(function(a, b) {
+                    const aPrice = parseInt(a.getAttribute('data-value'));
+                    const bPrice = parseInt(b.getAttribute('data-value'));
+                    return aPrice - bPrice; // trie en ordre décroissant selon la valeur de l'attribut "numTrace"
+                });
+                prixCoche = this;
+            }
+            else{
+                this.style.backgroundColor = "white";
+                this.style.color = "black";
+                prixCoche = '';
+            }
+        }
+        console.log(box == newBox);
+        if(prixCoche != ''){
+            newBox.forEach(function(div) {
+                div.parentNode.appendChild(div); // réinsère chaque div dans l'ordre trié
+            });
+        }
+        else{
+            box.forEach(function(div) {
+                div.parentNode.appendChild(div); // réinsère chaque div dans l'ordre trié
+            });
+        }
+        
+    }
+
+    priceDown.addEventListener('click', verifPrice);
+    priceUp.addEventListener('click', verifPrice);
 })

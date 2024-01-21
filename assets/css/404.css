@@ -1,0 +1,33 @@
+#header, #footer{
+    background-color: #ffa300;
+    height: 10vh;
+}
+
+main{
+    padding: 20px;
+    height: 80vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+}
+
+main p{
+    font-size: 40px;
+}
+
+#title{
+    display: flex;
+    align-items: center;
+    width: 100vw;
+    justify-content: space-evenly;
+}
+
+#title img{
+    width: 200px;
+}
+
+#title h1{
+    font-size: 100px;
+    color: #ffa300;
+}

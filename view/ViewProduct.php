@@ -33,7 +33,7 @@
                         <input type="radio" name="price" id="100ml" value="100 mL">
                         <div class="format-infos">
                             <p class="format">100 mL</p>
-                            <p class="prix_format"><?php echo $product->productPrice*1.5 ?> €</p>
+                            <p class="prix_format"><?php echo round($product->productPrice*1.5) ?> €</p>
                         </div>
                         <div class="case-couleur"></div>
                     </div>

@@ -1,7 +1,7 @@
 <section id="rgpd">
     <h1>RGPD</h1>
     <h3>Politique de confidentialité</h3>
-    <p>Dernière mise à jour : 09/01/2024
+    <p>Dernière mise à jour : 21/01/2024
         Nous nous engageons à protéger et à respecter votre vie privée. Cette politique de confidentialité explique comment nous collectons, utilisons, stockons et protégeons vos informations personnelles lorsque vous utilisez nos services ou interagissez avec notre site web</p>
     <h3>Collecte des informations personnelles</h3>
     <p>Nous collectons diverses informations lorsque vous interagissez avec nos services. Cela peut inclure, sans s'y limiter, les informations que vous fournissez volontairement lorsque vous :

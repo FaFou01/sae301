@@ -24,8 +24,8 @@
         </ul>
         <p>Prix</p>
         <ul>
-            <li class="choixPrix">Prix croissant</li>
-            <li class="choixPrix">Prix décroissant</li>
+            <li class="choixPrix" id="priceUp">Prix croissant</li>
+            <li class="choixPrix" id="priceDown">Prix décroissant</li>
         </ul>
         <p>Type</p>
         <ul>
@@ -44,7 +44,7 @@
             <?php
                 foreach($productsList as $product){
                     $onclick = "window.location.href='$root/products/women/$product->productId'"; 
-                    echo '<div class="product '.$product->productBrand.' '.$product->productType.'">';
+                    echo '<div class="product '.$product->productBrand.' '.$product->productType.'" data-value="'.$product->productPrice.'">';
                     echo '<img src="'.$dossierImg.$product->productPicture.'" alt="image du produit '.$product->productName.'" onclick='.$onclick.'>';
                     echo '<div class="productInfos" onclick='.$onclick.'>';
                     echo '<p><b>'.$product->productName.'</b></p>';

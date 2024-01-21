@@ -93,6 +93,9 @@
                     echo '<img src="'.$dossierImg.'boucle cadeau.svg" alt="boucle cadeau">';
                     echo '<div id="corpsOffert">';
                             for($i=0; $i<intdiv($prixTotal, 100); $i++){
+                                if($i == 4){
+                                    break;
+                                }
                                 echo '<div class="gift">'; 
                                     echo '<img src="'.$dossierImg.$gifts[$i]->productPicture.'" alt="photo du produit">';
                                     echo '<div>'; 

@@ -92,7 +92,7 @@
             $_SESSION['userLastName'] = $userLastName;
             $_SESSION['userFirstName'] = $userFirstName;
             $_SESSION['userEmail'] = $userEmail;
-            $req = $db->prepare('UPDATE user SET UserLastName = :var1, UserFirstName = :var2, UserEmail = :var4 WHERE UserId= :var4');
+            $req = $db->prepare('UPDATE user SET UserLastName = :var1, UserFirstName = :var2, UserEmail = :var3 WHERE UserId= :var4');
             $req->bindParam('var1', $userLastName, PDO::PARAM_STR);
             $req->bindParam('var2', $userFirstName, PDO::PARAM_STR);
             $req->bindParam('var3', $userEmail, PDO::PARAM_STR);
@@ -305,26 +305,94 @@
             $message = '
             <html>
                 <body>
-                    <h1>Votre commande Nuances</h1>
+                <style>
+                    *{
+                        font-family: "Poppins", sans-serif;
+                    }
+                    
+                    h1{
+                        color: #ffa300;
+                    }
+                    
+                    table{
+                        border: black solid 2px;
+                        text-align: center;
+                    }
+
+                    td, th{
+                        padding: 15px;
+                    }
+                    
+                    table:first-child th, table:last-child td{
+                        background-color: #ffa300;
+                        color: white;
+                    }
+                </style>
+
+                    <h1>Récap de votre commande</h1>
                     <table>
-                        <tr>
-                            <td>Test</td>
-                        </tr>
-                        <tr>
-                            <td>Test</td>
-                        </tr>
-                        <tr>
-                            <td>Test</td>
-                        </tr>
-                    </table>
-                    <p>Votre moyen de paiment :</p>
-                    <p>Votre adresse de livraison :</p>
-                </body>
+                    <tr>
+                        <th>Nom du produit</th>
+                        <th>Format</th>
+                        <th>Quantité</th>
+                        <th>Prix Unitaire</th>
+                        <th>Sous-Total</th>
+                    </tr>';
+            foreach($basket as $order){
+                $message .= '
+                    <tr>
+                        <td>'.
+                            $order[1]
+                        .'</td>
+                        <td>'.
+                            $order[2]
+                        .'</td>
+                        <td>'.
+                            $order[3]
+                        .'</td>
+                        <td>'.
+                            $order[5]
+                        .' €</td>
+                        <td>'.
+                            $order[5]*$order[3]
+                        .' €</td>
+                    </tr>
+                ';
+            }
+            $message .= '
+            <tr>
+                <td colspan="5">Prix total du panier : '.$basketPrice.' €</td>
+            </tr>
+            </table>
+                    <h2>Votre moyen de paiment :</h2>';
+            if($paymentType == 'CB'){
+                $message .= '<p>Numéro de carte bleu : '.$payment[0].' **** **** **'.$payment[3][2].$payment[3][3].'</p>';
+                $message .= '<p>Expiration : '.$payment[4].'/'.$payment[5].'</p>';
+                $message .= '<p>Cryptogramme : ***</p>';
+                $message .= '<p>Propriétaire : '.$payment[6].' '.$payment[7].'</p>';
+            }
+            else if($paymentType == 'Paypal'){
+                $message .= '<p>Email Paypal : '.$payment[0].'</p>';
+                $message .= '<p>Mot de passe : ********</p>';
+                $message .= '<p>Propriétaire : '.$payment[1].' '.$payment[2].'</p>';
+            }
+            else if($paymentType == 'Gift Card'){
+                $message .= '<p>Carte cadeau N° : '.$payment.'</p>';
+            }
+            $message .= '<h2>Votre adresse de livraison :</h2>';
+            if(is_array($delivery)){
+                $message .= '<p>'.$delivery[0].' '.$delivery[1].'</p>';
+                $message .= '<p>'.$delivery[2].', '.$delivery[3].' '.$delivery[4].'</p>';
+            }
+            else{
+                $message .= '<p>'.$delivery.'</p>';
+            }
+            $message .= '</body>
             </html>
             ';
 
             $headers[] = 'MIME-Version: 1.0';
-            $headers[] = 'Content-type: text/html; charset=iso-8859-1';
+            $headers[] = 'Content-type: text/html; charset=UTF-8';
             $headers[] = 'From: Nuances <no-reply@nuances.com>';
             mail($to, $subject, $message, implode("\r\n", $headers));
         }

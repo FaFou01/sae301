@@ -226,7 +226,7 @@ text {
     justify-content: center;
     align-items: center;
     backdrop-filter: blur(10px);
-    z-index: 100;
+    z-index: 50000000;
 }
 
 #popPayment>div{

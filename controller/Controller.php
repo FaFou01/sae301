@@ -17,7 +17,8 @@
         public function invoke()
         {
             session_start();
-            $root = 'https://sae301.digitalmattprestation.fr';
+            $root = 'http://127.0.0.1/dashboard/sae301';
+            // $root = 'https://sae301.digitalmattprestation.fr';
             $dossierImg = $root."/assets/img/";
             $dossierJs = $root."/assets/js/";
             $dossierCss = $root."/assets/css/";
@@ -49,8 +50,8 @@
                             $this->model->updateProductQuantityAvailable( $_GET['article'], $_POST['newQuantity']);
                             header('Location: '.$root.'/products/men/');
                         }
-                        else if(isset($_GET['action']) and $_GET['action'] == "retirerProduit"){
-                            $this->model->removeProduct($_GET['productId']);
+                        else if(isset($_POST['deleteProductId'])){
+                            $this->model->removeProduct($_POST['deleteProductId']);
                             header('Location: '.$root.'/products/men/');
                         }
                     }
@@ -140,14 +141,12 @@
                         $_POST['fourthNumbers'],
                         $_POST['expireMonth'],
                         $_POST['expireYear'],
-                        $_POST['crypto'],
                         $_POST['gender'],
                         $_POST['userName']);
                         $_SESSION['paymentType'] = "CB";
                     }
                     else if(isset($_POST['mailPaypal']) and isset($_POST['mdpPaypal'])){
                         $_SESSION['payment'] = array($_POST['mailPaypal'],
-                        $_POST['mdpPaypal'],
                         $_SESSION['userLastName'],
                         $_SESSION['userFirstName']);
                         $_SESSION['paymentType'] = "Paypal";
@@ -237,9 +236,14 @@
                 $css = 'index';
                 $productSelection = $this->model->getSelection();
             }
-            include('view/viewTemplateTop.php');
-            include('view/'.$page.'.php');
-            include('view/viewTemplateBottom.php');
+            if(isset($page)){
+                include('view/viewTemplateTop.php');
+                include('view/'.$page.'.php');
+                include('view/viewTemplateBottom.php');
+            }
+            else{
+                include('view/view404.php');
+            }
         }
     }
 ?>
