@@ -105,7 +105,7 @@
         <form action="" method="post">
             <div class="champ">
                 <label for=""></label>
-                <input type="text" value="giftCard">
+                <input type="text" value="">
             </div>
             <div class="envoyer">
                 <input type="submit" value="">

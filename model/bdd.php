@@ -5,7 +5,7 @@
         public function __construct(){
             $hostnameLocal = 'localhost';  
             $usernameLocal = 'root'; 
-            $passwordLocal = 'root';
+            $passwordLocal = '';
             $dbLocal = 'sae301';
             $hostnameHosted = 'localhost';  
             $usernameHosted = 'u961341371_digitalmattpre'; 

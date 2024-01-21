@@ -288,14 +288,47 @@ form a {
 }
 
 @media only screen and (max-width: 430px){
-    
+    form{
+        margin-top: 20px;
+    }
     form div {
-        width: 300px;
+        width: 274px;
     }
     form input[type="text"]{
-        width: 300px;
+        width: 274px;
     }
     form input[type="submit"]{
-        width: 300px;
+        width: 274px;
+        font-size: 20px;
+    }
+    .connclassique h3{
+        font-size: 20px;
+    }
+    .connclassique h2{
+        font-size: 24px;
+    }
+    form input[type="mail"], form input[type="password"], form input[type="text"]{
+        width: 274px;
+        height: 38px;
+    }
+    form a{
+        font-size: 12px;
+    }
+    form label{
+        font-size: 18px;
+    }
+    .divAvance{
+        text-align: center;
+        padding: none;
+        height: 25px;
+    }
+    .svgmargin0, .svgmargin2, .svgmargin3{
+        display: none;
+    }
+    .svgmargin1{
+        width: 200px;
+        margin-top: -45px;
+        margin-inline: auto;
+        position: relative;
     }
 }

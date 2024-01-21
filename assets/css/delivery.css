@@ -458,4 +458,18 @@ input{
     .PR label{
         font-size: 12px;
     }
+    .PR{
+        width: 280px;
+    }
+    .PR input[type=radio]{
+        width: 16px;
+        height: 16px;
+    }
+    .svgmargin0, .svgmargin3, .svgmargin1{
+        display: none;
+    }
+    .svgmargin2{
+        width: 200px;
+        margin: 0;
+    }
 }
