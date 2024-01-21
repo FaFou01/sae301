@@ -17,7 +17,7 @@
         public function invoke()
         {
             session_start();
-            $root = 'http://127.0.0.1/dashboard/sae301';
+            $root = 'http://localhost:8888/sae301';
             // $root = 'https://sae301.digitalmattprestation.fr';
             $dossierImg = $root."/assets/img/";
             $dossierJs = $root."/assets/js/";
@@ -42,49 +42,38 @@
                 if($this->url[0] == 'products'){
                     $css = 'productList';
                     if($this->url[1] == 'men'){
-                        if(isset($_GET['action']) and $_GET['action'] == "changeQuantity"){
-                            $this->model->updateProductQuantityAvailable( $_GET['article'], $_POST['newQuantity']);
-                            header('Location: '.$root.'/products/men/');
-                        }
-                        else if(isset($_GET['action']) and $_GET['action'] == "retirerProduit"){
-                            $this->model->removeProduct($_GET['productId']);
-                            header('Location: '.$root.'/products/men/');
-                        }
                         $productsList = $this->model->getProductList('Homme');
                         $brandList = $this->model->getBrandList('Homme');
                         $typeList = $this->model->getTypeList('Homme');
                         $page = 'viewMenProductsList';
-                        
-                    }
-                    else if($this->url[1] == 'women'){
                         if(isset($_GET['action']) and $_GET['action'] == "changeQuantity"){
                             $this->model->updateProductQuantityAvailable( $_GET['article'], $_POST['newQuantity']);
-                            header('Location: '.$root.'/products/women/');
+                            header('Location: '.$root.'/products/men/');
                         }
-                        else if(isset($_GET['action']) and $_GET['action'] == "retirerProduit"){
-                            $this->model->removeProduct($_GET['productId']);
-                            header('Location: '.$root.'/products/women/');
+                        else if(isset($_POST['deleteProductId'])){
+                            $this->model->removeProduct($_POST['deleteProductId']);
+                            header('Location: '.$root.'/products/men/');
                         }
+                    }
+                    else if($this->url[1] == 'women'){
                         $productsList = $this->model->getProductList('Femme');
                         $brandList = $this->model->getBrandList('Femme');
                         $typeList = $this->model->getTypeList('Femme');
                         $page = 'viewWomenProductsList';
-                        
-                    }
-                    else if($this->url[1] == 'small_prices'){
                         if(isset($_GET['action']) and $_GET['action'] == "changeQuantity"){
                             $this->model->updateProductQuantityAvailable( $_GET['article'], $_POST['newQuantity']);
-                            header('Location: '.$root.'/products/small_prices/');
+                            header('Location: '.$root.'/products/women/');
                         }
-                        else if(isset($_GET['action']) and $_GET['action'] == "retirerProduit"){
-                            $this->model->removeProduct($_GET['productId']);
-                            header('Location: '.$root.'/products/small_prices/');
-                        }
+                    }
+                    else if($this->url[1] == 'small_prices'){
                         $productsList = $this->model->getProductList('PP');
                         $brandList = $this->model->getBrandList('PP');
                         $typeList = $this->model->getTypeList('PP');
                         $page = 'viewSmallPrices';
-                        
+                        if(isset($_GET['action']) and $_GET['action'] == "changeQuantity"){
+                            $this->model->updateProductQuantityAvailable( $_GET['article'], $_POST['newQuantity']);
+                            header('Location: '.$root.'/products/small_prices/');
+                        }
                     }
                     if($this->url[2] != ''){
                         $product = $this->model->getProduct($this->url[2]);

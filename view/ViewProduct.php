@@ -17,35 +17,43 @@
         <img src="<?php echo $dossierImg.$product->productPicture?>" alt="image du produit">
         <div id="productCustom">
             <h1><?php echo str_replace('_', ' ', $product->productType).' '.$product->productName.' par '.str_replace('_', ' ', $product->productBrand)?></h1>
+            <img id="imagePetitEcran" src="<?php echo $dossierImg.$product->productPicture?>" alt="image du produit">
             <form action="" method="post">
                 <div id="formats">
-                    <img src="<?php echo $dossierImg?>petite_bouteille.svg" alt="icône parfum" id="petit_format">
-                    <div class="prix">
-                        <input type="radio" name="price" id="50ml" value="50 mL">
-                        <div class="format-infos">
-                            <p class="format">50 mL</p>
-                            <p class="prix_format"><?php echo $product->productPrice?> €</p>
+                    <div>
+                        <img src="<?php echo $dossierImg?>petite_bouteille.svg" alt="icône parfum" id="petit_format">
+                        <div class="prix">
+                            <input type="radio" name="price" id="50ml" value="50 mL">
+                            <div class="format-infos">
+                                <p class="format">50 mL</p>
+                                <p class="prix_format"><?php echo $product->productPrice?> €</p>
+                            </div>
+                            <div class="case-couleur"></div>
                         </div>
-                        <div class="case-couleur"></div>
                     </div>
-                    <img src="<?php echo $dossierImg?>moyenne_bouteille.svg" alt="icône parfum" id="moyen_format">
-                    <div class="prix">
-                        <input type="radio" name="price" id="100ml" value="100 mL">
-                        <div class="format-infos">
-                            <p class="format">100 mL</p>
-                            <p class="prix_format"><?php echo round($product->productPrice*1.5) ?> €</p>
+                    <div>
+                        <img src="<?php echo $dossierImg?>moyenne_bouteille.svg" alt="icône parfum" id="moyen_format">
+                        <div class="prix">
+                            <input type="radio" name="price" id="100ml" value="100 mL">
+                            <div class="format-infos">
+                                <p class="format">100 mL</p>
+                                <p class="prix_format"><?php echo round($product->productPrice*1.5) ?> €</p>
+                            </div>
+                            <div class="case-couleur"></div>
                         </div>
-                        <div class="case-couleur"></div>
                     </div>
-                    <img src="<?php echo $dossierImg?>grande_bouteille.svg" alt="icône parfum" id="grand_format">
-                    <div class="prix">
-                        <input type="radio" name="price" id="200ml" value="200 mL">
-                        <div class="format-infos">
-                            <p class="format">200 mL</p>
-                            <p class="prix_format"><?php echo $product->productPrice*2 ?> €</p>
+                    <div>
+                        <img src="<?php echo $dossierImg?>grande_bouteille.svg" alt="icône parfum" id="grand_format">
+                        <div class="prix">
+                            <input type="radio" name="price" id="200ml" value="200 mL">
+                            <div class="format-infos">
+                                <p class="format">200 mL</p>
+                                <p class="prix_format"><?php echo $product->productPrice*2 ?> €</p>
+                            </div>
+                            <div class="case-couleur"></div>
                         </div>
-                        <div class="case-couleur"></div>
                     </div>
+                    
                 </div>
                 <div id="quantity">
                     <label for="quantity">Quantité : </label>

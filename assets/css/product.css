@@ -4,13 +4,14 @@
 
 #infos{
     display: flex;
-    width: 1296px;
+    width: 90%;
     height: 72px;
     margin: auto;
+    max-width: 1300px;
 }
 
 #infos div{
-    width: 324px;
+    width: 25%;
     border: solid 4px #FFA300;
     border-bottom: none;
     border-radius: 30px 30px 0 0;
@@ -38,7 +39,8 @@
 }
 
 .contenu_infos{
-    width: 1296px;
+    width: 90%;
+    max-width: 1300px;
     height: 500px;
     margin: auto;
     border: solid 4px #FFA300;
@@ -47,6 +49,8 @@
 }
 
 #productInfos{
+    max-width: 1300px;
+    margin: auto;
     display: flex;
     justify-content: space-evenly;
 }
@@ -63,7 +67,8 @@
 
 #productCustom h1{
     color : #FFA300;
-    font-size: 30px;
+    font-size: 36px;
+    font-weight: 600;
 }
 
 #productCustom form{
@@ -312,7 +317,6 @@
 }
 
 .notice{
-    width: 1149px;
     font-size: 23px;
     margin: auto;
     margin-bottom: 15px;
@@ -328,4 +332,234 @@
 
 #ingredientList ul{
     padding: 20px;
+}
+#imagePetitEcran{
+    display: none;
+}
+#formats>div{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    gap: 10px;
+    align-items: end;
+}
+
+@media only screen and (max-width: 1260px){
+    #prix_commande{
+        width: 242px;
+        height: 122px;
+    }
+    #trou+div, #trou+div div input{
+        font-size: 24px;
+    }
+    
+    #prix_commande+input{
+        font-size: 20px;
+        width: 245px;
+        height: 58px;
+    }
+}
+
+@media only screen and (max-width: 1090px){
+    #productInfos>img{
+        width: 450px;
+        height: 450px;
+    }
+    .prix input[type=radio]{
+        width: 90px;
+    }
+    #prix_commande{
+        width: 194px;
+        height: 98px;
+    }
+    #trou+div, #trou+div div input{
+        font-size: 20px;
+    }
+    
+    #prix_commande+input{
+        font-size: 16px;
+        width: 196px;
+        height: 47px;
+    }
+}
+@media only screen and (max-width: 980px){
+    #productInfos{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+    #productCustom{
+        margin: auto;
+        width: 90%;
+    }
+    #productInfos>img{
+        display: none
+    }
+    #productCustom h1{
+        text-align: center;
+    }
+    #imagePetitEcran{
+        display: block;
+        width: 576px;
+        height: 501px;
+        margin:auto;
+    }
+    #productCustom{
+        text-align: left;
+    }
+    .prix input[type=radio]{
+        width: 108px;
+    }
+    #commande{
+        flex-direction: row-reverse;
+    }
+    #prix_commande+input{
+        font-size: 24px;
+        width: 307px;
+        height: 72px;
+        border-radius: 30px;
+        background-color: #FFA300;
+        color: white;
+        border: none;
+    }
+
+    #trou+div, #trou+div div input{
+        font-size: 24px;
+    }
+    
+    #prix_commande+input{
+        font-size: 20px;
+        width: 245px;
+        height: 58px;
+    }
+    #prix_commande{
+        width: 242px;
+        height: 122px;
+    }
+    .notice{
+        font-size: 20px ;
+    }
+}
+@media only screen and (max-width: 740px){
+    #imagePetitEcran{
+        width: 90%;
+        height: auto;
+    }
+    #formats>div{
+        flex-direction: column;
+    }
+    #formats>div img{
+        margin: auto;
+    }
+    #descContent, #advices, #ingredientList, .notice{
+        font-size: 16px;
+    }
+}
+@media only screen and (max-width: 680px){
+    .prix input[type=radio]{
+        width: 90px;
+    }
+    #prix_commande{
+        width: 194px;
+        height: 98px;
+    }
+    #trou+div, #trou+div div input{
+        font-size: 20px;
+    }
+    
+    #prix_commande+input{
+        font-size: 16px;
+        width: 196px;
+        height: 47px;
+    }
+    #quantity label{
+        font-size: 20px;
+    }
+    #quantity input{
+        font-size: 20px;
+        width: 51px;
+        height: 28px;
+    }
+}
+@media only screen and (max-width: 540px){
+    #prix_commande{
+        width: 155px;
+        height: 78px;
+    }
+    #trou+div, #trou+div div input{
+        font-size: 16px;
+    }
+    
+    #prix_commande+input{
+        font-size: 12px;
+        width: 157px;
+        height: 38px;
+    }
+    #infos{
+        height: 55px;
+    }
+    #infos p {
+        font-size: 12px;
+    }
+    #productCustom h1{
+        font-size: 28px;
+    }
+    #trou{
+        width: 16px;
+        height: 16px;
+    }
+    
+    
+}
+@media only screen and (max-width: 460px){
+    #infos{
+        height: 50px;
+    }
+    #infos p {
+        font-size: 10px;
+    }
+    #productCustom h1{
+        font-size: 20px;
+    }
+    #moyen_format{
+        width: 100%;
+    }
+    #grand_format{
+        width: 80%;
+    }
+    .format-infos{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    .prix input[type=radio]{
+        width: 70px;
+        height: 50px;
+        margin: auto;
+    }
+    .format-infos p {
+        font-size: 14px;
+    }
+    #formats>div{
+        align-items: center;
+    }
+    #pageProduit{
+        padding: 50px 20px;
+    }
+}
+
+@media only screen and (max-width: 400px){
+    #prix_commande{
+        width: 135px;
+        height: 78px;
+    }
+    #trou+div, #trou+div div input{
+        font-size: 16px;
+    }
+    
+    #prix_commande+input{
+        font-size: 12px;
+        width: 140px;
+        height: 38px;
+    }
 }
