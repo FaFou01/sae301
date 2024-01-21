@@ -300,33 +300,33 @@
             $req->execute();
 
             //envoi du mail de confirmation de la commande
-            // $to = $mail;
-            // $subject = 'Confirmation de votre commande chez Nuances';
-            // $message = '
-            // <html>
-            //     <body>
-            //         <h1>Votre commande Nuances</h1>
-            //         <table>
-            //             <tr>
-            //                 <td>Test</td>
-            //             </tr>
-            //             <tr>
-            //                 <td>Test</td>
-            //             </tr>
-            //             <tr>
-            //                 <td>Test</td>
-            //             </tr>
-            //         </table>
-            //         <p>Votre moyen de paiment :</p>
-            //         <p>Votre adresse de livraison :</p>
-            //     </body>
-            // </html>
-            // ';
+            $to = $mail;
+            $subject = 'Confirmation de votre commande chez Nuances';
+            $message = '
+            <html>
+                <body>
+                    <h1>Votre commande Nuances</h1>
+                    <table>
+                        <tr>
+                            <td>Test</td>
+                        </tr>
+                        <tr>
+                            <td>Test</td>
+                        </tr>
+                        <tr>
+                            <td>Test</td>
+                        </tr>
+                    </table>
+                    <p>Votre moyen de paiment :</p>
+                    <p>Votre adresse de livraison :</p>
+                </body>
+            </html>
+            ';
 
-            // $headers[] = 'MIME-Version: 1.0';
-            // $headers[] = 'Content-type: text/html; charset=iso-8859-1';
-            // $headers[] = 'From: Nuances <no-reply@nuances.com>';
-            // mail($to, $subject, $message, implode("\r\n", $headers));
+            $headers[] = 'MIME-Version: 1.0';
+            $headers[] = 'Content-type: text/html; charset=iso-8859-1';
+            $headers[] = 'From: Nuances <no-reply@nuances.com>';
+            mail($to, $subject, $message, implode("\r\n", $headers));
         }
     }
 
