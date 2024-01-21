@@ -407,4 +407,7 @@ form input[type=submit]:hover{
         height: 67px;
         font-size: 20px;
     }
+    #panier_vide img{
+        width: 346px;
+    }
 }

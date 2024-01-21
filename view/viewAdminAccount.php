@@ -25,9 +25,9 @@
                     echo '<p>N° de commande : '.$order->orderId.'</p>';
                     echo '<p>effectuée le : '.$order->orderDate.'</p>';
                     echo '</div>';
-                    echo '<form action="" method="post" id="changeOrderStatus">';
+                    echo '<form action="" method="post" class="changeOrderStatus">';
                     echo '<input type="number" name="orderId" value="'.$order->orderId.'" hidden>';
-                    echo '<select name="orderStatus" id="selectStatus">';
+                    echo '<select name="orderStatus" class="selectStatus">';
                     if($order->orderStatus == "En cours de traitement"){
                         echo '<option value="En cours de traitement">En cours de traitement</option>';
                         echo '<option value="Expédié">Expédié</option>';
@@ -49,7 +49,7 @@
                     echo '</select>';
                     echo '<input type="submit" value="Enregister">';
                     echo '</form>';
-                    echo '<p>'.$order->orderPrice.' €</p>';
+                    echo '<p class="prix">'.$order->orderPrice.' €</p>';
                     echo '</div>';
                     
                 }
@@ -59,7 +59,6 @@
         ?>
         <div id="actionCompte">
             <a href="<?php echo $root?>?action=deconnect"><button>Me déconnecter</button></a>
-            <a href=""><button>Supprimer mon compte</button></a>
         </div>
     </div>
 </div>

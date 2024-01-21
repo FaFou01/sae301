@@ -135,11 +135,11 @@ nav a{
 
 @media only screen and (max-width: 480px){
     #logoSite{
-        width: 173px;
-        height: 73px;
+        width: 132px;
+        height: 56px;
     }
     .icones{
-        width: 100px;
+        width: 170px;
     }
     .icones img{
         width: 30px;
@@ -148,5 +148,8 @@ nav a{
         width: 20px;
         height: 20px;
         font-size: 10px;
+    }
+    .icones a{
+        font-size: 12px;
     }
 }

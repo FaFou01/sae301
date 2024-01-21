@@ -579,4 +579,7 @@
         width: 140px;
         height: 38px;
     }
+    .contenu_infos{
+        overflow: scroll;
+    }
 }

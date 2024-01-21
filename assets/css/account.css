@@ -76,20 +76,20 @@
     font-size: 28px;
 }
 
-#changeOrderStatus{
+.changeOrderStatus{
     display: flex;
     justify-content: space-between;
     align-items: center;
     width: 500px;
 }
 
-#changeOrderStatus select{
+.changeOrderStatus select{
     width: 271px;
     height: 39px;
     font-size: 20px;
 }
 
-#changeOrderStatus input[type=submit]{
+.changeOrderStatus input[type=submit]{
     width: 134px;
     height: 45px;
     border-radius: 30px;
@@ -150,4 +150,72 @@
     display: flex;
     justify-content: space-evenly;
     align-items: center;
+}
+
+@media only screen and (max-width: 430px){
+    #monCompte{
+        padding: 15px;
+    }
+    #monCompte h1{
+        font-size: 28px;
+    }
+    #compte{
+        margin: auto;
+        width: 325px;
+    }
+    #compte, #infosPerso, #commandePerso, #orders, .order{
+        width: 325px;
+    }
+    #compte>p, #infosPerso>p, #commandePerso>p{
+        font-size: 16px;
+        width: 325px;
+    }
+    #infosPerso form{
+        width: 325px;
+        flex-wrap: wrap;
+        gap: 20px;
+        justify-content: space-between;
+    }
+    #infosPerso form label{
+        font-size: 14px;
+    }
+    #infosPerso form input:not([type=submit]){
+        width: 205px;
+        height: 27px;
+        font-size: 14px;
+    }
+    #infosPerso form input[type=submit]{
+        width: 110px;
+        height: 29px;
+        font-size: 14px;
+    }
+    .order>div p, .order>div+form+p, .order>div+p+p, .order>div+p{
+        font-size: 10px;
+    }
+    .order form{
+        width: 110px;
+        flex-direction: column;
+        gap: 20px;
+    }
+    .order select{
+        width: 110px;
+        height: 16px;
+        font-size: 10px;
+    }
+    .order form input[type=submit]{
+        width: 71px;
+        height: 16px;
+        font-size: 10px;
+    }
+    .order{
+        padding: 5px;
+    }
+    #compte button{
+        width: 144px;
+        height: 29px;
+        font-size: 10px;
+    }
+    #actionCompte{
+        width: 340px;
+    }
 }
