@@ -47,9 +47,9 @@
                     echo '<div class="product '.$product->productBrand.' '.$product->productType.'" data-value="'.$product->productPrice.'">';
                     echo '<img src="'.$dossierImg.$product->productPicture.'" alt="image du produit '.$product->productName.'" onclick='.$onclick.'>';
                     echo '<div class="productInfos" onclick='.$onclick.'>';
-                    echo '<p><b>'.$product->productName.'</b></p>';
-                    echo '<p>'.str_replace('_', ' ', $product->productBrand).'</p>';
-                    echo '<p>A partir de <b>'.$product->productPrice.' €</b></p>';
+                    echo '<p><b class="ProductTitre">'.$product->productName.'</b></p>';
+                    echo '<p class="ProductBrand">'.str_replace('_', ' ', $product->productBrand).'</p>';
+                    echo '<p class="ProductPrice">A partir de <b>'.$product->productPrice.' €</b></p>';
                     echo '</div>';
                     if(isset($_SESSION['userStatus']) and $_SESSION['userStatus'] == "Admin"){
                         echo '<form action="?action=changeQuantity&article='.$product->productId.'" method="post" id="quantiteAdmin">';
