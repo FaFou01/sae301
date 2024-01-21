@@ -23,6 +23,7 @@
 
 #liste_produits h1{
     color: #FFA300;
+    font-size: 38px;
 }
 
 #ajoutProduit{
@@ -98,7 +99,11 @@
 
 .ProductTitre{
     color: #FFA300;
-    font-size: 20px;
+    font-size: 24px;
+    line-height: 0.5em;
+}
+.ProductBrand, .ProductPrice{
+    font-size: 18px;
 }
 
 .product:hover{
@@ -111,7 +116,7 @@
     justify-content: center;
     align-items: center;
     gap: 18px;
-    height: 45%;
+    height: 38%;
 }
 
 #rupture{
@@ -243,9 +248,36 @@
     color: white;
     border: none;
 }
+#titreandfiltre{
+    height: 80px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+#titreandfiltre img{
+    padding: 5px;
+    background-color: #FFA300;
+    border-radius: 5px;
+    width: 45px;
+    height: 45px;
+    display: none;
+}
+#tri span{
+    display: none;
+}
+#tri{
+    display: block;
+}
+.body-no-scroll {
+    overflow: hidden;
+}
 
 @media only screen and (max-width: 938px){
-    #tri{
+    #tri span{
+        display: block;
+    }
+    #pop{
         display: none;
     }
     #liste_produits{
@@ -254,6 +286,45 @@
     #products{
         border: none;
     }
+    #liste_produits{
+        gap: 50px;
+    }
+    #titreandfiltre img{
+        display: block;
+    }
+    #pop{
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.5);
+        z-index: 2000;
+    }
+    #tri{
+        position: absolute;
+        width: 80%;
+        height: 60%;
+        top: 100px;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        background-color: white;
+        padding: 30px 50px;
+        text-align: center;
+        z-index: 3000;
+        overflow: auto;
+        text-align: left;
+    }
+    #tri span{
+        font-size: 40px;
+    }
+    .close {
+        position: absolute;
+        top: 20px;
+        right: 20px;
+        font-size: 30px;
+        cursor: pointer;
+    }
 }
 
 @media only screen and (max-width: 738px){
@@ -261,9 +332,22 @@
         width: 201px;
         height: 320px;
     }
+    #rupture{
+        width: 201px;
+        height: 320px;
+    }
     #products{
         gap: 50px;
         padding: 1em;
+    }
+    .ProductTitre{
+        font-size: 20px;
+    }
+    .ProductBrand, .ProductPrice{
+        font-size: 14px;
+    }
+    .productInfos{
+        gap: 10px;
     }
 }
 @media only screen and (max-width: 639px){
@@ -271,15 +355,52 @@
         width: 161px;
         height: 256px;
     }
+    #rupture{
+        width: 161px;
+        height: 256px;
+    }
+    .ProductTitre{
+        font-size: 16px;
+    }
+    .ProductBrand, .ProductPrice{
+        font-size: 12px;
+    }
+    .productInfos{
+        gap: 6px;
+    }
+    #liste_produits h1{
+        color: #FFA300;
+        font-size: 30px;
+    }
+    #liste_produits{
+        gap: 20px;
+    }
 }
 @media only screen and (max-width: 500px){
     .product{
         width: 129px;
+        height: 235px;
+    }
+    #rupture{
+        width: 129px;
         height: 205px;
+    }
+    .ProductTitre{
+        font-size: 14px;
+    }
+    .ProductBrand, .ProductPrice{
+        font-size: 10px;
+    }
+    #liste_produits h1{
+        color: #FFA300;
+        font-size: 26px;
     }
 }
 @media only screen and (max-width: 439px){
     .product{
+        width: 103px;
+    }
+    #rupture{
         width: 103px;
     }
     #products{
@@ -288,6 +409,7 @@
     }
     .productInfos{
         gap: 2px;
+
     }
     .ProductTitre{
         color: #FFA300;
@@ -295,5 +417,9 @@
     }
     .ProductBrand, .ProductPrice{
         font-size: 10px;
+    }
+    #liste_produits h1{
+        color: #FFA300;
+        font-size: 22px;
     }
 }

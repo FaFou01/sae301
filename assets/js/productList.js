@@ -140,4 +140,9 @@ window.addEventListener('load', function(){
 
     priceDown.addEventListener('click', verifPrice);
     priceUp.addEventListener('click', verifPrice);
+
+    
 })
+
+
+

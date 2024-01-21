@@ -13,33 +13,42 @@
 ?>
 
 <div id="listing">
-    <div id="tri">
-        <p>Marques</p>
-        <ul>
-            <?php
-                foreach($brandList as $brand){
-                    echo '<li class="choixMarque">'.str_replace('_', ' ', $brand).'</li>';
-                }
-            ?>
-        </ul>
-        <p>Prix</p>
-        <ul>
-            <li class="choixPrix" id="priceUp">Prix croissant</li>
-            <li class="choixPrix" id="priceDown">Prix décroissant</li>
-        </ul>
-        <p>Type</p>
-        <ul>
-            <?php
-                foreach($typeList as $type){
-                    echo '<li class="choixType">'.str_replace('_', ' ', $type).'</li>';
-                }
-            ?>
-        </ul>
+    <div id="pop">
+        <div id="tri">
+            <span class="close" onclick="closePopup()">&times;</span>
+            <p>Marques</p>
+            <ul>
+                <?php
+                    foreach($brandList as $brand){
+                        echo '<li class="choixMarque">'.str_replace('_', ' ', $brand).'</li>';
+                    }
+                ?>
+            </ul>
+            <p>Prix</p>
+            <ul>
+                <li class="choixPrix" id="priceUp">Prix croissant</li>
+                <li class="choixPrix" id="priceDown">Prix décroissant</li>
+            </ul>
+            <p>Type</p>
+            <ul>
+                <?php
+                    foreach($typeList as $type){
+                        echo '<li class="choixType">'.str_replace('_', ' ', $type).'</li>';
+                    }
+                ?>
+            </ul>
+        </div>
     </div>
+    
 
     <div id="liste_produits">
-        <h1>Produits pour Hommes</h1>
-        <img id="illustration" src="<?php echo $dossierImg?>parfumH.jpg" alt="produit pour homme">
+        <div>
+            <div id="titreandfiltre">
+                <h1>Produits pour Hommes</h1>
+                <img src="<?php echo $dossierImg?>filtres.png" alt="filtre" onclick="openPopup()">
+            </div>
+            <img id="illustration" src="<?php echo $dossierImg?>parfumH.jpg" alt="produit pour homme">
+        </div>
         <div id="products">
             <?php
                 foreach($productsList as $product){
@@ -80,3 +89,15 @@
 </div>
 
 <script src="<?php echo $dossierJs?>productList.js"></script>
+<script>
+    function openPopup() {
+        document.getElementById("pop").style.display = "block";
+        
+        document.body.classList.add("body-no-scroll");
+    }
+    
+    function closePopup() {
+        document.getElementById("pop").style.display = "none";
+        document.body.classList.remove("body-no-scroll");
+    }
+</script>
