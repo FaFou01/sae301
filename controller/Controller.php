@@ -17,8 +17,8 @@
         public function invoke()
         {
             session_start();
-            $root = 'http://127.0.0.1/dashboard/sae301';
-            // $root = 'https://sae301.digitalmattprestation.fr';
+            // $root = 'http://127.0.0.1/dashboard/sae301';
+            $root = 'https://sae301.digitalmattprestation.fr';
             $dossierImg = $root."/assets/img/";
             $dossierJs = $root."/assets/js/";
             $dossierCss = $root."/assets/css/";
@@ -50,8 +50,8 @@
                             $this->model->updateProductQuantityAvailable( $_GET['article'], $_POST['newQuantity']);
                             header('Location: '.$root.'/products/men/');
                         }
-                        else if(isset($_POST['deleteProductId'])){
-                            $this->model->removeProduct($_POST['deleteProductId']);
+                        else if(isset($_GET['action']) and $_GET['action'] == "retirerProduit"){
+                            $this->model->removeProduct($_GET['deleteProductId']);
                             header('Location: '.$root.'/products/men/');
                         }
                     }
@@ -64,6 +64,10 @@
                             $this->model->updateProductQuantityAvailable( $_GET['article'], $_POST['newQuantity']);
                             header('Location: '.$root.'/products/women/');
                         }
+                        else if(isset($_GET['action']) and $_GET['action'] == "retirerProduit"){
+                            $this->model->removeProduct($_GET['deleteProductId']);
+                            header('Location: '.$root.'/products/men/');
+                        }
                     }
                     else if($this->url[1] == 'small_prices'){
                         $productsList = $this->model->getProductList('PP');
@@ -73,6 +77,10 @@
                         if(isset($_GET['action']) and $_GET['action'] == "changeQuantity"){
                             $this->model->updateProductQuantityAvailable( $_GET['article'], $_POST['newQuantity']);
                             header('Location: '.$root.'/products/small_prices/');
+                        }
+                        else if(isset($_GET['action']) and $_GET['action'] == "retirerProduit"){
+                            $this->model->removeProduct($_GET['deleteProductId']);
+                            header('Location: '.$root.'/products/men/');
                         }
                     }
                     if($this->url[2] != ''){
