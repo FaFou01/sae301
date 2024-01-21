@@ -17,7 +17,7 @@
         public function invoke()
         {
             session_start();
-            $root = 'http://127.0.0.1/dashboard/sae301';
+            $root = 'https://sae301.digitalmattprestation.fr';
             $dossierImg = $root."/assets/img/";
             $dossierJs = $root."/assets/js/";
             $dossierCss = $root."/assets/css/";

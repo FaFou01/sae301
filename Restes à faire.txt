@@ -1,2 +1,0 @@
-* faire le "paiement" avec carte bleu, paypal et carte cadeau
-* réduire la quantité des produits commandés
