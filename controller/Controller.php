@@ -28,9 +28,6 @@
             else if(isset($_POST['emailConnexion']) and isset($_POST['mdpConnexion'])){
                 $this->model->connect($_POST['emailConnexion'], $_POST['mdpConnexion']);
             }
-            else if(isset($_POST['prenomCompte']) and isset($_POST['nomCompte'])){
-                $this->model->updateUser($_SESSION['userId'], $_POST['prenomCompte'], $_POST['nomCompte'], $_POST['mailCompte']);
-            }
 
             //partie pour effectuer des actions
             if(isset($_GET['action'])){
@@ -78,16 +75,16 @@
                         }
                     }
                     if($this->url[2] != ''){
-                        if(isset($_GET['action']) and $_GET['action'] == 'addNotice'){
-                            $this->model->addNotice($this->url[2], $_SESSION['userId'], $_POST['notice']);
-                        }
                         $product = $this->model->getProduct($this->url[2]);
                         $noticeList = $this->model->getProductNotices($this->url[2]);
                         $css = 'product';
                         $page = 'viewProduct';
-    
-                        if(isset($_POST['finalPrice'])){
-                            $this->model->addProductToBasket($product->productPicture,$product->productName, $_POST['price'], $_POST['quantity'], $product->productQuantityAvailable, $_POST['finalPrice']);
+                        if(isset($_GET['action']) and $_GET['action'] == 'addNotice' and isset($_POST['notice'])){
+                            $this->model->addNotice($this->url[2], $_SESSION['userId'], $_POST['notice']);
+                            header('Location: '.$root.'/products/'.$this->url[1].'/'.$_GET['productId']);
+                        }
+                        else if(isset($_POST['finalPrice'])){
+                            $this->model->addProductToBasket($product->productPicture,$product->productName, $_POST['price'], $_POST['quantity'], $product->productQuantityAvailable, $_POST['finalPrice'], $product->productId);
                         }
                     }
                 }
@@ -130,6 +127,42 @@
                     $page = 'viewConnexion';
                 }
                 else if($this->url[0] == 'payment'){
+                    if(isset($_POST['adress']) and isset($_POST['city'])){
+                        $_SESSION['delivery'] = array($_POST['lastName'], $_POST['firstName'], $_POST['adress'], $_POST['city'], $_POST['cp']);
+                    }
+                    else if(isset($_POST['point-relais'])){
+                        $_SESSION['delivery'] = $_POST['point-relais'];
+                    }
+                    else if(isset($_POST['crypto']) and isset($_POST['firstNumbers'])){
+                        $_SESSION['payment'] = array($_POST['firstNumbers'], 
+                        $_POST['secondNumbers'], 
+                        $_POST['thirdNumbers'],
+                        $_POST['fourthNumbers'],
+                        $_POST['expireMonth'],
+                        $_POST['expireYear'],
+                        $_POST['crypto'],
+                        $_POST['gender'],
+                        $_POST['userName']);
+                        $_SESSION['paymentType'] = "CB";
+                    }
+                    else if(isset($_POST['mailPaypal']) and isset($_POST['mdpPaypal'])){
+                        $_SESSION['payment'] = array($_POST['mailPaypal'],
+                        $_POST['mdpPaypal'],
+                        $_SESSION['userLastName'],
+                        $_SESSION['userFirstName']);
+                        $_SESSION['paymentType'] = "Paypal";
+                    }
+                    else if(isset($_POST['giftCard'])){
+                        $_SESSION['payment'] = $_POST['giftCard'];
+                        $_SESSION['paymentType'] = "Gift Card";
+                    }
+                    if(isset($_GET['action']) and $_GET['action'] == 'pay'){
+                        $this->model->setOrder($_SESSION['panier'], $_SESSION['delivery'], $_SESSION['payment'], $_SESSION['paymentType'], $_SESSION['userId'], $_SESSION['prixPanier'], $_SESSION['userEmail']);
+                        $_SESSION['panier'] = array();
+                        $_SESSION['delivery'] = '';
+                        $_SESSION['payment'] = '';
+                        header('Location: '.$root);
+                    }
                     $css = 'paiement';
                     $page = 'viewPayment';
                 }
@@ -138,12 +171,15 @@
                         $orderList = $this->model->getUserOrders($_SESSION['userId']);
                         $page = 'viewClientAccount';
                     }
-                    if($_SESSION['userStatus'] == 'Admin'){
+                    else if($_SESSION['userStatus'] == 'Admin'){
                         if(isset($_POST['orderStatus']) and isset($_POST['orderId'])){
                             $this->model->updateOrderStatus($_POST['orderId'], $_POST['orderStatus']);
                         }
                         $orderList = $this->model->getAllOrders();
                         $page = 'viewAdminAccount';
+                    }
+                    if(isset($_POST['prenomCompte']) and isset($_POST['nomCompte'])){
+                        $this->model->updateUser($_SESSION['userId'], $_POST['prenomCompte'], $_POST['nomCompte'], $_POST['mailCompte']);
                     }
                     
                     $css = 'account';

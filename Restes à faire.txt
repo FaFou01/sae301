@@ -1,4 +1,2 @@
-* partie Admin (ajouter un produit, modifier quantité restante)
 * faire le "paiement" avec carte bleu, paypal et carte cadeau
 * réduire la quantité des produits commandés
-* gérer les avis de clients

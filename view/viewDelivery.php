@@ -28,11 +28,11 @@
                 <div class="input-container" id="input-Name">
                     <div>
                         <label for="lastName">Prénom</label>
-                        <input type="text" name="lastName" id="" required>
+                        <input type="text" name="lastName" id="" value="<?php echo $_SESSION['userLastName']?>" required>
                     </div>
                     <div>
                         <label for="firstName">Nom</label>
-                        <input type="text" name="firstName" id="" required>
+                        <input type="text" name="firstName" id="" value="<?php echo $_SESSION['userFirstName']?>" required>
                     </div>
                 </div>
                 <div class="input-container">

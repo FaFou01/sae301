@@ -1,4 +1,16 @@
-<script src="<?php echo $dossierJs?>paiement.js"></script>
+<?php
+    if(isset($_SESSION['payment']) and $_SESSION['payment'] != ''){
+        echo '<div id="popPayment">';
+        echo '<div>';
+        echo '<p>Votre commande a été payée avec succès ! Vous allez recevoir votre facture par mail.</p>';
+        echo '<div>';
+        echo '<a href="?action=pay"><button id="validerPaiement">OK</button></a>';
+        echo '</div>';
+        echo '</div>';
+        echo '</div>';
+    } 
+?>
+
 <section id="paiement">
     <div class="divAvance">
         <svg xmlns="http://www.w3.org/2000/svg" class="svgmargin0" viewBox="0 0 349 61" fill="none">
@@ -34,57 +46,53 @@
     </div>
 
     <div id="parCarte">
-    <div id="carte_bleu">
+    <form action="" method="post" id="carte_bleu">
         <div class="credit-card-input">
-            <input type="text" maxlength="4" placeholder="XXXX" class="input-box" id="num1" required/>
-            <input type="text" maxlength="4" placeholder="XXXX" class="input-box" id="num2" required/>
-            <input type="text" maxlength="4" placeholder="XXXX" class="input-box" id="num3" required/>
-            <input type="text" maxlength="4" placeholder="XXXX" class="input-box" id="num4" required/>
+            <input type="text" name="firstNumbers" maxlength="4" placeholder="XXXX" class="input-box" id="num1" required/>
+            <input type="text" name="secondNumbers" maxlength="4" placeholder="XXXX" class="input-box" id="num2" required/>
+            <input type="text" name="thirdNumbers" maxlength="4" placeholder="XXXX" class="input-box" id="num3" required/>
+            <input type="text" name="fourthNumbers" maxlength="4" placeholder="XXXX" class="input-box" id="num4" required/>
         </div>
         <div class="date_expi">
             <h5>Date d'expiration :  &nbsp;&nbsp;</h5>
-            <input type="text" maxlength="2" placeholder="XX" class="input-expi" id="expi1" required/>
+            <input type="text" name="expireMonth" maxlength="2" placeholder="XX" class="input-expi" id="expi1" required/>
             <h5> / </h5>
-            <input type="text" maxlength="2" placeholder="XX" class="input-expi" id="expi1" required/>
+            <input type="text" name="expireYear" maxlength="2" placeholder="XX" class="input-expi" id="expi1" required/>
         </div>
         <div class="crypto">
             <h5>Cryptogramme :</h5>
-            <input type="text" maxlength="3" placeholder="XXX" class="input-crypto" id="crypto" required/>
+            <input type="text" name="crypto" maxlength="3" placeholder="XXX" class="input-crypto" id="crypto" required/>
         </div>
         <div id="bas_carte">
             <div class="Nom">
-                <select name="" id="" required>
+                <select name="gender" id="" required>
                     <option value="Monsieur">M.</option>
                     <option value="Madame">Mme.</option>
                 </select>
-                <input type="text" class="inputNom" required>
+                <input type="text" class="inputNom" name="userName" value="<?php echo $_SESSION['userLastName'].' '.$_SESSION['userFirstName']?>" required>
             </div>
             <img src="<?php echo $dossierImg?>Visa.png" alt="Visa" id="visabas">
         </div>
-    </div>
         <div id="validation">
-                <input type="submit" value="Valider et payer">
+            <input type="submit" value="Valider et payer">
         </div> 
+    </form>
     </div>
-    
-
-
-
 
     <div id="ParPaypal">
         <h2>Payer par Paypal</h2>
         <div>
-            <form action="">
+            <form action="" method="post">
                 <div class="champ">
                     <label for="">Email ou numéro de téléphone</label>
-                    <input type="text">
+                    <input type="text" name="mailPaypal">
                 </div>
                 <div class="champ">
                     <label for="">Mot de passe</label>
-                    <input type="password">
+                    <input type="password" name="mdpPaypal">
                 </div>
                 <div class="envoyer">
-                    <input type="submit">
+                    <input type="submit" value="">
                 </div>
             </form>
         </div>
@@ -92,15 +100,15 @@
 
     <div id="parCadeau">
         <h2>Carte Cadeau</h2>
-        <form action="">
+        <form action="" method="post">
             <div class="champ">
                 <label for=""></label>
-                <input type="text">
+                <input type="text" value="giftCard">
             </div>
             <div class="envoyer">
-                <input type="submit">
+                <input type="submit" value="">
             </div>
         </form>
     </div>
 </section> 
-
+<script src="<?php echo $dossierJs?>paiement.js"></script>

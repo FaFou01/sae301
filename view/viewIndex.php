@@ -19,15 +19,15 @@
 <div id="bandeau">
     <div>
         <p>Découvrez nos petits prix !</p>
-        <a href="index.php?page=liste_petit_prix"><button>Je découvre</button></a>
+        <a href="products/small_prices/"><button>Je découvre</button></a>
     </div>
 </div>
 <div id="parfums">
-    <div id="produitH" class="parfum" onclick='window.location.href="index.php?page=liste_produits_homme"'>
+    <div id="produitH" class="parfum" onclick='window.location.href="products/men/"'>
         <img src="assets/img/parfumH.jpg" alt="parfum pour homme">
         <p>Produits Homme</p>
     </div>
-    <div id="produitF" class="parfum" onclick='window.location.href="index.php?page=liste_produits_femme"'>
+    <div id="produitF" class="parfum" onclick='window.location.href="products/women/"'>
         <img src="assets/img/parfumF.jpg" alt="parfum pour homme">
         <p>Produits Femme</p>
     </div>

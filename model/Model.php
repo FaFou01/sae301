@@ -158,7 +158,7 @@
             return $orderList;
         }
 
-        public function addProductToBasket($productPicture, $productName, $format, $quantity, $maxQuantity, $price){
+        public function addProductToBasket($productPicture, $productName, $format, $quantity, $maxQuantity, $price, $id){
             $unitaryPrice = $price/$quantity;
             if(isset($_SESSION['panier'])){
                 array_push($_SESSION['panier'], 
@@ -167,7 +167,8 @@
                 $format,                            
                 $quantity,
                 $maxQuantity,
-                $unitaryPrice));
+                $unitaryPrice,
+                $id));
             }
             else{
                 $_SESSION['panier'] = array(array($productPicture,
@@ -175,7 +176,8 @@
                 $format,                            
                 $quantity,
                 $maxQuantity,
-                $unitaryPrice));
+                $unitaryPrice,
+                $id));
             }
         }
 
@@ -277,6 +279,54 @@
             $req->execute([$productId]);
             $req = $db->prepare('DELETE FROM product WHERE ProductId = ?');
             $req->execute([$productId]);
+        }
+
+        public function setOrder($basket, $delivery, $payment, $paymentType, $userId, $basketPrice, $mail){
+            $bdd = new connexionBDD();
+            $db = $bdd->db;
+            //modifie les quantités restantes des produits commandés
+            foreach($basket as $order){
+                $newQuantity = $order[4]-$order[3];
+                $req = $db->prepare('UPDATE product SET ProductQuantityAvailable= :var1 WHERE ProductId= :var2');
+                $req->bindParam('var1', $newQuantity, PDO::PARAM_INT);
+                $req->bindParam('var2', $order[6], PDO::PARAM_INT);
+                $req->execute();
+            }
+
+            //ajoute la commande de l'utilisateur
+            $req = $db->prepare('INSERT INTO userorder(UserId, OrderPrice) VALUES(:var1, :var2)');
+            $req->bindParam('var1', $userId, PDO::PARAM_INT);
+            $req->bindParam('var2', $basketPrice, PDO::PARAM_INT);
+            $req->execute();
+
+            //envoi du mail de confirmation de la commande
+            // $to = $mail;
+            // $subject = 'Confirmation de votre commande chez Nuances';
+            // $message = '
+            // <html>
+            //     <body>
+            //         <h1>Votre commande Nuances</h1>
+            //         <table>
+            //             <tr>
+            //                 <td>Test</td>
+            //             </tr>
+            //             <tr>
+            //                 <td>Test</td>
+            //             </tr>
+            //             <tr>
+            //                 <td>Test</td>
+            //             </tr>
+            //         </table>
+            //         <p>Votre moyen de paiment :</p>
+            //         <p>Votre adresse de livraison :</p>
+            //     </body>
+            // </html>
+            // ';
+
+            // $headers[] = 'MIME-Version: 1.0';
+            // $headers[] = 'Content-type: text/html; charset=iso-8859-1';
+            // $headers[] = 'From: Nuances <no-reply@nuances.com>';
+            // mail($to, $subject, $message, implode("\r\n", $headers));
         }
     }
 

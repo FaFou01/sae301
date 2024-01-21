@@ -16,8 +16,8 @@
             </div>
         </div>
         <ul id="liens_footer">
-            <li><a href="<?php echo $dossierImg?>/ml/">Mentions Légales</a></li>
-            <li><a href="<?php echo $dossierImg?>/rgpd/">RGPD</a></li>
+            <li><a href="<?php echo $root?>/ml/">Mentions Légales</a></li>
+            <li><a href="<?php echo $root?>/rgpd/">RGPD</a></li>
             <li>
                 <ul id="réseaux">
                     <li>Réseaux Sociaux</li>

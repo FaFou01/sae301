@@ -4,7 +4,7 @@
         echo '<div>';
         echo '<p>Le produit a été ajouté dans votre panier !</p>';
         echo '<div>';
-        echo '<a href="'.$root.'"><button id="retourAccueil">Retourner à laccueil</button></a>';
+        echo '<a href="'.$root.'"><button id="retourAccueil">Continuer mes achats</button></a>';
         echo '<a href="'.$root.'/basket/"><button id="allerPanier">Voir mon panier</button></a>';
         echo '</div>';
         echo '</div>';
@@ -92,7 +92,7 @@
         </div>
         <?php
             if(isset($_SESSION['userStatus'])){
-                echo '<form action="?page=produit&productId='.$product->productId.'&action=addNotice" method="post" id="ajoutAvis">';
+                echo '<form action="?action=addNotice&productId='.$product->productId.'" method="post" id="ajoutAvis">';
                 echo '<input type="text" name="notice" placeholder="Ecrire un avis..." required>';
                 echo '<input type="submit" value="">';
                 echo '</form>';

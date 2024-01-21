@@ -179,6 +179,11 @@ text {
 
 }
 
+#parCarte{
+    position: relative;
+    margin-bottom: 200px;
+}
+
 #validation input[type="submit"]{
     width: 576px;
     height: 80px;
@@ -191,11 +196,14 @@ text {
     font-style: normal;
     border: none;
 }
+
 #validation{
     width: 90%;
     margin: 50px auto;
     display: flex;
     justify-content: center;
+    position: absolute;
+    bottom: -200px;
 }
 
 .Nom select{
@@ -206,6 +214,54 @@ text {
     color: #FFA300;
     background-color: white;
     padding: 10px;
+    border: none;
+}
+
+#popPayment{
+    position: absolute;
+    top: 0;
+    width: 99vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    backdrop-filter: blur(10px);
+    z-index: 100;
+}
+
+#popPayment>div{
+    border-radius: 10px;
+    width: 700px;
+    height: 300px;
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 50px;
+    border: black solid 1px;
+}
+
+#popPayment>div div{
+    width: 100%;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+#popPayment>div p{
+    font-size: 30px;
+}
+
+#popPayment>div div button{
+    width: 250px;
+    height: 70px;
+    font-size: 20px;
+    border-radius: 10px;
+}
+
+#validerPaiement{
+    background-color: #FFA300;
+    color: white;
     border: none;
 }
   
